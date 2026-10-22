@@ -41,6 +41,10 @@ jobs:
           # Batches that left the six-month window: their images are no longer listed anywhere.
           while read -r TAG; do [ -n "$TAG" ] && gh release delete "$TAG" --cleanup-tag -y; done < out/dropped.txt
           gh issue close "$ISSUE" --comment "Published. TVs pick it up on their next daily check."
+          BATCH=$(node -p "require('./docs/index.json').batches[0].id")
+          for REVIEW_ISSUE in $(gh issue list --state open --search "\"Review batch $BATCH\" in:title" --json number -q '.[].number'); do
+            gh issue close "$REVIEW_ISSUE" --comment "Reviewed in #$ISSUE and published."
+          done
       - name: Report failure
         if: failure()
         run: |
