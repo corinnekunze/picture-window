@@ -28,7 +28,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          [ -f staging/current.json ] || { echo "Nothing staged."; git add state && git diff --cached --quiet || { git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Record evaluated files"; git push; }; exit 0; }
+          if [ ! -f staging/current.json ]; then
+            echo "Nothing staged."
+            git add state
+            if ! git diff --cached --quiet; then
+              git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Record evaluated files"
+              git push
+            fi
+            exit 0
+          fi
           BATCH=$(node -p "require('./staging/current.json').batch")
           COUNT=$(node -p "require('./staging/current.json').candidates.length")
           git add state staging docs

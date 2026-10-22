@@ -31,7 +31,7 @@ jobs:
         run: |
           BATCH=$(node -p "require('./docs/index.json').batches[0].id")
           (cd out && zip -rq "theme-$BATCH.zip" "theme-$BATCH")
-          gh release create "batch-$BATCH" out/batch-$BATCH/*.webp "out/theme-$BATCH.zip" \
+          gh release create "batch-$BATCH" "out/batch-$BATCH"/*.webp "out/theme-$BATCH.zip" \
             --title "Batch $BATCH" --notes "Photos for $BATCH. Credits: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/credits.html"
       - name: Publish manifests
         run: |
@@ -43,4 +43,5 @@ jobs:
           gh issue close "$ISSUE" --comment "Published. TVs pick it up on their next daily check."
       - name: Report failure
         if: failure()
-        run: gh issue comment "$ISSUE" --body "Publishing failed, so nothing changed for TVs. Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: |
+          gh issue comment "$ISSUE" --body "Publishing failed, so nothing changed for TVs. Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

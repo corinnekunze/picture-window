@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      - run: npm run revoke -- $IDS --reason "$REASON"
+      - run: npm run revoke -- "$IDS" --reason "$REASON"
       - run: |
           git add docs state
           git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Revoke $IDS"
