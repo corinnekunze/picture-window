@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "published": "2026-10-22T16:20:55.259Z",
+  "published": "2026-10-22T20:50:36.379Z",
   "batches": [
     {
       "id": "2026-10",
       "manifest": "batches/2026-10.json",
-      "sha256": "bf64852c4f3f2748f17877967e71df73cf52dfbe526b90ba4c407133fba36408",
+      "sha256": "ef72ea8e8451316a154103fe2effcbbc9d9e41cbe746a116d4452d3001729994",
       "count": 900,
       "theme": "https://github.com/corinnekunze/picture-window/releases/download/batch-2026-10/theme-2026-10.zip"
     }
