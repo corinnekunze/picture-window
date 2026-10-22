@@ -59,7 +59,7 @@ When the repository owner opens that approval issue, a second Action:
 
 1. downloads each approved photo at full size and crops it to 16:9 around its most interesting area;
 2. saves it as a 3840×2160 WebP image, about 1.5 MB on average, and as a one-frame 4K HEVC video, about 3 MB;
-3. uploads the photos and videos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them;
+3. uploads the photos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them, and the videos to a second Release (GitHub allows 1,000 files per Release);
 4. updates the public list of photos and the credits page, and drops batches older than six months.
 
 The photos go up before the list that points to them, so a TV never sees a photo it can't download. If any step fails, nothing changes and TVs keep the collection they have.

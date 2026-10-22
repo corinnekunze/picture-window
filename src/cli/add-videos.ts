@@ -1,6 +1,6 @@
 // Adds 4K videos to a batch published before videos existed (October 2026 was the first).
 //   npm run add-videos -- --batch 2026-10
-// Videos go to out/batch-YYYY-MM/; the workflow uploads them to the batch's existing release
+// Videos go to out/videos-YYYY-MM/; the workflow uploads them to the batch's video release
 // before it commits docs/, so TVs never see a manifest whose videos are missing. The photos
 // themselves don't change: each image is downloaded from the release and checked against its hash.
 import { readFileSync, rmSync } from "node:fs";
@@ -9,7 +9,7 @@ import { USER_AGENT } from "../config.ts";
 import { readJson, sha256Hex, writeJson, writeText } from "../io.ts";
 import { readRevokedIds } from "../ledger.ts";
 import { readIndex, rollIndex } from "../manifest.ts";
-import { PATHS, batchManifestPath, releaseAssetUrl, releaseTag, sitePath, videoFileName } from "../paths.ts";
+import { PATHS, batchManifestPath, sitePath, videoAssetUrl, videoFileName, videoReleaseTag } from "../paths.ts";
 import { BatchManifest, type Item } from "../schema.ts";
 import { encodeStillVideo } from "../video.ts";
 
@@ -40,7 +40,7 @@ async function withVideo(item: Item, batch: string, revokedIds: Set<string>, out
     const { mp4, sha256 } = await encodeStillVideo(await downloadPublishedImage(item));
     writeText(`${outDir}/${videoFileName(item.id)}`, mp4);
     progress.added++;
-    return { ...item, video: { url: releaseAssetUrl(batch, videoFileName(item.id)), bytes: mp4.length, sha256 } };
+    return { ...item, video: { url: videoAssetUrl(batch, videoFileName(item.id)), bytes: mp4.length, sha256 } };
   } catch (error) {
     progress.skipped++;
     console.warn(`No video for ${item.id}: ${(error as Error).message}`);
@@ -64,7 +64,7 @@ async function main(): Promise<void> {
   const batch = readBatchArgument();
   const manifest = readJson(sitePath(batchManifestPath(batch)), BatchManifest);
   const revokedIds = new Set(readRevokedIds());
-  const outDir = `${PATHS.out}/${releaseTag(batch)}`;
+  const outDir = `${PATHS.out}/${videoReleaseTag(batch)}`;
   rmSync(PATHS.out, { recursive: true, force: true });
 
   const progress: Progress = { added: 0, skipped: 0 };
@@ -79,7 +79,7 @@ async function main(): Promise<void> {
   }
 
   writeManifests(batch, manifest, items);
-  console.log(`Added ${progress.added} videos to ${releaseTag(batch)}; ${progress.skipped} skipped`);
+  console.log(`Added ${progress.added} videos to ${videoReleaseTag(batch)}; ${progress.skipped} skipped`);
 }
 
 await main();

@@ -29,9 +29,12 @@ jobs:
       - name: Upload videos
         run: |
           shopt -s nullglob
-          VIDEOS=("out/batch-$BATCH"/*.mp4)
+          VIDEOS=("out/videos-$BATCH"/*.mp4)
           [ ${#VIDEOS[@]} -eq 0 ] && { echo "No videos to upload."; exit 0; }
-          gh release upload "batch-$BATCH" "${VIDEOS[@]}" --clobber
+          # Videos have their own release: GitHub allows 1,000 files per release.
+          gh release view "videos-$BATCH" >/dev/null 2>&1 || \
+            gh release create "videos-$BATCH" --title "Videos $BATCH" --notes "One-frame 4K videos of the $BATCH photos."
+          gh release upload "videos-$BATCH" "${VIDEOS[@]}" --clobber
       - name: Publish manifests
         run: |
           git add docs

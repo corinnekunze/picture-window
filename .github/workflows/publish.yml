@@ -33,16 +33,25 @@ jobs:
         run: |
           BATCH=$(node -p "require('./docs/index.json').batches[0].id")
           (cd out && zip -rq "theme-$BATCH.zip" "theme-$BATCH")
-          shopt -s nullglob
-          gh release create "batch-$BATCH" "out/batch-$BATCH"/*.webp "out/batch-$BATCH"/*.mp4 "out/theme-$BATCH.zip" \
+          gh release create "batch-$BATCH" "out/batch-$BATCH"/*.webp "out/theme-$BATCH.zip" \
             --title "Batch $BATCH" --notes "Photos for $BATCH. Credits: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/credits.html"
+          # Videos have their own release: GitHub allows 1,000 files per release.
+          shopt -s nullglob
+          VIDEOS=("out/videos-$BATCH"/*.mp4)
+          if [ ${#VIDEOS[@]} -gt 0 ]; then
+            gh release create "videos-$BATCH" "${VIDEOS[@]}" --title "Videos $BATCH" --notes "One-frame 4K videos of the $BATCH photos."
+          fi
       - name: Publish manifests
         run: |
           git add docs state staging
           git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Publish $TITLE"
           git push
           # Batches that left the six-month window: their images are no longer listed anywhere.
-          while read -r TAG; do [ -n "$TAG" ] && gh release delete "$TAG" --cleanup-tag -y; done < out/dropped.txt
+          while read -r TAG; do
+            [ -n "$TAG" ] || continue
+            gh release delete "$TAG" --cleanup-tag -y
+            gh release delete "videos-${TAG#batch-}" --cleanup-tag -y 2>/dev/null || true
+          done < out/dropped.txt
           gh issue close "$ISSUE" --comment "Published. TVs pick it up on their next daily check."
           BATCH=$(node -p "require('./docs/index.json').batches[0].id")
           for REVIEW_ISSUE in $(gh issue list --state open --search "\"Review batch $BATCH\" in:title" --json number -q '.[].number'); do

@@ -30,8 +30,20 @@ export function themeName(batch: string): string {
   return `theme-${batch}`;
 }
 
+/**
+ * Videos get a release of their own: GitHub allows 1,000 files per release, and a big batch's photos,
+ * theme and videos together can pass that (2026-10 had 900 photos).
+ */
+export function videoReleaseTag(batch: string): string {
+  return `videos-${batch}`;
+}
+
 export function releaseAssetUrl(batch: string, fileName: string): string {
   return `https://github.com/${REPO}/releases/download/${releaseTag(batch)}/${fileName}`;
+}
+
+export function videoAssetUrl(batch: string, fileName: string): string {
+  return `https://github.com/${REPO}/releases/download/${videoReleaseTag(batch)}/${fileName}`;
 }
 
 export function photoFileName(photoId: string): string {
