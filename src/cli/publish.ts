@@ -79,9 +79,9 @@ async function renderApproved(approval: Approval, imageDir: string): Promise<Ren
 }
 
 /** Theme photos: the batch minus anything flagged as possibly suggestive. */
-function themePhotoIds(approval: Approval, photos: Item[]): string[] {
+function themePhotos(approval: Approval, photos: Item[]): Item[] {
   const flaggedIds = new Set(approval.staging.candidates.filter((candidate) => candidate.flags.length).map((candidate) => candidate.id));
-  return photos.map((photo) => photo.id).filter((photoId) => !flaggedIds.has(photoId));
+  return photos.filter((photo) => !flaggedIds.has(photo.id));
 }
 
 /** Writes the batch manifest and the rolled index; returns the batches that left the window. */
@@ -115,7 +115,7 @@ async function main(): Promise<void> {
   const { photos, decisions } = await renderApproved(approval, imageDir);
   if (!photos.length) throw new Error("No photos rendered. Nothing published.");
 
-  const themeIds = writeTheme(themePhotoIds(approval, photos), imageDir, `${PATHS.out}/${themeName(batch)}`);
+  const themeIds = writeTheme(themePhotos(approval, photos), imageDir, `${PATHS.out}/${themeName(batch)}`);
   const dropped = writeManifests(batch, photos, new Date());
   writeText(`${PATHS.out}/dropped.txt`, dropped.map(releaseTag).join("\n"));
   writeLandingPage();
