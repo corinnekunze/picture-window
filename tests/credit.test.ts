@@ -50,10 +50,24 @@ describe("on-screen credits", () => {
 });
 
 describe("place names", () => {
-  it("keeps to town and country, falling back to region", () => {
+  it("names a real town, else the region, else the country", () => {
     expect(placeName({ city: "Zug", state: "Zug", country: "Switzerland" })).toBe("Zug, Switzerland");
-    expect(placeName({ county: "Mariposa County", state: "California", country: "United States" })).toBe("Mariposa County, United States");
+    expect(placeName({ county: "Mariposa County", state: "California", country: "United States" })).toBe("California, United States");
     expect(placeName({ country: "Iceland" })).toBe("Iceland");
     expect(placeName({})).toBeNull();
+  });
+
+  it("skips names a viewer couldn't read", () => {
+    expect(placeName({ village: "صيار", state: "Gouvernorat de Kairouan", country: "Tunisia" })).toBe("Gouvernorat de Kairouan, Tunisia");
+    expect(placeName({ village: "Хужирское сельское поселение", state: "Irkutsk Oblast", country: "Russia" })).toBe("Irkutsk Oblast, Russia");
+  });
+
+  it("drops administrative words and repeats", () => {
+    expect(placeName({ town: "Gyeongju-si", state: "North Gyeongsang", country: "South Korea" })).toBe("Gyeongju, South Korea");
+    expect(placeName({ city: "Singapore", country: "Singapore" })).toBe("Singapore");
+    expect(placeName({ village: "Improvement District No. 9", state: "Alberta", country: "Canada" })).toBe("Alberta, Canada");
+    expect(placeName({ town: "Burdur Merkez", country: "Turkey" })).toBe("Burdur, Turkey");
+    expect(placeName({ village: "Prags - Braies", country: "Italy" })).toBe("Prags, Italy");
+    expect(placeName({ village: "Rapperswil-Jona", country: "Switzerland" })).toBe("Rapperswil-Jona, Switzerland");
   });
 });
