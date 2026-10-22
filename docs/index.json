@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "published": "2026-10-22T15:52:29.655Z",
+  "published": "2026-10-22T16:20:55.259Z",
   "batches": [
     {
       "id": "2026-10",
@@ -10,5 +10,7 @@
       "theme": "https://github.com/corinnekunze/picture-window/releases/download/batch-2026-10/theme-2026-10.zip"
     }
   ],
-  "revoked": []
+  "revoked": [
+    "wmc-193366557"
+  ]
 }
