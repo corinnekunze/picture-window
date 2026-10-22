@@ -31,11 +31,14 @@
     <img src="<%= photo.thumbUrl %>" alt="" loading="lazy" decoding="async">
 <% if (photo.flags.length) { %>
     <span class="badge flag"><%= photo.flags[0] %></span>
+<% } else if (photo.creditProblem) { %>
+    <span class="badge flag">No TV credit: <%= photo.creditProblem %></span>
 <% } %>
     <span class="badge category"><%= photo.category %></span>
     <figcaption>
       <span class="title"><%= photo.title %></span>
       <span class="meta"><%= photo.license %> · <%= photo.author %></span>
+      <span class="meta">On TV: <%= photo.credit ? `Photo by ${photo.credit}` : "no credit" %><% if (photo.place) { %> · <%= photo.place %><% } %></span>
     </figcaption>
   </figure>
 <% } %>

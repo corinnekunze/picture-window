@@ -3,12 +3,12 @@
 // Videos go to out/videos-YYYY-MM/; the workflow uploads them to the batch's video release
 // before it commits docs/, so TVs never see a manifest whose videos are missing. The photos
 // themselves don't change: each image is downloaded from the release and checked against its hash.
-import { readFileSync, rmSync } from "node:fs";
+import { rmSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { USER_AGENT } from "../config.ts";
-import { readJson, sha256Hex, writeJson, writeText } from "../io.ts";
+import { readJson, sha256Hex, writeText } from "../io.ts";
 import { readRevokedIds } from "../ledger.ts";
-import { readIndex, rollIndex } from "../manifest.ts";
+import { rewriteBatchManifest } from "../manifest.ts";
 import { PATHS, batchManifestPath, sitePath, videoAssetUrl, videoFileName, videoReleaseTag } from "../paths.ts";
 import { BatchManifest, type Item } from "../schema.ts";
 import { encodeStillVideo } from "../video.ts";
@@ -48,18 +48,6 @@ async function withVideo(item: Item, batch: string, revokedIds: Set<string>, out
   }
 }
 
-/** Rewrites the batch manifest and points the index at its new hash. Nothing else in the index changes. */
-function writeManifests(batch: string, manifest: BatchManifest, items: Item[]): void {
-  const manifestPath = batchManifestPath(batch);
-  writeJson(sitePath(manifestPath), BatchManifest.parse({ ...manifest, items }));
-
-  const index = readIndex();
-  const entry = index?.batches.find((candidate) => candidate.id === batch);
-  if (!index || !entry) throw new Error(`Batch ${batch} isn't in the index. Nothing written.`);
-  const updatedEntry = { ...entry, sha256: sha256Hex(readFileSync(sitePath(manifestPath))) };
-  writeJson(PATHS.index, rollIndex(index, updatedEntry, index.revoked, new Date()).index);
-}
-
 async function main(): Promise<void> {
   const batch = readBatchArgument();
   const manifest = readJson(sitePath(batchManifestPath(batch)), BatchManifest);
@@ -78,7 +66,7 @@ async function main(): Promise<void> {
     return;
   }
 
-  writeManifests(batch, manifest, items);
+  rewriteBatchManifest(batch, manifest, items);
   console.log(`Added ${progress.added} videos to ${videoReleaseTag(batch)}; ${progress.skipped} skipped`);
 }
 

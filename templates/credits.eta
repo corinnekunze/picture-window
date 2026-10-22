@@ -2,7 +2,7 @@
 <header class="intro">
   <div class="eyebrow">Picture Window · photo credits</div>
   <h1><%= it.photos.length %> photographs, their authors and licenses</h1>
-  <p class="lede">Every photo comes from Wikimedia Commons Featured Pictures and is resized and cropped to 3840×2160 for TVs. Share-alike photos keep their original license. Updated <%= it.updated %>.</p>
+  <p class="lede">Every photo comes from Wikimedia Commons Featured Pictures and is resized and cropped to 3840×2160 for TVs. Share-alike photos keep their original license. Place names come from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>. Updated <%= it.updated %>.</p>
 </header>
 <div class="scroll">
   <table>

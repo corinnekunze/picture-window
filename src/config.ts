@@ -48,6 +48,12 @@ export const THEME_CONFIG = {
   ambient_glow: false,
 };
 
+/**
+ * On-screen credits the profanity check flagged but the owner has checked are real names.
+ * "Abo" is a slur in Australian English and also part of an Arabic name.
+ */
+export const CREDIT_ALLOW = ["Mono Abo-Abda"];
+
 /** Licenses that allow redistribution with attribution (and share-alike, which we honour by keeping the license). */
 export const LICENSE_ALLOW = /^(CC0(\s1\.0)?|Public domain|PD.*|CC BY(-SA)? \d\.\d.*)$/i;
 

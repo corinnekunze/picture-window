@@ -6,8 +6,10 @@ import { MAX_CATEGORY_SHARE, NSFW_FLAG, NSFW_REJECT, STAGE_COUNT, type Category 
 import { downloadBuffer, fetchFileInfo, listFeaturedPageIds, type CommonsFile } from "../commons.ts";
 import { balanceByCategory, checkFile, cleanTitle, pickableCount, stripHtml } from "../filters.ts";
 import { writeJson } from "../io.ts";
+import { displayCredit } from "../credit.ts";
 import { batchIdFor, readLedger, recordDecisions, type Decision } from "../ledger.ts";
 import { PATHS } from "../paths.ts";
+import { PlaceLookup } from "../places.ts";
 import { nsfwScore } from "../safety.ts";
 import type { Candidate, Staging } from "../schema.ts";
 import { writeReviewPage } from "../site.ts";
@@ -42,7 +44,8 @@ async function listUnevaluatedPageIds(): Promise<number[]> {
   return pageIds.filter((pageId) => !ledger.has(`wmc-${pageId}`));
 }
 
-function toCandidate(file: CommonsFile, category: Category, nsfw: number): Candidate {
+function toCandidate(file: CommonsFile, category: Category, nsfw: number, place: string | null): Candidate {
+  const onScreen = displayCredit(file.author, file);
   return {
     id: `wmc-${file.pageId}`,
     category,
@@ -57,11 +60,13 @@ function toCandidate(file: CommonsFile, category: Category, nsfw: number): Candi
     thumbUrl: file.thumbUrl,
     nsfw: Number(nsfw.toFixed(3)),
     flags: nsfw >= NSFW_FLAG ? ["possibly suggestive"] : [],
+    ...(onScreen.credit !== null ? { credit: onScreen.credit } : { creditProblem: onScreen.problem }),
+    ...(place && { place }),
   };
 }
 
 /** Runs the filters and the safety model on one file; adds the result to `scan`. */
-async function evaluateFile(file: CommonsFile, scan: ScanResult): Promise<void> {
+async function evaluateFile(file: CommonsFile, scan: ScanResult, places: PlaceLookup): Promise<void> {
   const photoId = `wmc-${file.pageId}`;
   const verdict = checkFile(file);
   if (!verdict.ok) {
@@ -82,22 +87,24 @@ async function evaluateFile(file: CommonsFile, scan: ScanResult): Promise<void> 
     scan.decisions.push({ id: photoId, decision: "nsfw", reason: nsfw.toFixed(3) });
     return;
   }
-  scan.passed.push(toCandidate(file, verdict.category, nsfw));
+  scan.passed.push(toCandidate(file, verdict.category, nsfw, await places.find(file.latitude, file.longitude)));
 }
 
 /** Evaluates files in order until enough could be staged within the category cap. */
 async function scanForCandidates(pageIds: number[], options: Options): Promise<ScanResult> {
   const scan: ScanResult = { passed: [], decisions: [] };
+  const places = new PlaceLookup();
   const enoughPassed = () => pickableCount(scan.passed, options.count, MAX_CATEGORY_SHARE) >= options.count;
   let scanned = 0;
 
   for (let start = 0; start < pageIds.length; start += SCAN_CHUNK) {
     if (scanned >= options.maxScan || enoughPassed()) break;
     const files = await fetchFileInfo(pageIds.slice(start, start + SCAN_CHUNK));
-    for (const file of files) await evaluateFile(file, scan);
+    for (const file of files) await evaluateFile(file, scan, places);
     scanned += files.length;
     console.log(`scanned ${scanned}, ${scan.passed.length} passed`);
   }
+  places.save();
   return scan;
 }
 

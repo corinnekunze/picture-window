@@ -104,18 +104,23 @@ $0 a month. GitHub Actions, Pages and Releases are free for public repositories,
 }
 ```
 
-Each `batches/YYYY-MM.json` lists every photo with `id`, `url`, `width`, `height`, `bytes`, `sha256`, `category`, `title`, `author`, `license`, `licenseUrl`, `sourceUrl` and, optionally, `video` (`url`, `bytes`, `sha256` of a one-frame 3840×2160 HEVC MP4). A published photo's image never changes; a batch file only changes to add optional fields, as when videos were added to 2026-10. The schemas are in [`src/schema.ts`](src/schema.ts). New fields may be added; a breaking change would bump `schema`.
+Each `batches/YYYY-MM.json` lists every photo with `id`, `url`, `width`, `height`, `bytes`, `sha256`, `category`, `title`, `author`, `license`, `licenseUrl`, `sourceUrl` and, optionally:
+
+- `video`: `url`, `bytes` and `sha256` of a one-frame 3840×2160 HEVC MP4;
+- `credit`: the short name a TV shows as "Photo by …", cleaned from the Commons author field (no emails, links, licenses, notices or derivative-work editors; at most 80 characters, checked against a profanity list). Absent when no clean name could be found, in which case TVs show no credit rather than the raw `author`;
+- `place`: roughly where the photo was taken, town or region and country ("Zug, Switzerland"), from the file's camera coordinates via [OpenStreetMap Nominatim](https://nominatim.org/). Place data © OpenStreetMap contributors.
+ A published photo's image never changes; a batch file only changes to add optional fields, as when videos were added to 2026-10. The schemas are in [`src/schema.ts`](src/schema.ts). New fields may be added; a breaking change would bump `schema`.
 
 ### Repository layout
 
 | Path | What it holds |
 |---|---|
-| `src/cli/` | The entry points: `stage.ts`, `publish.ts`, `revoke.ts`, and `add-videos.ts` for batches published before videos |
+| `src/cli/` | The entry points: `stage.ts`, `publish.ts`, `revoke.ts`, and `add-videos.ts` / `add-details.ts` for batches published before videos and credits |
 | `src/` | Library modules: filters, the Commons API client, the safety model, photo rendering, manifests, the site |
 | `src/config.ts` | Everything worth tuning: batch size, category share, filters, thresholds |
 | `templates/` | Page markup ([Eta](https://eta.js.org) templates) |
 | `docs/` | The GitHub Pages site. `docs/assets/` is hand-written; everything else is generated |
-| `state/` | The decision log and the revoked list |
+| `state/` | The decision log, the revoked list, and cached place names |
 | `staging/` | The batch waiting for review, if there is one |
 | `.github/workflows/` | Stage (monthly), Publish (on approval), Revoke (manual), Add videos (manual), Test |
 
@@ -130,6 +135,7 @@ Node 22 or newer, and ffmpeg with libx265 for the videos. `npm install`, then:
 | `npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md` | Publish the staged batch, leaving out the IDs listed in `issue.md` |
 | `npm run revoke -- wmc-123456 --reason "text on sign"` | Revoke photos |
 | `npm run add-videos -- --batch 2026-10` | Add 4K videos to a batch published without them |
+| `npm run add-details -- --batch 2026-10 --report out/details.tsv` | Add on-screen credits and places to a batch published without them, writing one line per photo to check |
 
 ### Maintaining
 

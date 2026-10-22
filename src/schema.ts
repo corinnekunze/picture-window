@@ -5,10 +5,15 @@ export const Category = z.enum(["space", "wildlife", "architecture", "cities", "
 /** Attribution and source facts, kept for every published photo. */
 const Credit = z.object({
   title: z.string(),
+  /** The full attribution from Commons, as the credits page shows it. */
   author: z.string(),
   license: z.string(),
   licenseUrl: z.string().nullable(),
   sourceUrl: z.string().url(),
+  /** Optional, added in October 2026: the short name a TV shows ("Photo by …"). Absent when none is clean. */
+  credit: z.string().max(80).optional(),
+  /** Optional, added in October 2026: roughly where the photo was taken ("Zug, Switzerland"). */
+  place: z.string().optional(),
 });
 
 /** A photo waiting for review. */
@@ -21,6 +26,8 @@ export const Candidate = Credit.extend({
   thumbUrl: z.string().url(),
   nsfw: z.number().min(0).max(1),
   flags: z.array(z.string()),
+  /** Why there's no on-screen credit, for the reviewer. */
+  creditProblem: z.string().optional(),
 });
 export type Candidate = z.infer<typeof Candidate>;
 

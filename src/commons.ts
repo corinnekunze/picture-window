@@ -6,14 +6,21 @@ import type { FileInfo } from "./filters.ts";
 
 const API_URL = "https://commons.wikimedia.org/w/api.php";
 const RETRYABLE_STATUSES = [429, 500, 502, 503, 504];
-const METADATA_FIELDS = "LicenseShortName|LicenseUrl|Artist|Restrictions|Categories";
+const METADATA_FIELDS = "LicenseShortName|LicenseUrl|Artist|Credit|Restrictions|Categories|GPSLatitude|GPSLongitude";
 /** Thumbnail width the review grid shows; 1280 for the zoom view, 3840 for rendering. */
 const REVIEW_THUMB_WIDTH = 500;
 const BATCH_SIZE = 50;
 
 export interface CommonsFile extends FileInfo {
   pageId: number;
+  /** The Artist field as Commons gives it: HTML, sometimes with templates and notes mixed in. */
   author: string;
+  /** The Credit field ("Own work", a source) and who uploaded the file: a fallback for the credit. */
+  creditHtml: string;
+  uploader: string;
+  /** Where the camera stood, when the file records it. */
+  latitude: number | null;
+  longitude: number | null;
   licenseUrl: string | null;
   sourceUrl: string;
   originalUrl: string;
@@ -33,6 +40,7 @@ const ImagePage = z.object({
   title: z.string(),
   imageinfo: z.array(z.object({
     mime: z.string(),
+    user: z.string().optional(),
     width: z.number(),
     height: z.number(),
     url: z.string(),
@@ -97,7 +105,7 @@ export async function fetchFileInfo(pageIds: number[]): Promise<CommonsFile[]> {
   for (let start = 0; start < pageIds.length; start += BATCH_SIZE) {
     const batchIds = pageIds.slice(start, start + BATCH_SIZE);
     const response = ImageInfoResponse.parse(await queryApi({
-      pageids: batchIds.join("|"), prop: "imageinfo", iiprop: "url|size|mime|extmetadata",
+      pageids: batchIds.join("|"), prop: "imageinfo", iiprop: "url|size|mime|user|extmetadata",
       iiurlwidth: String(REVIEW_THUMB_WIDTH), iiextmetadatafilter: METADATA_FIELDS,
     }));
     const pagesById = new Map(response.query.pages.map((page) => [page.pageid, page]));
@@ -126,10 +134,19 @@ function toCommonsFile(page: z.infer<typeof ImagePage> | undefined): CommonsFile
     restrictions: metadata("Restrictions"),
     categories: metadata("Categories"),
     author: metadata("Artist"),
+    creditHtml: metadata("Credit"),
+    uploader: imageInfo.user ?? "",
+    latitude: coordinate(metadata("GPSLatitude")),
+    longitude: coordinate(metadata("GPSLongitude")),
     sourceUrl: imageInfo.descriptionurl,
     originalUrl: imageInfo.url,
     thumbUrl: imageInfo.thumburl,
   };
+}
+
+function coordinate(value: string): number | null {
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : null;
 }
 
 /** The same Commons thumbnail at another standard width (500, 1280, 3840). */

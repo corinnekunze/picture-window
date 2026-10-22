@@ -4,6 +4,8 @@ import { REPO } from "./config.ts";
 export const PATHS = {
   ledger: "state/seen.jsonl",
   revoked: "state/revoked.json",
+  /** Place names already looked up on OpenStreetMap, by rounded coordinates. */
+  places: "state/places.json",
   staging: "staging/current.json",
   templates: "templates",
   /** The GitHub Pages site. Everything here is generated except `assets/`. */
