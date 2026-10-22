@@ -43,6 +43,6 @@ jobs:
           git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Stage batch $BATCH for review"
           git push
           PAGES="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
-          gh issue create --title "Review batch $BATCH" --body "$COUNT photos are ready: $PAGES/review/
+          gh issue create --title "Review batch $BATCH" --body "@${GITHUB_REPOSITORY_OWNER} $COUNT photos are ready: $PAGES/review/
 
           Reject the misfits, press **Approve batch**, and submit the issue it opens. Until then TVs keep the current collection. (The page can take a minute or two to update after this issue opens.)"
