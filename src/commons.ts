@@ -1,7 +1,15 @@
+// Wikimedia Commons API client. Follows Wikimedia's etiquette: a descriptive
+// User-Agent, maxlag, backoff on 429/503, and only standard thumbnail widths.
+import { z } from "zod";
 import { SOURCE_CATEGORY, USER_AGENT } from "./config.ts";
 import type { FileInfo } from "./filters.ts";
 
-const API = "https://commons.wikimedia.org/w/api.php";
+const API_URL = "https://commons.wikimedia.org/w/api.php";
+const RETRYABLE_STATUSES = [429, 500, 502, 503, 504];
+const METADATA_FIELDS = "LicenseShortName|LicenseUrl|Artist|Restrictions|Categories";
+/** Thumbnail width the review grid shows; 1280 for the zoom view, 3840 for rendering. */
+const REVIEW_THUMB_WIDTH = 500;
+const BATCH_SIZE = 50;
 
 export interface CommonsFile extends FileInfo {
   pageId: number;
@@ -10,91 +18,131 @@ export interface CommonsFile extends FileInfo {
   sourceUrl: string;
   originalUrl: string;
   thumbUrl: string;
-  bytes: number;
 }
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const ApiError = z.object({ error: z.object({ code: z.string(), info: z.string() }) });
 
-/** GET with Wikimedia's etiquette: User-Agent, maxlag, and backoff on 429/503. */
-export async function getWithRetry(url: string, attempts = 5): Promise<Response> {
-  for (let i = 0; ; i++) {
-    const res = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
-    if (res.ok) return res;
-    if (i + 1 >= attempts || ![429, 500, 502, 503, 504].includes(res.status)) {
-      throw new Error(`${res.status} ${res.statusText} for ${url}`);
+const CategoryPage = z.object({
+  query: z.object({ categorymembers: z.array(z.object({ pageid: z.number() })) }),
+  continue: z.record(z.string(), z.string()).optional(),
+});
+
+const MetadataValue = z.object({ value: z.unknown() }).optional();
+const ImagePage = z.object({
+  pageid: z.number(),
+  title: z.string(),
+  imageinfo: z.array(z.object({
+    mime: z.string(),
+    width: z.number(),
+    height: z.number(),
+    url: z.string(),
+    descriptionurl: z.string(),
+    thumburl: z.string(),
+    extmetadata: z.record(z.string(), MetadataValue).optional(),
+  })).optional(),
+});
+const ImageInfoResponse = z.object({ query: z.object({ pages: z.array(ImagePage) }) });
+
+const sleep = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+export async function fetchWithRetry(url: string, attempts = 5): Promise<Response> {
+  for (let attempt = 1; ; attempt++) {
+    const response = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+    if (response.ok) return response;
+
+    const retryable = RETRYABLE_STATUSES.includes(response.status);
+    if (!retryable || attempt >= attempts) {
+      throw new Error(`${response.status} ${response.statusText} for ${url}`);
     }
-    const wait = Number(res.headers.get("retry-after")) * 1000 || 2000 * 2 ** i;
-    await sleep(wait);
+    const retryAfterSeconds = Number(response.headers.get("retry-after"));
+    await sleep(retryAfterSeconds * 1000 || 2000 * 2 ** attempt);
   }
 }
 
-async function api(params: Record<string, string>): Promise<any> {
+export async function downloadBuffer(url: string): Promise<Buffer> {
+  const response = await fetchWithRetry(url);
+  return Buffer.from(await response.arrayBuffer());
+}
+
+async function queryApi(params: Record<string, string>): Promise<unknown> {
   const query = new URLSearchParams({ action: "query", format: "json", formatversion: "2", maxlag: "5", ...params });
-  const res = await getWithRetry(`${API}?${query}`);
-  const body: any = await res.json();
-  if (body.error) throw new Error(`Commons API: ${body.error.code} ${body.error.info}`);
+  const response = await fetchWithRetry(`${API_URL}?${query}`);
+  const body: unknown = await response.json();
+
+  const apiError = ApiError.safeParse(body);
+  if (apiError.success) {
+    throw new Error(`Commons API: ${apiError.data.error.code} ${apiError.data.error.info}`);
+  }
   return body;
 }
 
 /** Every page ID in the Featured Pictures category, newest promotion first. */
-export async function listFeatured(): Promise<number[]> {
-  const ids: number[] = [];
-  let cont: Record<string, string> = {};
+export async function listFeaturedPageIds(): Promise<number[]> {
+  const pageIds: number[] = [];
+  let continuation: Record<string, string> = {};
   do {
-    const body = await api({
+    const page = CategoryPage.parse(await queryApi({
       list: "categorymembers", cmtitle: SOURCE_CATEGORY, cmtype: "file", cmlimit: "500",
-      cmsort: "timestamp", cmdir: "desc", cmprop: "ids", ...cont,
-    });
-    for (const m of body.query.categorymembers) ids.push(m.pageid);
-    cont = body.continue ?? {};
-  } while (cont.cmcontinue);
-  return ids;
+      cmsort: "timestamp", cmdir: "desc", cmprop: "ids", ...continuation,
+    }));
+    pageIds.push(...page.query.categorymembers.map((member) => member.pageid));
+    continuation = page.continue ?? {};
+  } while (continuation.cmcontinue);
+  return pageIds;
 }
 
-/** Metadata for up to 50 files per request, in the order asked. */
-export async function fileInfo(pageIds: number[]): Promise<CommonsFile[]> {
-  const out: CommonsFile[] = [];
-  for (let i = 0; i < pageIds.length; i += 50) {
-    const chunk = pageIds.slice(i, i + 50);
-    const body = await api({
-      pageids: chunk.join("|"), prop: "imageinfo", iiprop: "url|size|mime|extmetadata", iiurlwidth: "500",
-      iiextmetadatafilter: "LicenseShortName|LicenseUrl|Artist|Restrictions|Categories",
-    });
-    const byId = new Map<number, any>(body.query.pages.map((p: any) => [p.pageid, p]));
-    for (const id of chunk) {
-      const page = byId.get(id);
-      const ii = page?.imageinfo?.[0];
-      if (!ii) continue;
-      const meta = (key: string): string => ii.extmetadata?.[key]?.value ?? "";
-      out.push({
-        pageId: id,
-        title: page.title,
-        mime: ii.mime,
-        width: ii.width,
-        height: ii.height,
-        bytes: ii.size,
-        license: meta("LicenseShortName"),
-        licenseUrl: meta("LicenseUrl") || null,
-        restrictions: meta("Restrictions"),
-        categories: meta("Categories"),
-        author: meta("Artist"),
-        sourceUrl: ii.descriptionurl,
-        originalUrl: ii.url,
-        thumbUrl: ii.thumburl,
-      });
+/** Metadata for the given files, in the order asked. Files Commons can't describe are left out. */
+export async function fetchFileInfo(pageIds: number[]): Promise<CommonsFile[]> {
+  const files: CommonsFile[] = [];
+  for (let start = 0; start < pageIds.length; start += BATCH_SIZE) {
+    const batchIds = pageIds.slice(start, start + BATCH_SIZE);
+    const response = ImageInfoResponse.parse(await queryApi({
+      pageids: batchIds.join("|"), prop: "imageinfo", iiprop: "url|size|mime|extmetadata",
+      iiurlwidth: String(REVIEW_THUMB_WIDTH), iiextmetadatafilter: METADATA_FIELDS,
+    }));
+    const pagesById = new Map(response.query.pages.map((page) => [page.pageid, page]));
+    for (const pageId of batchIds) {
+      const file = toCommonsFile(pagesById.get(pageId));
+      if (file) files.push(file);
     }
     await sleep(300);
   }
-  return out;
+  return files;
+}
+
+function toCommonsFile(page: z.infer<typeof ImagePage> | undefined): CommonsFile | null {
+  const imageInfo = page?.imageinfo?.[0];
+  if (!page || !imageInfo) return null;
+
+  const metadata = (field: string): string => String(imageInfo.extmetadata?.[field]?.value ?? "");
+  return {
+    pageId: page.pageid,
+    title: page.title,
+    mime: imageInfo.mime,
+    width: imageInfo.width,
+    height: imageInfo.height,
+    license: metadata("LicenseShortName"),
+    licenseUrl: metadata("LicenseUrl") || null,
+    restrictions: metadata("Restrictions"),
+    categories: metadata("Categories"),
+    author: metadata("Artist"),
+    sourceUrl: imageInfo.descriptionurl,
+    originalUrl: imageInfo.url,
+    thumbUrl: imageInfo.thumburl,
+  };
+}
+
+/** The same Commons thumbnail at another standard width (500, 1280, 3840). */
+export function thumbnailAtWidth(thumbUrl: string, width: number): string {
+  return thumbUrl.replace(/\/\d+px-([^/]+)$/, `/${width}px-$1`);
 }
 
 /**
- * URL for a copy at least `minWidth` wide. Commons pre-renders a few standard widths
- * (3840 is one); anything wider comes from the original.
+ * A copy at least `minWidth` pixels wide. Commons pre-renders 3840; anything wider,
+ * or a file that is exactly that size, comes from the original.
  */
-export function sizedUrl(file: { originalUrl: string; thumbUrl: string; width: number }, minWidth: number): string {
-  if (minWidth <= 3840 && file.width > 3840) {
-    return file.thumbUrl.replace(/\/\d+px-([^/]+)$/, "/3840px-$1");
-  }
-  return file.originalUrl;
+export function downloadUrlFor(file: { originalUrl: string; thumbUrl: string; width: number }, minWidth: number): string {
+  const thumbnailIsEnough = minWidth <= 3840 && file.width > 3840;
+  if (!thumbnailIsEnough) return file.originalUrl;
+  return thumbnailAtWidth(file.thumbUrl, 3840);
 }

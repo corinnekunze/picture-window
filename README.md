@@ -46,4 +46,4 @@ Node 22 or newer.
 | `npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md` | Publish the staged batch, rejecting IDs listed in `issue.md` |
 | `npm run revoke -- wmc-123 --reason "text on sign"` | Revoke photos |
 
-Tuning (batch size, category share, filters, thresholds) lives in [`src/config.ts`](src/config.ts). `state/seen.jsonl` records every file ever evaluated and the decision; delete a line to let that file be considered again.
+Tuning (batch size, category share, filters, thresholds) lives in [`src/config.ts`](src/config.ts). Page markup is in `templates/` (Eta); styles and the review page's script are in `docs/assets/`. `state/seen.jsonl` records every file ever evaluated and the decision; delete a line to let that file be considered again.

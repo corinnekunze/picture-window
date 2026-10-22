@@ -15,6 +15,8 @@ Plan and decisions: Linear project "TV Photo Feed" (P-MTD-8). This repo is ticke
 
 ## Code
 
-- TypeScript run by `tsx` on Node 22+; `zod` validates everything that crosses a file boundary.
-- Tunables in `src/config.ts`; pure logic in `src/filters.ts` and `src/manifest.ts` (unit-tested); scripts in `stage.ts`, `publish.ts`, `revoke.ts`.
+- TypeScript run by `tsx` on Node 22+; `zod` validates everything that crosses a file or network boundary.
+- `src/cli/` holds the three entry points (stage, publish, revoke), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
+- HTML comes from Eta templates in `templates/` (auto-escaped). Never build markup in TypeScript or browser JS strings. `docs/assets/` (CSS and the review page script) is hand-written; everything else in `docs/` is generated.
+- Style: descriptive names (no single-letter variables or parameters, including in callbacks), early returns instead of nested if/else, one job per function.
 - Run `npm run typecheck && npm test` after changing code.

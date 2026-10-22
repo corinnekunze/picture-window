@@ -1,0 +1,52 @@
+<% layout("./layout", { title: `Review ${it.batch} · Picture Window`, root: it.root, stylesheet: "review.css", script: "review.js", bodyData: { batch: it.batch, repo: it.repo } }) %>
+<header class="intro">
+  <div class="eyebrow">Picture Window · batch <%= it.batch %></div>
+  <h1>Review <%= it.photos.length %> photos</h1>
+  <p class="lede">
+    Every photo starts approved. Click one or press <kbd>Space</kbd> to reject it; <kbd>Z</kbd> shows it larger.
+<% if (it.flaggedCount) { %>
+    The <%= it.flaggedCount %> flagged as possibly suggestive are at the top.
+<% } %>
+    When you're done, press <strong>Approve batch</strong> and submit the GitHub issue it opens. The rest is published automatically. Your rejects are remembered in this browser until then.
+  </p>
+</header>
+
+<div class="toolbar">
+  <div class="chips" id="chips" role="group" aria-label="Filter by category">
+<% for (const chip of it.chips) { %>
+    <button class="chip" type="button" data-category="<%= chip.id %>" aria-pressed="<%= chip.id === "all" %>"><%= chip.label %> <%= chip.count %></button>
+<% } %>
+  </div>
+  <div class="count" aria-live="polite"><b id="approved-count"><%= it.photos.length %></b> approved · <b class="rejected-count" id="rejected-count">0</b> rejected</div>
+  <div class="spacer"></div>
+  <div class="keys"><kbd>←</kbd><kbd>→</kbd> move · <kbd>Space</kbd> reject · <kbd>Z</kbd> zoom</div>
+  <a class="approve" id="approve" href="#" target="_blank" rel="noopener">Approve batch</a>
+</div>
+
+<main class="grid" id="grid">
+<% for (const photo of it.photos) { %>
+  <figure class="tile" tabindex="0" aria-pressed="false" aria-label="<%= photo.title %>"
+    data-id="<%= photo.id %>" data-category="<%= photo.category %>" data-zoom="<%= photo.zoomUrl %>"
+    data-title="<%= photo.title %>" data-author="<%= photo.author %>" data-license="<%= photo.license %>" data-source="<%= photo.sourceUrl %>">
+    <img src="<%= photo.thumbUrl %>" alt="" loading="lazy" decoding="async">
+<% if (photo.flags.length) { %>
+    <span class="badge flag"><%= photo.flags[0] %></span>
+<% } %>
+    <span class="badge category"><%= photo.category %></span>
+    <figcaption>
+      <span class="title"><%= photo.title %></span>
+      <span class="meta"><%= photo.license %> · <%= photo.author %></span>
+    </figcaption>
+  </figure>
+<% } %>
+</main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <figure>
+    <img id="lightbox-image" alt="">
+    <figcaption>
+      <span class="title" id="lightbox-title"></span>
+      <span><span id="lightbox-credit"></span> · <a id="lightbox-source" href="#" target="_blank" rel="noopener">Source</a></span>
+    </figcaption>
+  </figure>
+</div>

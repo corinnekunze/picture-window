@@ -66,11 +66,11 @@ export const Index = z.object({
 });
 export type Index = z.infer<typeof Index>;
 
-/** Every file ever evaluated, so nothing is rediscovered or reapproved. */
-export const SeenEntry = z.object({
+/** One decision about one Commons file; see ledger.ts. */
+export const LedgerEntry = z.object({
   id: z.string(),
   decision: z.enum(["filtered", "nsfw", "staged", "approved", "rejected", "revoked"]),
   reason: z.string().optional(),
   at: z.string(),
 });
-export type SeenEntry = z.infer<typeof SeenEntry>;
+export type LedgerEntry = z.infer<typeof LedgerEntry>;

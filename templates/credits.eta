@@ -1,0 +1,21 @@
+<% layout("./layout", { title: "Credits · Picture Window", root: it.root, stylesheet: "credits.css" }) %>
+<header class="intro">
+  <div class="eyebrow">Picture Window · photo credits</div>
+  <h1><%= it.photos.length %> photographs, their authors and licenses</h1>
+  <p class="lede">Every photo comes from Wikimedia Commons Featured Pictures and is resized and cropped to 3840×2160 for TVs. Share-alike photos keep their original license. Updated <%= it.updated %>.</p>
+</header>
+<div class="scroll">
+  <table>
+    <thead><tr><th>ID</th><th>Photo</th><th>Author</th><th>License</th></tr></thead>
+    <tbody>
+<% for (const photo of it.photos) { %>
+      <tr>
+        <td class="id"><%= photo.id %></td>
+        <td><a href="<%= photo.sourceUrl %>" target="_blank" rel="noopener"><%= photo.title %></a></td>
+        <td><%= photo.author %></td>
+        <td><% if (photo.licenseUrl) { %><a href="<%= photo.licenseUrl %>" target="_blank" rel="noopener"><%= photo.license %></a><% } else { %><%= photo.license %><% } %></td>
+      </tr>
+<% } %>
+    </tbody>
+  </table>
+</div>

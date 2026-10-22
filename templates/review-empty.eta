@@ -1,0 +1,6 @@
+<% layout("./layout", { title: "Review · Picture Window", root: it.root }) %>
+<header class="intro">
+  <div class="eyebrow">Picture Window</div>
+  <h1>Nothing to review</h1>
+  <p class="lede">The next batch is staged on the 1st of the month. GitHub opens an issue when it's ready.</p>
+</header>

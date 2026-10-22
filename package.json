@@ -4,9 +4,9 @@
   "description": "A free, hand-reviewed 4K photo feed for Android TVs",
   "scripts": {
     "test": "vitest run",
-    "stage": "tsx src/stage.ts",
-    "publish:batch": "tsx src/publish.ts",
-    "revoke": "tsx src/revoke.ts",
+    "stage": "tsx src/cli/stage.ts",
+    "publish:batch": "tsx src/cli/publish.ts",
+    "revoke": "tsx src/cli/revoke.ts",
     "typecheck": "tsc"
   },
   "license": "MIT",
@@ -14,6 +14,7 @@
   "private": true,
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
+    "eta": "^4.6.0",
     "nsfwjs": "^4.3.0",
     "sharp": "^0.35.5",
     "zod": "^4.6.7"

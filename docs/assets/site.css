@@ -1,0 +1,28 @@
+/* A dark screening room, so photos read the way they will on a TV. */
+:root {
+  color-scheme: dark;
+  --ground: #121314;
+  --surface: #1b1d1f;
+  --line: #2c2f33;
+  --ink: #ece9e4;
+  --muted: #8f9398;
+  --safelight: #e8a33d;
+  --reject: #ef5350;
+  --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--ground); color: var(--ink); margin: 0; }
+body { font: 15px/1.5 var(--sans); padding-inline: 16px; padding-block: 0 48px; }
+[hidden] { display: none !important; }
+a { color: var(--safelight); }
+kbd { font: 11px var(--mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; padding: 0 5px; color: var(--ink); }
+
+.wrap { max-width: 1440px; margin-inline: auto; }
+.intro { padding-block: 36px 24px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--safelight); }
+h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.05; font-weight: 700; letter-spacing: -.02em; margin: 10px 0 12px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 64ch; margin: 0; }
+.lede strong { color: var(--ink); font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
