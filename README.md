@@ -16,7 +16,7 @@ Picture Window brings the photos back on these terms:
 - **No tracking.** TVs download plain public files. Nothing identifies a TV or reports what it shows.
 - **Family-friendly by review, not by hope.** Automated filters do the bulk of the work, and a person approves every batch before it publishes.
 - **Properly licensed.** Only photos whose licenses allow redistribution are used, and every photographer is credited.
-- **Actually 4K.** Every photo is delivered at exactly 3840×2160.
+- **Actually 4K.** Every photo is delivered at exactly 3840×2160, and also as a one-frame 4K video: most TVs draw apps at 1080p but play video at full 4K.
 - **Fresh.** About 350 new photos a month, keeping the latest six months: roughly 2,100 photos once the collection is full, so the same picture rarely comes back.
 
 ## How it works
@@ -58,8 +58,8 @@ Software alone isn't enough here. Keyword filters miss context: a war memorial f
 When the repository owner opens that approval issue, a second Action:
 
 1. downloads each approved photo at full size and crops it to 16:9 around its most interesting area;
-2. saves it as a 3840×2160 WebP image, about 1.5 MB on average;
-3. uploads the photos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them;
+2. saves it as a 3840×2160 WebP image, about 1.5 MB on average, and as a one-frame 4K HEVC video, about 3 MB;
+3. uploads the photos and videos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them;
 4. updates the public list of photos and the credits page, and drops batches older than six months.
 
 The photos go up before the list that points to them, so a TV never sees a photo it can't download. If any step fails, nothing changes and TVs keep the collection they have.
@@ -82,7 +82,7 @@ The code in this repository is MIT licensed.
 
 ## Cost
 
-$0 a month. GitHub Actions, Pages and Releases are free for public repositories, the Wikimedia Commons API is free, and the safety model runs inside the Action. Rendering a month's photos takes about 20 minutes of GitHub's free compute.
+$0 a month. GitHub Actions, Pages and Releases are free for public repositories, the Wikimedia Commons API is free, and the safety model runs inside the Action. Rendering a month's photos and videos takes about an hour of GitHub's free compute.
 
 ---
 
@@ -104,24 +104,24 @@ $0 a month. GitHub Actions, Pages and Releases are free for public repositories,
 }
 ```
 
-Each `batches/YYYY-MM.json` never changes once published. It lists every photo with `id`, `url`, `width`, `height`, `bytes`, `sha256`, `category`, `title`, `author`, `license`, `licenseUrl` and `sourceUrl`. The schemas are in [`src/schema.ts`](src/schema.ts). New fields may be added; a breaking change would bump `schema`.
+Each `batches/YYYY-MM.json` lists every photo with `id`, `url`, `width`, `height`, `bytes`, `sha256`, `category`, `title`, `author`, `license`, `licenseUrl`, `sourceUrl` and, optionally, `video` (`url`, `bytes`, `sha256` of a one-frame 3840×2160 HEVC MP4). A published photo's image never changes; a batch file only changes to add optional fields, as when videos were added to 2026-10. The schemas are in [`src/schema.ts`](src/schema.ts). New fields may be added; a breaking change would bump `schema`.
 
 ### Repository layout
 
 | Path | What it holds |
 |---|---|
-| `src/cli/` | The three entry points: `stage.ts`, `publish.ts`, `revoke.ts` |
+| `src/cli/` | The entry points: `stage.ts`, `publish.ts`, `revoke.ts`, and `add-videos.ts` for batches published before videos |
 | `src/` | Library modules: filters, the Commons API client, the safety model, photo rendering, manifests, the site |
 | `src/config.ts` | Everything worth tuning: batch size, category share, filters, thresholds |
 | `templates/` | Page markup ([Eta](https://eta.js.org) templates) |
 | `docs/` | The GitHub Pages site. `docs/assets/` is hand-written; everything else is generated |
 | `state/` | The decision log and the revoked list |
 | `staging/` | The batch waiting for review, if there is one |
-| `.github/workflows/` | Stage (monthly), Publish (on approval), Revoke (manual), Test |
+| `.github/workflows/` | Stage (monthly), Publish (on approval), Revoke (manual), Add videos (manual), Test |
 
 ### Running locally
 
-Node 22 or newer. `npm install`, then:
+Node 22 or newer, and ffmpeg with libx265 for the videos. `npm install`, then:
 
 | Command | What it does |
 |---|---|
@@ -129,6 +129,7 @@ Node 22 or newer. `npm install`, then:
 | `npm run stage -- --count 20 --max-scan 300` | Stage a small batch |
 | `npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md` | Publish the staged batch, leaving out the IDs listed in `issue.md` |
 | `npm run revoke -- wmc-123456 --reason "text on sign"` | Revoke photos |
+| `npm run add-videos -- --batch 2026-10` | Add 4K videos to a batch published without them |
 
 ### Maintaining
 

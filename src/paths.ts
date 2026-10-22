@@ -37,3 +37,7 @@ export function releaseAssetUrl(batch: string, fileName: string): string {
 export function photoFileName(photoId: string): string {
   return `${photoId}.webp`;
 }
+
+export function videoFileName(photoId: string): string {
+  return `${photoId}.mp4`;
+}

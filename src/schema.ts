@@ -31,6 +31,14 @@ export const Staging = z.object({
 });
 export type Staging = z.infer<typeof Staging>;
 
+/** The same photo as a one-frame 3840×2160 HEVC video, for TVs that only reach 4K through video. */
+export const Video = z.object({
+  url: z.string().url(),
+  bytes: z.number().int().positive(),
+  sha256: z.string().regex(/^[0-9a-f]{64}$/),
+});
+export type Video = z.infer<typeof Video>;
+
 /** One published photo, as the TV app reads it. */
 export const Item = Credit.extend({
   id: z.string(),
@@ -40,6 +48,8 @@ export const Item = Credit.extend({
   bytes: z.number().int().positive(),
   sha256: z.string().regex(/^[0-9a-f]{64}$/),
   category: Category,
+  /** Optional, added in October 2026; older TVs ignore it. */
+  video: Video.optional(),
 });
 export type Item = z.infer<typeof Item>;
 

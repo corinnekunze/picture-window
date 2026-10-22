@@ -1,0 +1,40 @@
+# Adds 4K videos to a batch published before videos existed. The photos don't change.
+name: Add videos to a batch
+on:
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: Batch, e.g. 2026-10
+        required: true
+permissions:
+  contents: write
+concurrency: { group: feed, cancel-in-progress: false }
+jobs:
+  add-videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BATCH: ${{ inputs.batch }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -yq --no-install-recommends ffmpeg
+      - name: Encode videos
+        run: npm run add-videos -- --batch "$BATCH"
+      # Videos go up first; the manifest that points at them is committed only after.
+      - name: Upload videos
+        run: |
+          shopt -s nullglob
+          VIDEOS=("out/batch-$BATCH"/*.mp4)
+          [ ${#VIDEOS[@]} -eq 0 ] && { echo "No videos to upload."; exit 0; }
+          gh release upload "batch-$BATCH" "${VIDEOS[@]}" --clobber
+      - name: Publish manifests
+        run: |
+          git add docs
+          git diff --cached --quiet && { echo "Nothing to commit."; exit 0; }
+          git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Add 4K videos to batch $BATCH"
+          git push

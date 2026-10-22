@@ -1,6 +1,6 @@
 // Monthly step 2, after review: render the approved photos and write the manifests.
 //   npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md
-// Images go to out/; the workflow uploads them to a GitHub Release before it commits
+// Images and their 4K videos go to out/; the workflow uploads them to a GitHub Release before it commits
 // docs/, so TVs never see a manifest whose images are missing.
 import { readFileSync, rmSync } from "node:fs";
 import { parseArgs } from "node:util";
@@ -9,9 +9,10 @@ import { parseApprovedBatch, parsePhotoIds } from "../approval.ts";
 import { readJson, sha256Hex, writeJson, writeText } from "../io.ts";
 import { readRevokedIds, recordDecisions, type Decision } from "../ledger.ts";
 import { livePhotos, readIndex, rollIndex } from "../manifest.ts";
-import { PATHS, batchManifestPath, photoFileName, releaseAssetUrl, releaseTag, sitePath, themeName } from "../paths.ts";
+import { PATHS, batchManifestPath, photoFileName, releaseAssetUrl, releaseTag, sitePath, themeName, videoFileName } from "../paths.ts";
 import { renderPhoto } from "../photo.ts";
-import { BatchManifest, Staging, type Candidate, type Item } from "../schema.ts";
+import { BatchManifest, Staging, type Candidate, type Item, type Video } from "../schema.ts";
+import { encodeStillVideo } from "../video.ts";
 import { writeCreditsPage, writeEmptyReviewPage, writeLandingPage } from "../site.ts";
 import { writeTheme } from "../theme.ts";
 
@@ -42,7 +43,7 @@ function readApproval(): Approval {
   return { staging, approved, rejectedIds };
 }
 
-function toItem(candidate: Candidate, batch: string, webp: Buffer, sha256: string): Item {
+function toItem(candidate: Candidate, batch: string, webp: Buffer, sha256: string, video: Video | undefined): Item {
   return {
     id: candidate.id,
     title: candidate.title,
@@ -56,7 +57,23 @@ function toItem(candidate: Candidate, batch: string, webp: Buffer, sha256: strin
     height: OUT_HEIGHT,
     bytes: webp.length,
     sha256,
+    ...(video && { video }),
   };
+}
+
+/**
+ * Writes the photo's 4K video next to its image. The video is optional in the feed, so a failed
+ * encode leaves it out and keeps the photo.
+ */
+async function writeVideo(photoId: string, batch: string, webp: Buffer, imageDir: string): Promise<Video | undefined> {
+  try {
+    const { mp4, sha256 } = await encodeStillVideo(webp);
+    writeText(`${imageDir}/${videoFileName(photoId)}`, mp4);
+    return { url: releaseAssetUrl(batch, videoFileName(photoId)), bytes: mp4.length, sha256 };
+  } catch (error) {
+    console.warn(`No video for ${photoId}: ${(error as Error).message}`);
+    return undefined;
+  }
 }
 
 /** Renders every approved photo into `imageDir`. A photo that fails is left out, never published half-made. */
@@ -66,7 +83,8 @@ async function renderApproved(approval: Approval, imageDir: string): Promise<Ren
     try {
       const { webp, sha256 } = await renderPhoto(candidate);
       writeText(`${imageDir}/${photoFileName(candidate.id)}`, webp);
-      result.photos.push(toItem(candidate, approval.staging.batch, webp, sha256));
+      const video = await writeVideo(candidate.id, approval.staging.batch, webp, imageDir);
+      result.photos.push(toItem(candidate, approval.staging.batch, webp, sha256, video));
       result.decisions.push({ id: candidate.id, decision: "approved" });
       console.log(`[${position + 1}/${approval.approved.length}] ${candidate.id} ${(webp.length / 1e6).toFixed(1)} MB`);
     } catch (error) {

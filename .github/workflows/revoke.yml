@@ -33,5 +33,6 @@ jobs:
           for ID in $(echo "$IDS" | grep -oE 'wmc-[0-9]+'); do
             for TAG in $(gh release list --limit 20 --json tagName -q '.[].tagName'); do
               gh release delete-asset "$TAG" "$ID.webp" -y 2>/dev/null || true
+              gh release delete-asset "$TAG" "$ID.mp4" -y 2>/dev/null || true
             done
           done

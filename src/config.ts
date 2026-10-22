@@ -14,6 +14,13 @@ export const OUT_WIDTH = 3840;
 export const OUT_HEIGHT = 2160;
 export const WEBP_QUALITY = 90;
 
+/**
+ * Each photo also ships as a one-frame 4K HEVC video. TVs draw apps at 1080p but play video at full
+ * 4K, so the screensaver shows the video when the TV can. CRF 14 keeps it visually lossless (~3 MB).
+ */
+export const VIDEO_CRF = 14;
+export const VIDEO_PRESET = "medium";
+
 /** Widest and narrowest source aspect we accept; outside this the 16:9 crop loses too much. */
 export const MIN_ASPECT = 1.4;
 export const MAX_ASPECT = 2.4;

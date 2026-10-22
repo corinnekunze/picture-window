@@ -7,6 +7,7 @@
     "stage": "tsx src/cli/stage.ts",
     "publish:batch": "tsx src/cli/publish.ts",
     "revoke": "tsx src/cli/revoke.ts",
+    "add-videos": "tsx src/cli/add-videos.ts",
     "typecheck": "tsc"
   },
   "license": "MIT",

@@ -6,7 +6,7 @@ Plan and decisions: Linear project "TV Photo Feed" (P-MTD-8). This repo is ticke
 
 - $0 to run: GitHub Actions, Pages and Releases only. No LLMs, paid APIs, servers or databases.
 - Nothing publishes without the owner's approval through the review page. Fail closed: if anything is unclear or errors, leave the photo or the batch out.
-- 4K only: every published photo is exactly 3840×2160 WebP. Non-4K TVs aren't a target.
+- 4K only: every published photo is exactly 3840×2160 WebP, plus an optional one-frame 3840×2160 HEVC MP4 (`video`) because TVs draw apps at 1080p but play video at 4K. Non-4K TVs aren't a target.
 - Images live in GitHub Releases, never in git. `docs/` is the Pages site and holds only manifests and pages.
 - Upload the release before committing manifests that point at it, so TVs never see a manifest whose images are missing.
 - The feed format (`src/schema.ts`, `schema: 1`) is a contract with TVs already in the field. Add optional fields freely; a breaking change needs `schema: 2`.
@@ -16,7 +16,7 @@ Plan and decisions: Linear project "TV Photo Feed" (P-MTD-8). This repo is ticke
 ## Code
 
 - TypeScript run by `tsx` on Node 22+; `zod` validates everything that crosses a file or network boundary.
-- `src/cli/` holds the three entry points (stage, publish, revoke), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
+- `src/cli/` holds the entry points (stage, publish, revoke, and add-videos for batches published before videos), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `video.ts` (ffmpeg), `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
 - HTML comes from Eta templates in `templates/` (auto-escaped). Never build markup in TypeScript or browser JS strings. `docs/assets/` (CSS and the review page script) is hand-written; everything else in `docs/` is generated.
 - Style: descriptive names (no single-letter variables or parameters, including in callbacks), early returns instead of nested if/else, one job per function.
 - Run `npm run typecheck && npm test` after changing code.
