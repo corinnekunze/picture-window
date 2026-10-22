@@ -1,0 +1,37 @@
+# Pull published photos. TVs delete them on their next daily check.
+name: Revoke photos
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: Photo IDs, e.g. wmc-123456 wmc-789
+        required: true
+      reason:
+        description: Why (kept in state/seen.jsonl)
+        default: revoked
+permissions:
+  contents: write
+concurrency: { group: feed, cancel-in-progress: false }
+jobs:
+  revoke:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      IDS: ${{ inputs.ids }}
+      REASON: ${{ inputs.reason }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run revoke -- $IDS --reason "$REASON"
+      - run: |
+          git add docs state
+          git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Revoke $IDS"
+          git push
+          # Also stop serving the files themselves.
+          for ID in $(echo "$IDS" | grep -oE 'wmc-[0-9]+'); do
+            for TAG in $(gh release list --limit 20 --json tagName -q '.[].tagName'); do
+              gh release delete-asset "$TAG" "$ID.webp" -y 2>/dev/null || true
+            done
+          done

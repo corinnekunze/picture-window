@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>Picture Window</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>
+:root { color-scheme: dark; --ground:#121314; --surface:#1b1d1f; --line:#2c2f33; --ink:#ece9e4; --muted:#8f9398; --safelight:#e8a33d; --reject:#ef5350;
+  --sans:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; }
+* { box-sizing: border-box; }
+html, body { background: var(--ground); color: var(--ink); margin: 0; }
+body { font: 15px/1.5 var(--sans); padding-inline: 16px; padding-block: 0 48px; }
+.wrap { max-width: 1440px; margin-inline: auto; }
+a { color: var(--safelight); }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--safelight); }
+h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.05; font-weight: 700; letter-spacing: -.02em; margin: 10px 0 12px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 64ch; margin: 0; }
+kbd { font: 11px var(--mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; padding: 0 5px; color: var(--ink); }
+header.intro { padding-block: 36px 24px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style></head>
+<body><div class="wrap"><header class="intro"><div class="eyebrow">Picture Window</div><h1>A free 4K photo feed for TVs</h1>
+<p class="lede">Hand-reviewed photography from Wikimedia Commons Featured Pictures, refreshed monthly. TVs read <a href="index.json">index.json</a>. See the <a href="credits.html">photo credits</a> or the <a href="https://github.com/corinnekunze/picture-window">source</a>.</p></header></div></body></html>

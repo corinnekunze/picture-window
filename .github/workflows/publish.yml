@@ -1,0 +1,46 @@
+# Monthly step 2: runs when the repo owner opens "Approve batch YYYY-MM" from the review page.
+name: Publish batch
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+  issues: write
+concurrency: { group: feed, cancel-in-progress: false }
+jobs:
+  publish:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Approve batch ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TITLE: ${{ github.event.issue.title }}
+      BODY: ${{ github.event.issue.body }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Render approved photos
+        run: |
+          printf '%s' "$BODY" > "$RUNNER_TEMP/issue.md"
+          npm run publish:batch -- --title "$TITLE" --body-file "$RUNNER_TEMP/issue.md"
+      # Images go up first; the manifest that points at them is committed only after.
+      - name: Upload release
+        run: |
+          BATCH=$(node -p "require('./docs/index.json').batches[0].id")
+          (cd out && zip -rq "theme-$BATCH.zip" "theme-$BATCH")
+          gh release create "batch-$BATCH" out/batch-$BATCH/*.webp "out/theme-$BATCH.zip" \
+            --title "Batch $BATCH" --notes "Photos for $BATCH. Credits: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/credits.html"
+      - name: Publish manifests
+        run: |
+          git add docs state staging
+          git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Publish $TITLE"
+          git push
+          # Batches that left the six-month window: their images are no longer listed anywhere.
+          while read -r TAG; do [ -n "$TAG" ] && gh release delete "$TAG" --cleanup-tag -y; done < out/dropped.txt
+          gh issue close "$ISSUE" --comment "Published. TVs pick it up on their next daily check."
+      - name: Report failure
+        if: failure()
+        run: gh issue comment "$ISSUE" --body "Publishing failed, so nothing changed for TVs. Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

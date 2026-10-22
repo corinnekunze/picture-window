@@ -1,0 +1,40 @@
+# Monthly step 1: stage new candidates and open an issue asking for review.
+name: Stage batch
+on:
+  schedule:
+    - cron: "0 9 1 * *" # 09:00 UTC on the 1st of every month
+  workflow_dispatch:
+    inputs:
+      count:
+        description: Photos to stage (use ~900 for the first, starter batch)
+        default: "450"
+permissions:
+  contents: write
+  issues: write
+concurrency: { group: feed, cancel-in-progress: false }
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run stage -- --count "${COUNT:-450}"
+        env:
+          COUNT: ${{ inputs.count }}
+      - name: Commit and ask for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f staging/current.json ] || { echo "Nothing staged."; git add state && git diff --cached --quiet || { git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Record evaluated files"; git push; }; exit 0; }
+          BATCH=$(node -p "require('./staging/current.json').batch")
+          COUNT=$(node -p "require('./staging/current.json').candidates.length")
+          git add state staging docs
+          git -c user.name=picture-window -c user.email=actions@github.com commit -qm "Stage batch $BATCH for review"
+          git push
+          PAGES="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
+          gh issue create --title "Review batch $BATCH" --body "$COUNT photos are ready: $PAGES/review/
+
+          Reject the misfits, press **Approve batch**, and submit the issue it opens. Until then TVs keep the current collection. (The page can take a minute or two to update after this issue opens.)"

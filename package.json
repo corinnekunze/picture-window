@@ -1,0 +1,30 @@
+{
+  "name": "picture-window",
+  "version": "1.0.0",
+  "description": "A free, hand-reviewed 4K photo feed for Android TVs",
+  "scripts": {
+    "test": "vitest run",
+    "stage": "tsx src/stage.ts",
+    "publish:batch": "tsx src/publish.ts",
+    "revoke": "tsx src/revoke.ts",
+    "typecheck": "tsc"
+  },
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "nsfwjs": "^4.3.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
