@@ -14,6 +14,8 @@ const Credit = z.object({
   credit: z.string().max(80).optional(),
   /** Optional, added in October 2026: roughly where the photo was taken ("Zug, Switzerland"). */
   place: z.string().optional(),
+  /** Optional, added in October 2026: one line about what the photo shows ("Great Grey Shrike in Bhigwan"). */
+  about: z.string().max(90).optional(),
 });
 
 /** A photo waiting for review. */
@@ -28,6 +30,8 @@ export const Candidate = Credit.extend({
   flags: z.array(z.string()),
   /** Why there's no on-screen credit, for the reviewer. */
   creditProblem: z.string().optional(),
+  /** Why there's no about line, for the reviewer. */
+  aboutProblem: z.string().optional(),
 });
 export type Candidate = z.infer<typeof Candidate>;
 

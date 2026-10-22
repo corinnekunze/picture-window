@@ -6,6 +6,7 @@ import { MAX_CATEGORY_SHARE, NSFW_FLAG, NSFW_REJECT, STAGE_COUNT, type Category 
 import { downloadBuffer, fetchFileInfo, listFeaturedPageIds, type CommonsFile } from "../commons.ts";
 import { balanceByCategory, checkFile, cleanTitle, pickableCount, stripHtml } from "../filters.ts";
 import { writeJson } from "../io.ts";
+import { describeFiles } from "../about.ts";
 import { displayCredit } from "../credit.ts";
 import { batchIdFor, readLedger, recordDecisions, type Decision } from "../ledger.ts";
 import { PATHS } from "../paths.ts";
@@ -108,6 +109,15 @@ async function scanForCandidates(pageIds: number[], options: Options): Promise<S
   return scan;
 }
 
+/** Adds each staged photo's about line, or why it has none, for the reviewer to check. */
+async function withAboutLines(candidates: Candidate[]): Promise<Candidate[]> {
+  const results = await describeFiles(candidates.map((candidate) => Number(candidate.id.replace("wmc-", ""))));
+  return candidates.map((candidate) => {
+    const result = results.get(Number(candidate.id.replace("wmc-", "")))!;
+    return result.about !== null ? { ...candidate, about: result.about } : { ...candidate, aboutProblem: result.problem };
+  });
+}
+
 function summarize(candidates: Candidate[]): Record<string, number> {
   const perCategory = Map.groupBy(candidates, (candidate) => candidate.category);
   return Object.fromEntries([...perCategory].map(([category, members]) => [category, members.length]));
@@ -124,7 +134,7 @@ async function main(): Promise<void> {
   console.log(`${pageIds.length} Featured Pictures not evaluated yet`);
 
   const scan = await scanForCandidates(pageIds, options);
-  const candidates = balanceByCategory(scan.passed, options.count, MAX_CATEGORY_SHARE);
+  const candidates = await withAboutLines(balanceByCategory(scan.passed, options.count, MAX_CATEGORY_SHARE));
   // Files that passed but weren't staged stay unrecorded, so a later batch can use them.
   const stagedDecisions: Decision[] = candidates.map((candidate) => ({ id: candidate.id, decision: "staged" }));
   recordDecisions([...scan.decisions, ...stagedDecisions]);

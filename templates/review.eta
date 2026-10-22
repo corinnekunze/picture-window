@@ -38,7 +38,8 @@
     <figcaption>
       <span class="title"><%= photo.title %></span>
       <span class="meta"><%= photo.license %> · <%= photo.author %></span>
-      <span class="meta">On TV: <%= photo.credit ? `Photo by ${photo.credit}` : "no credit" %><% if (photo.place) { %> · <%= photo.place %><% } %></span>
+      <span class="meta">On TV: <%= photo.about ?? `no about line (${photo.aboutProblem ?? "none"})` %></span>
+      <span class="meta"><%= photo.credit ? `Photo by ${photo.credit}` : "no credit" %><% if (photo.place) { %> · <%= photo.place %><% } %></span>
     </figcaption>
   </figure>
 <% } %>

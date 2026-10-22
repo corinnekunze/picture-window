@@ -53,6 +53,7 @@ function toItem(candidate: Candidate, batch: string, webp: Buffer, sha256: strin
     sourceUrl: candidate.sourceUrl,
     ...(candidate.credit && { credit: candidate.credit }),
     ...(candidate.place && { place: candidate.place }),
+    ...(candidate.about && { about: candidate.about }),
     category: candidate.category,
     url: releaseAssetUrl(batch, photoFileName(candidate.id)),
     width: OUT_WIDTH,

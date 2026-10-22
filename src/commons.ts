@@ -5,6 +5,7 @@ import { SOURCE_CATEGORY, USER_AGENT } from "./config.ts";
 import type { FileInfo } from "./filters.ts";
 
 const API_URL = "https://commons.wikimedia.org/w/api.php";
+const WIKIDATA_API_URL = "https://www.wikidata.org/w/api.php";
 const RETRYABLE_STATUSES = [429, 500, 502, 503, 504];
 const METADATA_FIELDS = "LicenseShortName|LicenseUrl|Artist|Credit|Restrictions|Categories|GPSLatitude|GPSLongitude";
 /** Thumbnail width the review grid shows; 1280 for the zoom view, 3840 for rendering. */
@@ -74,6 +75,7 @@ export async function downloadBuffer(url: string): Promise<Buffer> {
 
 async function queryApi(params: Record<string, string>): Promise<unknown> {
   const query = new URLSearchParams({ action: "query", format: "json", formatversion: "2", maxlag: "5", ...params });
+  if (params.action === "wbgetentities") query.delete("formatversion");
   const response = await fetchWithRetry(`${API_URL}?${query}`);
   const body: unknown = await response.json();
 
@@ -147,6 +149,103 @@ function toCommonsFile(page: z.infer<typeof ImagePage> | undefined): CommonsFile
 function coordinate(value: string): number | null {
   const parsed = Number.parseFloat(value);
   return Number.isFinite(parsed) ? parsed : null;
+}
+
+const DescriptionResponse = z.object({
+  query: z.object({
+    pages: z.array(z.object({
+      pageid: z.number(),
+      imageinfo: z.array(z.object({ extmetadata: z.record(z.string(), MetadataValue).optional() })).optional(),
+    })),
+  }),
+});
+
+const MediaInfoResponse = z.object({
+  entities: z.record(z.string(), z.object({
+    statements: z.record(z.string(), z.array(z.object({
+      mainsnak: z.object({ datavalue: z.object({ value: z.unknown() }).optional() }),
+    }))).or(z.array(z.never())).optional(),
+  })),
+});
+
+const WikidataItem = z.object({ id: z.string().regex(/^Q\d+$/) });
+
+const WikidataLabels = z.object({
+  entities: z.record(z.string(), z.object({ labels: z.record(z.string(), z.object({ value: z.string() })).optional() })),
+});
+
+/** A file's description (HTML), and whether Commons marked it as English rather than leaving it untagged. */
+export interface Description {
+  html: string;
+  taggedEnglish: boolean;
+}
+
+/**
+ * Each file's English description, by page ID. Asked separately from fetchFileInfo because the
+ * multi-language option would turn other fields, such as Artist, into per-language maps too. Untagged
+ * descriptions are kept but marked, since they can be in any language; tagged non-English ones are left out.
+ */
+export async function fetchEnglishDescriptions(pageIds: number[]): Promise<Map<number, Description>> {
+  const descriptions = new Map<number, Description>();
+  for (let start = 0; start < pageIds.length; start += BATCH_SIZE) {
+    const response = DescriptionResponse.parse(await queryApi({
+      pageids: pageIds.slice(start, start + BATCH_SIZE).join("|"), prop: "imageinfo", iiprop: "extmetadata",
+      iiextmetadatafilter: "ImageDescription", iiextmetadatamultilang: "1",
+    }));
+    for (const page of response.query.pages) {
+      const english = englishValue(page.imageinfo?.[0]?.extmetadata?.ImageDescription?.value);
+      if (english) descriptions.set(page.pageid, english);
+    }
+    await sleep(300);
+  }
+  return descriptions;
+}
+
+function englishValue(value: unknown): Description | null {
+  if (typeof value === "string") return { html: value, taggedEnglish: false };
+  if (value && typeof value === "object" && "en" in value) {
+    return { html: String((value as Record<string, unknown>).en), taggedEnglish: true };
+  }
+  return null;
+}
+
+/** English names of what each file is tagged as showing (Commons "depicts", P180), by page ID. */
+export async function fetchDepictedLabels(pageIds: number[]): Promise<Map<number, string[]>> {
+  const depictedIds = new Map<number, string[]>();
+  for (let start = 0; start < pageIds.length; start += BATCH_SIZE) {
+    const batchIds = pageIds.slice(start, start + BATCH_SIZE);
+    const response = MediaInfoResponse.parse(await queryApi({
+      action: "wbgetentities", ids: batchIds.map((pageId) => `M${pageId}`).join("|"), props: "claims",
+    }));
+    for (const [entityId, entity] of Object.entries(response.entities)) {
+      const statements = Array.isArray(entity.statements) ? {} : entity.statements ?? {};
+      const items = (statements.P180 ?? []).flatMap((claim) => {
+        const parsed = WikidataItem.safeParse(claim.mainsnak.datavalue?.value);
+        return parsed.success ? [parsed.data.id] : [];
+      });
+      if (items.length) depictedIds.set(Number(entityId.slice(1)), items);
+    }
+    await sleep(300);
+  }
+  const labels = await fetchWikidataLabels([...new Set([...depictedIds.values()].flat())]);
+  return new Map([...depictedIds].map(([pageId, items]) => [pageId, items.flatMap((item) => labels.get(item) ?? [])]));
+}
+
+async function fetchWikidataLabels(itemIds: string[]): Promise<Map<string, string>> {
+  const labels = new Map<string, string>();
+  for (let start = 0; start < itemIds.length; start += BATCH_SIZE) {
+    const query = new URLSearchParams({
+      action: "wbgetentities", format: "json", maxlag: "5", props: "labels", languages: "en",
+      ids: itemIds.slice(start, start + BATCH_SIZE).join("|"),
+    });
+    const response = WikidataLabels.parse(await (await fetchWithRetry(`${WIKIDATA_API_URL}?${query}`)).json());
+    for (const [itemId, entity] of Object.entries(response.entities)) {
+      const label = entity.labels?.en?.value;
+      if (label) labels.set(itemId, label);
+    }
+    await sleep(300);
+  }
+  return labels;
 }
 
 /** The same Commons thumbnail at another standard width (500, 1280, 3840). */

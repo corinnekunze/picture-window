@@ -13,12 +13,13 @@ Plan and decisions: Linear project "TV Photo Feed" (P-MTD-8). This repo is ticke
 - Content policy: family-friendly; distant crowds are fine, close-up portraits are not. Licenses limited to PD, CC0, CC BY and CC BY-SA, and attribution is always kept.
 - Wikimedia etiquette: descriptive User-Agent, `maxlag`, backoff on 429/503, standard thumbnail widths (500, 1280, 3840).
 - OpenStreetMap Nominatim etiquette (places): at most one request a second, descriptive User-Agent, every answer cached in `state/places.json`, attribution on the credits page. Places stay vague: town or region and country, never coordinates.
+- About lines (`about.ts`) come only from English descriptions or Wikidata tags, and withhold anything grim, first-person or unclear; like credits, TVs show nothing rather than raw text.
 - On-screen credits (`credit.ts`) show only cleaned names; when cleaning fails, TVs show no credit, never the raw author. Real names the profanity check trips on go in `CREDIT_ALLOW` after the owner checks them.
 
 ## Code
 
 - TypeScript run by `tsx` on Node 22+; `zod` validates everything that crosses a file or network boundary.
-- `src/cli/` holds the entry points (stage, publish, revoke, and add-videos / add-details for batches published before videos and credits), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `video.ts` (ffmpeg), `credit.ts` (on-screen names), `places.ts` (Nominatim), `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
+- `src/cli/` holds the entry points (stage, publish, revoke, and add-videos / add-details for batches published before videos and credits), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `video.ts` (ffmpeg), `credit.ts` (on-screen names), `about.ts` (what a photo shows), `profanity.ts`, `places.ts` (Nominatim), `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
 - HTML comes from Eta templates in `templates/` (auto-escaped). Never build markup in TypeScript or browser JS strings. `docs/assets/` (CSS and the review page script) is hand-written; everything else in `docs/` is generated.
 - Style: descriptive names (no single-letter variables or parameters, including in callbacks), early returns instead of nested if/else, one job per function.
 - Run `npm run typecheck && npm test` after changing code.

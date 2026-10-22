@@ -1,9 +1,9 @@
 // Turns a Commons "Artist" field into the short credit a TV shows ("Photo by …"). The field is
 // free-form HTML: user links, templates, panorama notices, contact details, licenses. The full
 // text stays on the credits page; this only decides what fits on screen, or that nothing does.
-import { englishDataset, englishRecommendedTransformers, RegExpMatcher } from "obscenity";
 import { CREDIT_ALLOW } from "./config.ts";
 import { stripHtml } from "./filters.ts";
+import { hasWholeWordProfanity } from "./profanity.ts";
 
 /** Longest credit shown on screen; it wraps to two lines on the TV. */
 export const MAX_CREDIT_LENGTH = 80;
@@ -16,8 +16,6 @@ export interface CreditFallback {
   creditHtml: string;
   uploader: string;
 }
-
-const profanity = new RegExpMatcher({ ...englishDataset.build(), ...englishRecommendedTransformers });
 
 /** Whole notices some photographers' templates add to the field. Removed before anything else. */
 const BOILERPLATE = [
@@ -124,10 +122,5 @@ function check(credit: string): CreditResult {
  */
 function hasProfanity(credit: string): boolean {
   if (CREDIT_ALLOW.includes(credit)) return false;
-  return profanity.getAllMatches(credit).some((match) => isWholeWord(credit, match.startIndex, match.endIndex));
-}
-
-function isWholeWord(text: string, startIndex: number, endIndex: number): boolean {
-  const letter = /\p{L}/u;
-  return !letter.test(text[startIndex - 1] ?? "") && !letter.test(text[endIndex + 1] ?? "");
+  return hasWholeWordProfanity(credit);
 }

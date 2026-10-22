@@ -108,6 +108,7 @@ Each `batches/YYYY-MM.json` lists every photo with `id`, `url`, `width`, `height
 
 - `video`: `url`, `bytes` and `sha256` of a one-frame 3840×2160 HEVC MP4;
 - `credit`: the short name a TV shows as "Photo by …", cleaned from the Commons author field (no emails, links, licenses, notices or derivative-work editors; at most 80 characters, checked against a profanity list). Absent when no clean name could be found, in which case TVs show no credit rather than the raw `author`;
+- `about`: one line about what the photo shows ("Great Grey Shrike in Bhigwan, Maharashtra, India"), from the first sentence of the photo's English description on Commons, or its most specific Wikidata "depicts" tag. At most 90 characters, cut at a natural break; template notices, credit lines, other languages, first-person asides and grim words ("carcass", "hunting") are left out;
 - `place`: roughly where the photo was taken, town or region and country ("Zug, Switzerland"), from the file's camera coordinates via [OpenStreetMap Nominatim](https://nominatim.org/). Place data © OpenStreetMap contributors.
  A published photo's image never changes; a batch file only changes to add optional fields, as when videos were added to 2026-10. The schemas are in [`src/schema.ts`](src/schema.ts). New fields may be added; a breaking change would bump `schema`.
 
@@ -135,7 +136,7 @@ Node 22 or newer, and ffmpeg with libx265 for the videos. `npm install`, then:
 | `npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md` | Publish the staged batch, leaving out the IDs listed in `issue.md` |
 | `npm run revoke -- wmc-123456 --reason "text on sign"` | Revoke photos |
 | `npm run add-videos -- --batch 2026-10` | Add 4K videos to a batch published without them |
-| `npm run add-details -- --batch 2026-10 --report out/details.tsv` | Add on-screen credits and places to a batch published without them, writing one line per photo to check |
+| `npm run add-details -- --batch 2026-10 --report out/details.tsv` | Add on-screen credits, places and about lines to a batch published without them, writing one line per photo to check |
 
 ### Maintaining
 
