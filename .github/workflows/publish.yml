@@ -11,7 +11,7 @@ jobs:
   publish:
     if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Approve batch ')
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
     env:
       GH_TOKEN: ${{ github.token }}
       TITLE: ${{ github.event.issue.title }}
@@ -42,8 +42,9 @@ jobs:
             gh release create "videos-$BATCH" "${VIDEOS[@]}" --title "Videos $BATCH" --notes "One-frame 4K videos of the $BATCH photos."
           fi
           # Small copies for the photos page, also in a release of their own.
-          gh release create "thumbs-$BATCH" "out/thumbs-$BATCH"/*.webp --title "Thumbnails $BATCH" \
+          gh release create "thumbs-$BATCH" --title "Thumbnails $BATCH" \
             --notes "Small copies of the $BATCH photos for https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/photos.html"
+          scripts/upload-assets.sh "thumbs-$BATCH" "out/thumbs-$BATCH"/*.webp
       - name: Publish manifests
         run: |
           git add docs state staging

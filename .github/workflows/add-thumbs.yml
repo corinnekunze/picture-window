@@ -12,7 +12,7 @@ concurrency: { group: feed, cancel-in-progress: false }
 jobs:
   add-thumbs:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 240
     env:
       GH_TOKEN: ${{ github.token }}
       BATCH: ${{ inputs.batch }}
@@ -29,7 +29,7 @@ jobs:
           gh release view "thumbs-$BATCH" >/dev/null 2>&1 || \
             gh release create "thumbs-$BATCH" --title "Thumbnails $BATCH" \
               --notes "Small copies of the $BATCH photos for https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/photos.html"
-          gh release upload "thumbs-$BATCH" "out/thumbs-$BATCH"/*.webp --clobber
+          scripts/upload-assets.sh "thumbs-$BATCH" "out/thumbs-$BATCH"/*.webp
       - name: Publish the photos page
         run: |
           git add docs
