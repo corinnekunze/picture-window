@@ -9,6 +9,7 @@
     "revoke": "tsx src/cli/revoke.ts",
     "add-videos": "tsx src/cli/add-videos.ts",
     "add-details": "tsx src/cli/add-details.ts",
+    "add-thumbs": "tsx src/cli/add-thumbs.ts",
     "typecheck": "tsc"
   },
   "license": "MIT",

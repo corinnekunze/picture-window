@@ -4,9 +4,9 @@ import { parseArgs } from "node:util";
 import { parsePhotoIds } from "../approval.ts";
 import { writeJson } from "../io.ts";
 import { readRevokedIds, recordDecisions, writeRevokedIds } from "../ledger.ts";
-import { livePhotos, readIndex, rollIndex } from "../manifest.ts";
+import { readIndex, rollIndex } from "../manifest.ts";
 import { PATHS } from "../paths.ts";
-import { writeCreditsPage } from "../site.ts";
+import { writePublicPages } from "../site.ts";
 
 function readRequest(): { photoIds: string[]; reason: string } {
   const { values, positionals } = parseArgs({ allowPositionals: true, options: { reason: { type: "string", default: "revoked" } } });
@@ -21,7 +21,7 @@ function republishIndex(revokedIds: string[]): void {
 
   const { index } = rollIndex(previous, null, revokedIds, new Date());
   writeJson(PATHS.index, index);
-  writeCreditsPage(livePhotos(index), index.published);
+  writePublicPages(index);
 }
 
 function main(): void {

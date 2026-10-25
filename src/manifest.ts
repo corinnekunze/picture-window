@@ -50,10 +50,16 @@ export function rewriteBatchManifest(batch: string, manifest: BatchManifest, ite
   writeJson(PATHS.index, rollIndex(index, updatedEntry, index.revoked, new Date()).index);
 }
 
-/** Every photo TVs should currently show: all batches in the index, minus revoked ones. */
-export function livePhotos(index: Index): Item[] {
+export interface LiveBatch {
+  id: string;
+  photos: Item[];
+}
+
+/** Every batch in the index, newest first, with the photos TVs should currently show: revoked ones left out. */
+export function liveBatches(index: Index): LiveBatch[] {
   const revoked = new Set(index.revoked);
-  return index.batches
-    .flatMap((batch) => readJson(sitePath(batch.manifest), BatchManifest).items)
-    .filter((photo) => !revoked.has(photo.id));
+  return index.batches.map((batch) => ({
+    id: batch.id,
+    photos: readJson(sitePath(batch.manifest), BatchManifest).items.filter((photo) => !revoked.has(photo.id)),
+  }));
 }

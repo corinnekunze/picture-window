@@ -2,5 +2,5 @@
 <header class="intro">
   <div class="eyebrow">Picture Window</div>
   <h1>A free 4K photo feed for TVs</h1>
-  <p class="lede">Hand-reviewed photography from Wikimedia Commons Featured Pictures, refreshed monthly. TVs read <a href="index.json">index.json</a>. See the <a href="credits.html">photo credits</a> or the <a href="https://github.com/<%= it.repo %>">source</a>.</p>
+  <p class="lede">Hand-reviewed photography from Wikimedia Commons Featured Pictures, refreshed monthly. See <a href="photos.html">the photos TVs are showing now</a> and their <a href="credits.html">credits</a>. TVs read <a href="index.json">index.json</a>; the <a href="https://github.com/<%= it.repo %>">source</a> is on GitHub.</p>
 </header>

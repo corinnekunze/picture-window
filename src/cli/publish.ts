@@ -1,6 +1,7 @@
 // Monthly step 2, after review: render the approved photos and write the manifests.
 //   npm run publish:batch -- --title "Approve batch 2026-11" --body-file issue.md
-// Images go to out/batch-*/ and their 4K videos to out/videos-*/; the workflow uploads both releases before it commits
+// Images go to out/batch-*/, their 4K videos to out/videos-*/ and photos-page thumbnails to out/thumbs-*/; the
+// workflow uploads all three releases before it commits
 // docs/, so TVs never see a manifest whose images are missing.
 import { readFileSync, rmSync } from "node:fs";
 import { parseArgs } from "node:util";
@@ -8,12 +9,12 @@ import { OUT_HEIGHT, OUT_WIDTH } from "../config.ts";
 import { parseApprovedBatch, parsePhotoIds } from "../approval.ts";
 import { readJson, sha256Hex, writeJson, writeText } from "../io.ts";
 import { readRevokedIds, recordDecisions, type Decision } from "../ledger.ts";
-import { livePhotos, readIndex, rollIndex } from "../manifest.ts";
-import { PATHS, batchManifestPath, photoFileName, releaseAssetUrl, releaseTag, sitePath, themeName, videoAssetUrl, videoFileName, videoReleaseTag } from "../paths.ts";
-import { renderPhoto } from "../photo.ts";
+import { readIndex, rollIndex } from "../manifest.ts";
+import { PATHS, batchManifestPath, photoFileName, releaseAssetUrl, releaseTag, sitePath, themeName, thumbReleaseTag, videoAssetUrl, videoFileName, videoReleaseTag } from "../paths.ts";
+import { renderPhoto, renderThumbnail } from "../photo.ts";
 import { BatchManifest, Staging, type Candidate, type Item, type Video } from "../schema.ts";
 import { encodeStillVideo } from "../video.ts";
-import { writeCreditsPage, writeEmptyReviewPage, writeLandingPage } from "../site.ts";
+import { writeEmptyReviewPage, writeLandingPage, writePublicPages } from "../site.ts";
 import { writeTheme } from "../theme.ts";
 
 interface Approval {
@@ -86,6 +87,7 @@ async function renderApproved(approval: Approval, imageDir: string): Promise<Ren
     try {
       const { webp, sha256 } = await renderPhoto(candidate);
       writeText(`${imageDir}/${photoFileName(candidate.id)}`, webp);
+      writeText(`${PATHS.out}/${thumbReleaseTag(approval.staging.batch)}/${photoFileName(candidate.id)}`, await renderThumbnail(webp));
       const video = await writeVideo(candidate.id, approval.staging.batch, webp);
       result.photos.push(toItem(candidate, approval.staging.batch, webp, sha256, video));
       result.decisions.push({ id: candidate.id, decision: "approved" });
@@ -121,7 +123,7 @@ function writeManifests(batch: string, photos: Item[], now: Date): string[] {
   writeJson(PATHS.index, index);
   for (const droppedBatch of dropped) rmSync(sitePath(batchManifestPath(droppedBatch)), { force: true });
 
-  writeCreditsPage(livePhotos(index), index.published);
+  writePublicPages(index);
   return dropped;
 }
 

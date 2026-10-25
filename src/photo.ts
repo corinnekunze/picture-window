@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { OUT_HEIGHT, OUT_WIDTH, WEBP_QUALITY } from "./config.ts";
+import { OUT_HEIGHT, OUT_WIDTH, THUMB_HEIGHT, THUMB_QUALITY, THUMB_WIDTH, WEBP_QUALITY } from "./config.ts";
 import { downloadBuffer, downloadUrlFor } from "./commons.ts";
 import { crop169 } from "./filters.ts";
 import { sha256Hex } from "./io.ts";
@@ -28,4 +28,9 @@ export async function renderPhoto(candidate: Candidate): Promise<RenderedPhoto> 
     .webp({ quality: WEBP_QUALITY, effort: 5 })
     .toBuffer();
   return { webp, sha256: sha256Hex(webp) };
+}
+
+/** A small copy of a published 4K photo, the same crop, for the public photos page. */
+export async function renderThumbnail(webp: Buffer): Promise<Buffer> {
+  return sharp(webp).resize(THUMB_WIDTH, THUMB_HEIGHT, { fit: "cover" }).webp({ quality: THUMB_QUALITY }).toBuffer();
 }

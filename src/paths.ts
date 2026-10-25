@@ -40,12 +40,21 @@ export function videoReleaseTag(batch: string): string {
   return `videos-${batch}`;
 }
 
+/** Thumbnails for the photos page get a third release, for the same 1,000-file reason. */
+export function thumbReleaseTag(batch: string): string {
+  return `thumbs-${batch}`;
+}
+
 export function releaseAssetUrl(batch: string, fileName: string): string {
   return `https://github.com/${REPO}/releases/download/${releaseTag(batch)}/${fileName}`;
 }
 
 export function videoAssetUrl(batch: string, fileName: string): string {
   return `https://github.com/${REPO}/releases/download/${videoReleaseTag(batch)}/${fileName}`;
+}
+
+export function thumbAssetUrl(batch: string, photoId: string): string {
+  return `https://github.com/${REPO}/releases/download/${thumbReleaseTag(batch)}/${photoFileName(photoId)}`;
 }
 
 export function photoFileName(photoId: string): string {

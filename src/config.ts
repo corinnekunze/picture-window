@@ -14,6 +14,11 @@ export const OUT_WIDTH = 3840;
 export const OUT_HEIGHT = 2160;
 export const WEBP_QUALITY = 90;
 
+/** Small copies of each photo's TV crop for the public photos page; not part of the feed. */
+export const THUMB_WIDTH = 640;
+export const THUMB_HEIGHT = 360;
+export const THUMB_QUALITY = 75;
+
 /**
  * Each photo also ships as a one-frame 4K HEVC video. TVs draw apps at 1080p but play video at full
  * 4K, so the screensaver shows the video when the TV can. CRF 14 keeps it visually lossless (~3 MB).

@@ -41,6 +41,9 @@ jobs:
           if [ ${#VIDEOS[@]} -gt 0 ]; then
             gh release create "videos-$BATCH" "${VIDEOS[@]}" --title "Videos $BATCH" --notes "One-frame 4K videos of the $BATCH photos."
           fi
+          # Small copies for the photos page, also in a release of their own.
+          gh release create "thumbs-$BATCH" "out/thumbs-$BATCH"/*.webp --title "Thumbnails $BATCH" \
+            --notes "Small copies of the $BATCH photos for https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/photos.html"
       - name: Publish manifests
         run: |
           git add docs state staging
@@ -51,6 +54,7 @@ jobs:
             [ -n "$TAG" ] || continue
             gh release delete "$TAG" --cleanup-tag -y
             gh release delete "videos-${TAG#batch-}" --cleanup-tag -y 2>/dev/null || true
+            gh release delete "thumbs-${TAG#batch-}" --cleanup-tag -y 2>/dev/null || true
           done < out/dropped.txt
           gh issue close "$ISSUE" --comment "Published. TVs pick it up on their next daily check."
           BATCH=$(node -p "require('./docs/index.json').batches[0].id")

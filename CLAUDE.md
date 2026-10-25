@@ -19,7 +19,7 @@ Plan and decisions: Linear project "TV Photo Feed" (P-MTD-8). This repo is ticke
 ## Code
 
 - TypeScript run by `tsx` on Node 22+; `zod` validates everything that crosses a file or network boundary.
-- `src/cli/` holds the entry points (stage, publish, revoke, and add-videos / add-details for batches published before videos and credits), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `video.ts` (ffmpeg), `credit.ts` (on-screen names), `about.ts` (what a photo shows), `profanity.ts`, `places.ts` (Nominatim), `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
+- `src/cli/` holds the entry points (stage, publish, revoke, and add-videos / add-details / add-thumbs for batches published before videos, credits and the photos page), each a `main()` made of small named steps. Everything else in `src/` is a library module: `config.ts` (tunables), `paths.ts`, `io.ts`, `ledger.ts`, `commons.ts`, `filters.ts`, `safety.ts`, `photo.ts`, `video.ts` (ffmpeg), `credit.ts` (on-screen names), `about.ts` (what a photo shows), `profanity.ts`, `places.ts` (Nominatim), `theme.ts`, `manifest.ts`, `approval.ts`, `site.ts`.
 - HTML comes from Eta templates in `templates/` (auto-escaped). Never build markup in TypeScript or browser JS strings. `docs/assets/` (CSS and the review page script) is hand-written; everything else in `docs/` is generated.
 - Style: descriptive names (no single-letter variables or parameters, including in callbacks), early returns instead of nested if/else, one job per function.
 - Run `npm run typecheck && npm test` after changing code.

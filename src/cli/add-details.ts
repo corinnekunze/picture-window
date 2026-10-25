@@ -7,10 +7,11 @@ import { describeFiles, type AboutResult } from "../about.ts";
 import { fetchFileInfo, type CommonsFile } from "../commons.ts";
 import { displayCredit } from "../credit.ts";
 import { readJson, writeText } from "../io.ts";
-import { rewriteBatchManifest } from "../manifest.ts";
+import { readIndex, rewriteBatchManifest } from "../manifest.ts";
 import { batchManifestPath, sitePath } from "../paths.ts";
 import { PlaceLookup } from "../places.ts";
 import { BatchManifest, type Item } from "../schema.ts";
+import { writePublicPages } from "../site.ts";
 
 interface Options {
   batch: string;
@@ -74,6 +75,7 @@ async function main(): Promise<void> {
   if (report) writeText(report, lines.join("\n") + "\n");
 
   rewriteBatchManifest(batch, manifest, items);
+  writePublicPages(readIndex()!);
   const credited = items.filter((item) => item.credit).length;
   const placed = items.filter((item) => item.place).length;
   const described = items.filter((item) => item.about).length;

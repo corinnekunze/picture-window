@@ -1,0 +1,34 @@
+<% layout("./layout", { title: "Photos · Picture Window", root: it.root, stylesheet: "photos.css", script: "photos.js" }) %>
+<header class="intro">
+  <div class="eyebrow">Picture Window · on TVs now</div>
+  <h1>The <%= it.photoCount %> photos TVs are showing</h1>
+  <p class="lede">Every photo in the feed right now, as TVs crop it, with the line and credit they show. A person reviewed each one before it was published. Open a photo to see it at full 4K. If one doesn't belong on a family TV, or its credit is wrong, use <strong>Report</strong> and it can be pulled from every TV within a day. Updated <%= it.updated %>; <a href="credits.html">full credits and licenses</a>.</p>
+</header>
+
+<div class="toolbar">
+  <div class="chips" id="chips" role="group" aria-label="Filter by category">
+<% for (const chip of it.chips) { %>
+    <button class="chip" type="button" data-category="<%= chip.id %>" aria-pressed="<%= chip.id === "all" %>"><%= chip.label %> <%= chip.count %></button>
+<% } %>
+  </div>
+</div>
+
+<% for (const batch of it.batches) { %>
+<section class="batch" aria-labelledby="batch-<%= batch.id %>">
+  <h2 id="batch-<%= batch.id %>"><%= batch.month %> <span class="batch-count"><%= batch.photos.length %> photos</span></h2>
+  <div class="grid">
+<% for (const photo of batch.photos) { %>
+    <figure class="tile" data-category="<%= photo.category %>">
+      <a class="photo" href="<%= photo.url %>" target="_blank" rel="noopener" aria-label="<%= photo.title %>, full 4K">
+        <img src="<%= photo.thumbUrl %>" alt="" width="640" height="360" loading="lazy" decoding="async">
+      </a>
+      <figcaption>
+        <span class="about"><%= photo.about ?? photo.title %></span>
+        <span class="meta"><%= photo.credit ? `Photo by ${photo.credit}` : "No on-screen credit" %><% if (photo.place) { %> · <%= photo.place %><% } %></span>
+        <span class="links"><a href="<%= photo.sourceUrl %>" target="_blank" rel="noopener"><%= photo.license %> · Commons</a><a href="<%= photo.reportUrl %>" target="_blank" rel="noopener">Report</a></span>
+      </figcaption>
+    </figure>
+<% } %>
+  </div>
+</section>
+<% } %>

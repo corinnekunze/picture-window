@@ -59,8 +59,8 @@ When the repository owner opens that approval issue, a second Action:
 
 1. downloads each approved photo at full size and crops it to 16:9 around its most interesting area;
 2. saves it as a 3840×2160 WebP image, about 1.5 MB on average, and as a one-frame 4K HEVC video, about 3 MB;
-3. uploads the photos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them, and the videos to a second Release (GitHub allows 1,000 files per Release);
-4. updates the public list of photos and the credits page, and drops batches older than six months.
+3. uploads the photos to a GitHub Release for that month, along with a ready-made CleanYourTV theme of 100 of them, the videos to a second Release (GitHub allows 1,000 files per Release), and small copies for the photos page to a third;
+4. updates the public list of photos, the photos page and the credits page, and drops batches older than six months.
 
 The photos go up before the list that points to them, so a TV never sees a photo it can't download. If any step fails, nothing changes and TVs keep the collection they have.
 
@@ -73,6 +73,10 @@ TVs check one small file once a day, [`index.json`](https://corinnekunze.github.
 - **On Android TV:** the companion app (a photo screensaver and home-screen wallpaper) is in progress.
 - **With CleanYourTV:** each monthly release on the [Releases page](https://github.com/corinnekunze/picture-window/releases) includes a `theme-YYYY-MM.zip`. Unzip it and push it with CleanYourTV's `tools/theme.sh` for 100 rotating 4K wallpapers.
 - **Anything else:** the feed is plain JSON plus image files, so any app can read it. The format is described below.
+
+## See the photos yourself
+
+The [photos page](https://corinnekunze.github.io/picture-window/photos.html) shows every photo TVs are showing right now, grouped by month, cropped exactly as TVs crop them and with the line and credit they put on screen. Open one to see it at full 4K. Each has a **Report** link: if a photo doesn't belong on a family TV, or its credit is wrong, it opens a GitHub issue, and a revoked photo leaves every TV on its next daily check.
 
 ## Credits and licenses
 
@@ -116,7 +120,7 @@ Each `batches/YYYY-MM.json` lists every photo with `id`, `url`, `width`, `height
 
 | Path | What it holds |
 |---|---|
-| `src/cli/` | The entry points: `stage.ts`, `publish.ts`, `revoke.ts`, and `add-videos.ts` / `add-details.ts` for batches published before videos and credits |
+| `src/cli/` | The entry points: `stage.ts`, `publish.ts`, `revoke.ts`, and `add-videos.ts` / `add-details.ts` / `add-thumbs.ts` for batches published before videos, credits and the photos page |
 | `src/` | Library modules: filters, the Commons API client, the safety model, photo rendering, manifests, the site |
 | `src/config.ts` | Everything worth tuning: batch size, category share, filters, thresholds |
 | `templates/` | Page markup ([Eta](https://eta.js.org) templates) |
@@ -137,10 +141,11 @@ Node 22 or newer, and ffmpeg with libx265 for the videos. `npm install`, then:
 | `npm run revoke -- wmc-123456 --reason "text on sign"` | Revoke photos |
 | `npm run add-videos -- --batch 2026-10` | Add 4K videos to a batch published without them |
 | `npm run add-details -- --batch 2026-10 --report out/details.tsv` | Add on-screen credits, places and about lines to a batch published without them, writing one line per photo to check |
+| `npm run add-thumbs -- --batch 2026-10` | Make the photos page's thumbnails for a batch published without them (the **Add thumbnails to a batch** workflow uploads them) |
 
 ### Maintaining
 
-- **Revoking a photo:** run the **Revoke photos** workflow with its ID (shown on the credits page). It's removed from the feed and its release.
+- **Revoking a photo:** run the **Revoke photos** workflow with its ID (shown on the credits page, and in the title of a **Report** issue). It's removed from the feed, the photos page and its releases.
 - **Reconsidering a photo:** delete its line in `state/seen.jsonl` and it will be evaluated again next month.
 - **Only the repository owner's approval publishes anything.** Issues opened by anyone else are ignored.
 - **Setting up a copy:** fork the repo, turn on GitHub Pages (branch `main`, folder `/docs`), and run **Stage batch** by hand. Swap the filters in `src/config.ts` for your own taste.
