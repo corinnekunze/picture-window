@@ -4,7 +4,7 @@ Picture Window is a free collection of beautiful 4K photographs for TV screens, 
 
 Every photo comes from [Wikimedia Commons Featured Pictures](https://commons.wikimedia.org/wiki/Commons:Featured_pictures), the photographs the Commons community has voted the best of its collection. Each one is checked by software and then by a person before it reaches any TV, so the feed stays family-friendly: landscapes, wildlife, architecture, cities and space.
 
-This repository is the feed itself: the pipeline that picks the photos, and the published files TVs download. The TV app that displays them lives in a separate repository.
+This repository is the feed itself: the pipeline that picks the photos, and the published files TVs download. The TV app that displays them lives in [picture-window-tv](https://github.com/corinnekunze/picture-window-tv).
 
 ## Why it exists
 
@@ -88,6 +88,12 @@ The code in this repository is MIT licensed.
 
 $0 a month. GitHub Actions, Pages and Releases are free for public repositories, the Wikimedia Commons API is free, and the safety model runs inside the Action. Rendering a month's photos and videos takes about an hour of GitHub's free compute.
 
+## Support
+
+Picture Window is free and will stay free. If you enjoy it, you can [buy me a coffee](https://buymeacoffee.com/mtdetc).
+
+The photographs are the real gift here. They're shared by the photographers of Wikimedia Commons and hosted by the Wikimedia Foundation, a nonprofit. If Picture Window brightens your room, please consider [donating to Wikimedia](https://donate.wikimedia.org/) too.
+
 ---
 
 ## For developers
@@ -150,4 +156,4 @@ Node 22 or newer, and ffmpeg with libx265 for the videos. `npm install`, then:
 - **Only the repository owner's approval publishes anything.** Issues opened by anyone else are ignored.
 - **Setting up a copy:** fork the repo, turn on GitHub Pages (branch `main`, folder `/docs`), and run **Stage batch** by hand. Swap the filters in `src/config.ts` for your own taste.
 
-Made by [Corinne Kunze](https://github.com/corinnekunze) for MTD etc.
+Made by [Corinne Kunze](https://github.com/corinnekunze) for [MTD etc.](https://www.youtube.com/@mtdetc)
