@@ -1,10 +1,10 @@
 // A vague place name for where a photo was taken ("Zug, Switzerland"), from the camera coordinates
 // Commons records. Looked up with OpenStreetMap's Nominatim, following its usage policy: one request
-// a second, a descriptive User-Agent, and every answer cached in state/places.json so a spot is only
+// a second, a descriptive User-Agent, backoff on 429/503, and every answer cached in state/places.json so a spot is only
 // asked about once. Place data © OpenStreetMap contributors (ODbL), credited on the credits page.
 import { existsSync } from "node:fs";
 import { z } from "zod";
-import { USER_AGENT } from "./config.ts";
+import { fetchWithRetry } from "./commons.ts";
 import { readJson, writeJson } from "./io.ts";
 import { PATHS } from "./paths.ts";
 
@@ -98,8 +98,8 @@ export class PlaceLookup {
     const query = new URLSearchParams({
       format: "jsonv2", lat: latitude.toFixed(2), lon: longitude.toFixed(2), zoom: ZOOM, "accept-language": "en",
     });
-    const response = await fetch(`${REVERSE_URL}?${query}`, { headers: { "User-Agent": USER_AGENT } });
-    if (!response.ok) throw new Error(`Nominatim ${response.status} for ${latitude},${longitude}`);
+    // Backs off on 429/503 like the Commons calls; still failing after that throws.
+    const response = await fetchWithRetry(`${REVERSE_URL}?${query}`);
     const body = ReverseResponse.parse(await response.json());
     if (!body.address) return null;
     const { city, town, village, municipality, county, state, country } = body.address;

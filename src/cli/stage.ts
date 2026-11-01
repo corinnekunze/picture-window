@@ -88,7 +88,16 @@ async function evaluateFile(file: CommonsFile, scan: ScanResult, places: PlaceLo
     scan.decisions.push({ id: photoId, decision: "nsfw", reason: nsfw.toFixed(3) });
     return;
   }
-  scan.passed.push(toCandidate(file, verdict.category, nsfw, await places.find(file.latitude, file.longitude)));
+
+  let place: string | null;
+  try {
+    place = await places.find(file.latitude, file.longitude);
+  } catch (error) {
+    // Same as a failed download: not recorded, so the file is tried again next month.
+    console.warn(`Skipping ${photoId} for now: ${(error as Error).message}`);
+    return;
+  }
+  scan.passed.push(toCandidate(file, verdict.category, nsfw, place));
 }
 
 /** Evaluates files in order until enough could be staged within the category cap. */
