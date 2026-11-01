@@ -1,4 +1,26 @@
 {
+  "-0.03,30.07": {
+    "state": "Kasese",
+    "country": "Uganda"
+  },
+  "-0.04,30.09": {
+    "state": "Kasese",
+    "country": "Uganda"
+  },
+  "-0.09,29.99": {
+    "state": "Kasese",
+    "country": "Uganda"
+  },
+  "-0.17,29.98": {
+    "state": "Rubirizi",
+    "country": "Uganda"
+  },
+  "-0.44,-76.28": {
+    "municipality": "Parroquia Pañacocha",
+    "county": "Shushufindi",
+    "state": "Sucumbíos",
+    "country": "Ecuador"
+  },
   "-0.58,-90.16": {
     "municipality": "Parroquia Bella Vista",
     "county": "Cantón Santa Cruz",
@@ -28,34 +50,134 @@
     "state": "Pará",
     "country": "Brazil"
   },
+  "-1.49,29.48": {
+    "city": "Musanze District",
+    "state": "Northern Province",
+    "country": "Rwanda"
+  },
   "-1.56,34.89": {
     "state": "Mara Region",
     "country": "Tanzania"
+  },
+  "-12.44,130.83": {
+    "city": "Darwin",
+    "country": "Australia"
   },
   "-12.61,49.17": {
     "county": "Antsiranana II",
     "state": "Diana Region",
     "country": "Madagascar"
   },
+  "-12.63,143.43": {
+    "state": "Queensland",
+    "country": "Australia"
+  },
+  "-12.65,131.34": {
+    "country": "Australia"
+  },
+  "-12.71,143.29": {
+    "state": "Queensland",
+    "country": "Australia"
+  },
+  "-12.79,143.36": {
+    "state": "Queensland",
+    "country": "Australia"
+  },
+  "-12.94,32.02": {
+    "state": "Eastern Province",
+    "country": "Zambia"
+  },
+  "-13.01,-38.53": {
+    "city": "Salvador",
+    "state": "Bahia",
+    "country": "Brazil"
+  },
+  "-13.90,-171.78": {
+    "state": "Tuamasaga",
+    "country": "Samoa"
+  },
+  "-15.02,25.99": {
+    "state": "Central Province",
+    "country": "Zambia"
+  },
   "-15.31,-55.84": {
     "city": "Cuiabá",
     "state": "Mato Grosso",
     "country": "Brazil"
+  },
+  "-16.60,145.97": {
+    "state": "Queensland",
+    "country": "Australia"
+  },
+  "-16.79,180.00": null,
+  "-16.82,-179.97": {
+    "county": "Cakaudrove",
+    "state": "Northern",
+    "country": "Fiji"
+  },
+  "-16.85,-72.00": {
+    "city": "Mollendo",
+    "state": "Arequipa",
+    "country": "Peru"
   },
   "-17.27,-56.69": {
     "village": "Barão de Melgaço",
     "state": "Mato Grosso",
     "country": "Brazil"
   },
+  "-17.47,-149.78": {
+    "state": "French Polynesia",
+    "country": "France"
+  },
+  "-18.99,16.37": {
+    "state": "Oshikoto",
+    "country": "Namibia"
+  },
   "-19.31,15.94": {
     "state": "Oshana",
     "country": "Namibia"
+  },
+  "-2.05,101.31": {
+    "city": "Sungai Penuh",
+    "county": "Pesisir Bukit",
+    "state": "Jambi",
+    "country": "Indonesia"
+  },
+  "-2.19,34.24": {
+    "state": "Mara Region",
+    "country": "Tanzania"
+  },
+  "-2.24,34.34": {
+    "state": "Mara Region",
+    "country": "Tanzania"
+  },
+  "-2.30,101.53": {
+    "municipality": "Gunung Raya",
+    "county": "Kerinci",
+    "state": "Jambi",
+    "country": "Indonesia"
+  },
+  "-2.42,34.85": {
+    "state": "Mara Region",
+    "country": "Tanzania"
+  },
+  "-2.48,34.81": {
+    "state": "Mara Region",
+    "country": "Tanzania"
   },
   "-2.50,34.92": {
     "state": "Simiyu",
     "country": "Tanzania"
   },
+  "-2.54,34.92": {
+    "state": "Simiyu",
+    "country": "Tanzania"
+  },
   "-20.45,14.33": {
+    "state": "Kunene Region",
+    "country": "Namibia"
+  },
+  "-20.50,14.42": {
     "state": "Kunene Region",
     "country": "Namibia"
   },
@@ -67,8 +189,47 @@
     "state": "Otjozondjupa",
     "country": "Namibia"
   },
+  "-20.94,55.43": {
+    "city": "Saint-Denis",
+    "municipality": "Saint-Denis",
+    "state": "Réunion",
+    "country": "France"
+  },
+  "-21.26,-159.73": {
+    "village": "Ngatangiia",
+    "state": "Rarotonga",
+    "country": "Cook Islands"
+  },
+  "-21.44,-68.41": {
+    "village": "Ollagüe",
+    "county": "Provincia de El Loa",
+    "state": "Antofagasta Region",
+    "country": "Chile"
+  },
+  "-21.53,-68.34": {
+    "village": "Ollagüe",
+    "county": "Provincia de El Loa",
+    "state": "Antofagasta Region",
+    "country": "Chile"
+  },
+  "-21.77,-68.35": {
+    "city": "Calama",
+    "county": "Provincia de El Loa",
+    "state": "Antofagasta Region",
+    "country": "Chile"
+  },
   "-21.77,13.95": {
     "country": "Namibia"
+  },
+  "-22.10,166.68": {
+    "village": "Yaté",
+    "county": "South Province",
+    "country": "France"
+  },
+  "-22.53,-43.21": {
+    "municipality": "Petrópolis",
+    "state": "Rio de Janeiro",
+    "country": "Brazil"
   },
   "-22.88,14.43": {
     "city": "Walvis Bay",
@@ -84,13 +245,47 @@
     "state": "Rio de Janeiro",
     "country": "Brazil"
   },
+  "-22.96,-43.17": {
+    "city": "Rio de Janeiro",
+    "state": "Rio de Janeiro",
+    "country": "Brazil"
+  },
   "-23.00,-43.25": {
     "state": "Rio de Janeiro",
     "country": "Brazil"
   },
+  "-23.45,-70.29": {
+    "city": "Antofagasta",
+    "county": "Provincia de Antofagasta",
+    "state": "Antofagasta Region",
+    "country": "Chile"
+  },
+  "-23.62,132.73": {
+    "country": "Australia"
+  },
+  "-23.71,133.88": {
+    "country": "Australia"
+  },
   "-24.24,18.03": {
     "state": "Hardap",
     "country": "Namibia"
+  },
+  "-24.25,131.57": {
+    "country": "Australia"
+  },
+  "-24.26,131.57": {
+    "country": "Australia"
+  },
+  "-24.59,-48.63": {
+    "village": "Iporanga",
+    "state": "São Paulo",
+    "country": "Brazil"
+  },
+  "-24.94,30.71": {
+    "city": "Thaba Chweu Local Municipality",
+    "county": "Ehlanzeni District Municipality",
+    "state": "Mpumalanga",
+    "country": "South Africa"
   },
   "-25.20,31.60": {
     "city": "Mbombela",
@@ -98,10 +293,23 @@
     "state": "Mpumalanga",
     "country": "South Africa"
   },
+  "-26.15,31.16": {
+    "county": "Inkhundla Nkhaba",
+    "state": "Hhohho Region",
+    "country": "Eswatini"
+  },
+  "-26.41,32.89": {
+    "state": "Maputo Province",
+    "country": "Mozambique"
+  },
   "-29.09,-50.37": {
     "municipality": "Jaquirana",
     "state": "Rio Grande do Sul",
     "country": "Brazil"
+  },
+  "-29.21,141.99": {
+    "state": "New South Wales",
+    "country": "Australia"
   },
   "-29.38,-50.87": {
     "town": "Gramado",
@@ -112,6 +320,26 @@
     "municipality": "Porto Alegre",
     "state": "Rio Grande do Sul",
     "country": "Brazil"
+  },
+  "-31.43,29.85": {
+    "state": "Eastern Cape",
+    "country": "South Africa"
+  },
+  "-32.44,136.07": {
+    "state": "South Australia",
+    "country": "Australia"
+  },
+  "-32.83,145.83": {
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  "-32.92,145.73": {
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  "-33.05,146.21": {
+    "state": "New South Wales",
+    "country": "Australia"
   },
   "-33.33,-70.24": {
     "city": "Santiago",
@@ -125,6 +353,11 @@
     "state": "Santiago Metropolitan Region",
     "country": "Chile"
   },
+  "-33.68,150.75": {
+    "city": "Sydney",
+    "state": "New South Wales",
+    "country": "Australia"
+  },
   "-33.72,-71.64": {
     "city": "Santo Domingo",
     "county": "Provincia de San Antonio",
@@ -136,6 +369,16 @@
     "county": "City of Cape Town",
     "state": "Western Cape",
     "country": "South Africa"
+  },
+  "-34.02,23.90": {
+    "city": "Kou-Kamma Local Municipality",
+    "county": "Sarah Baartman District Municipality",
+    "state": "Eastern Cape",
+    "country": "South Africa"
+  },
+  "-34.17,146.29": {
+    "state": "New South Wales",
+    "country": "Australia"
   },
   "-34.40,-57.80": {
     "state": "Colonia",
@@ -154,6 +397,46 @@
   "-34.44,-57.88": {
     "country": "Uruguay"
   },
+  "-34.92,138.61": {
+    "city": "Adelaide",
+    "state": "South Australia",
+    "country": "Australia"
+  },
+  "-35.01,144.88": {
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  "-35.53,144.97": {
+    "state": "New South Wales",
+    "country": "Australia"
+  },
+  "-35.97,136.81": {
+    "state": "South Australia",
+    "country": "Australia"
+  },
+  "-36.06,136.70": {
+    "state": "South Australia",
+    "country": "Australia"
+  },
+  "-36.41,146.21": {
+    "state": "Victoria",
+    "country": "Australia"
+  },
+  "-36.60,174.89": {
+    "city": "Hibiscus and Bays",
+    "state": "Auckland",
+    "country": "New Zealand"
+  },
+  "-36.82,-73.07": {
+    "city": "Concepcion",
+    "county": "Provincia de Concepción",
+    "state": "Biobio Region",
+    "country": "Chile"
+  },
+  "-38.67,143.11": {
+    "state": "Victoria",
+    "country": "Australia"
+  },
   "-39.26,175.39": {
     "county": "Ruapehu District",
     "state": "Manawatū-Whanganui",
@@ -167,10 +450,48 @@
     "county": "Bel Air",
     "country": "Seychelles"
   },
+  "-41.05,-71.56": {
+    "city": "Ejido Villa Llao Llao",
+    "municipality": "Municipio de San Carlos de Bariloche",
+    "state": "Río Negro",
+    "country": "Argentina"
+  },
+  "-41.15,147.48": {
+    "state": "Tasmania",
+    "country": "Australia"
+  },
+  "-41.50,147.80": {
+    "state": "Tasmania",
+    "country": "Australia"
+  },
+  "-41.53,147.67": {
+    "state": "Tasmania",
+    "country": "Australia"
+  },
   "-41.85,171.95": {
     "county": "Buller District",
     "state": "West Coast",
     "country": "New Zealand"
+  },
+  "-41.93,-74.04": {
+    "town": "Ancud",
+    "county": "Provincia de Chiloé",
+    "state": "Los Lagos Region",
+    "country": "Chile"
+  },
+  "-42.02,173.99": {
+    "county": "Kaikōura District",
+    "state": "Canterbury",
+    "country": "New Zealand"
+  },
+  "-42.39,172.35": {
+    "county": "Buller District",
+    "state": "West Coast",
+    "country": "New Zealand"
+  },
+  "-42.76,147.24": {
+    "state": "Tasmania",
+    "country": "Australia"
   },
   "-43.01,171.72": {
     "county": "Selwyn District",
@@ -181,6 +502,35 @@
     "county": "Selwyn District",
     "state": "Canterbury",
     "country": "New Zealand"
+  },
+  "-43.11,148.25": {
+    "country": "Australia"
+  },
+  "-43.12,148.24": {
+    "country": "Australia"
+  },
+  "-43.13,148.06": {
+    "state": "Tasmania",
+    "country": "Australia"
+  },
+  "-43.16,148.16": {
+    "country": "Australia"
+  },
+  "-43.17,148.16": {
+    "country": "Australia"
+  },
+  "-43.20,148.25": {
+    "country": "Australia"
+  },
+  "-43.21,148.24": {
+    "country": "Australia"
+  },
+  "-43.24,148.24": {
+    "country": "Australia"
+  },
+  "-43.37,147.34": {
+    "state": "Tasmania",
+    "country": "Australia"
   },
   "-50.33,-72.27": {
     "town": "El Calafate",
@@ -210,6 +560,16 @@
     "state": "Special Region of Yogyakarta",
     "country": "Indonesia"
   },
+  "-7.94,112.96": {
+    "county": "Probolinggo",
+    "state": "East Java",
+    "country": "Indonesia"
+  },
+  "-8.11,114.24": {
+    "county": "Banyuwangi",
+    "state": "East Java",
+    "country": "Indonesia"
+  },
   "-8.57,119.50": {
     "county": "Manggarai Barat",
     "state": "East Nusa Tenggara",
@@ -220,11 +580,35 @@
     "state": "East Nusa Tenggara",
     "country": "Indonesia"
   },
+  "-8.73,115.16": {
+    "state": "Bali",
+    "country": "Indonesia"
+  },
   "0.02,-78.71": {
     "municipality": "Nanegalito",
     "county": "Quito Canton",
     "state": "Pichincha",
     "country": "Ecuador"
+  },
+  "0.40,30.38": {
+    "state": "Kamwenge",
+    "country": "Uganda"
+  },
+  "0.41,30.37": {
+    "state": "Kamwenge",
+    "country": "Uganda"
+  },
+  "0.42,30.38": {
+    "state": "Kamwenge",
+    "country": "Uganda"
+  },
+  "0.46,30.40": {
+    "state": "Kamwenge",
+    "country": "Uganda"
+  },
+  "1.29,103.85": {
+    "city": "Singapore",
+    "country": "Singapore"
   },
   "1.29,103.86": {
     "city": "Singapore",
@@ -249,6 +633,12 @@
   "10.50,-84.73": {
     "village": "La Fortuna",
     "county": "San Carlos",
+    "state": "Alajuela Province",
+    "country": "Costa Rica"
+  },
+  "10.71,-84.99": {
+    "village": "Bijagua",
+    "county": "Upala",
     "state": "Alajuela Province",
     "country": "Costa Rica"
   },
@@ -288,6 +678,11 @@
     "state": "Tamil Nadu",
     "country": "India"
   },
+  "11.47,108.07": {
+    "county": "Xã Di Linh",
+    "state": "Lâm Đồng Province",
+    "country": "Vietnam"
+  },
   "11.47,76.70": {
     "county": "Udhagamandalam",
     "state": "Tamil Nadu",
@@ -300,6 +695,11 @@
   },
   "11.83,102.50": {
     "country": "Thailand"
+  },
+  "12.10,108.36": {
+    "county": "Xã Đam Rông 4",
+    "state": "Lâm Đồng Province",
+    "country": "Vietnam"
   },
   "12.11,-68.94": {
     "country": "Curacao"
@@ -316,7 +716,19 @@
     "state": "Siem Reap",
     "country": "Cambodia"
   },
+  "13.41,103.86": {
+    "city": "Siem Reap",
+    "county": "Siem Reap",
+    "state": "Siem Reap",
+    "country": "Cambodia"
+  },
   "13.41,103.87": {
+    "city": "Siem Reap",
+    "county": "Siem Reap",
+    "state": "Siem Reap",
+    "country": "Cambodia"
+  },
+  "13.42,103.86": {
     "city": "Siem Reap",
     "county": "Siem Reap",
     "state": "Siem Reap",
@@ -328,6 +740,10 @@
     "country": "Thailand"
   },
   "13.60,47.82": null,
+  "13.73,100.55": {
+    "city": "Bangkok",
+    "country": "Thailand"
+  },
   "13.76,100.49": {
     "city": "Bangkok",
     "country": "Thailand"
@@ -335,6 +751,45 @@
   "13.76,100.50": {
     "city": "Bangkok",
     "country": "Thailand"
+  },
+  "13.95,105.91": {
+    "county": "Khong District",
+    "state": "Champasak Province",
+    "country": "Laos"
+  },
+  "13.96,105.92": {
+    "county": "Khong District",
+    "state": "Champasak Province",
+    "country": "Laos"
+  },
+  "13.98,105.92": {
+    "county": "Khong District",
+    "state": "Champasak Province",
+    "country": "Laos"
+  },
+  "13.99,105.92": {
+    "county": "Khong District",
+    "state": "Champasak Province",
+    "country": "Laos"
+  },
+  "14.12,40.35": {
+    "state": "Afar Region",
+    "country": "Ethiopia"
+  },
+  "14.52,-91.14": {
+    "county": "Patulul",
+    "state": "Suchitepéquez",
+    "country": "Guatemala"
+  },
+  "14.67,108.27": {
+    "town": "Măng Đen",
+    "state": "Quảng Ngãi Province",
+    "country": "Vietnam"
+  },
+  "14.83,-89.14": {
+    "municipality": "Copán Ruinas",
+    "state": "Copán",
+    "country": "Honduras"
   },
   "14.85,105.81": {
     "town": "Champassack District",
@@ -346,7 +801,18 @@
     "state": "Quảng Ngãi Province",
     "country": "Vietnam"
   },
+  "15.12,105.80": {
+    "city": "Pak Sé District",
+    "state": "Champasak Province",
+    "country": "Laos"
+  },
   "15.28,76.41": {
+    "city": "Hosapete",
+    "county": "Hosapete taluk",
+    "state": "Karnataka",
+    "country": "India"
+  },
+  "15.32,76.47": {
     "city": "Hosapete",
     "county": "Hosapete taluk",
     "state": "Karnataka",
@@ -372,10 +838,18 @@
     "state": "Guadeloupe",
     "country": "France"
   },
+  "17.54,-89.11": {
+    "state": "Orange Walk",
+    "country": "Belize"
+  },
   "17.80,-91.54": {
     "county": "Balancán",
     "state": "Tabasco",
     "country": "Mexico"
+  },
+  "17.91,-62.89": {
+    "state": "Saint Barthélemy",
+    "country": "France"
   },
   "17.93,73.65": {
     "county": "Mahabaleshwar",
@@ -397,16 +871,43 @@
     "state": "Maharashtra",
     "country": "India"
   },
+  "18.92,102.39": {
+    "county": "Vangvieng District",
+    "state": "Vientiane Province",
+    "country": "Laos"
+  },
   "18.92,72.84": {
     "city": "Mumbai",
     "state": "Maharashtra",
     "country": "India"
+  },
+  "18.93,102.44": {
+    "county": "Vangvieng District",
+    "state": "Vientiane Province",
+    "country": "Laos"
   },
   "19.17,99.90": {
     "city": "Wiang Subdistrict",
     "municipality": "Phayao Town Municipality",
     "county": "Mueang Phayao District",
     "country": "Thailand"
+  },
+  "19.18,99.89": {
+    "city": "Wiang Subdistrict",
+    "municipality": "Phayao Town Municipality",
+    "county": "Mueang Phayao District",
+    "country": "Thailand"
+  },
+  "19.75,101.99": {
+    "county": "Luang Prabang District",
+    "state": "Luang Prabang",
+    "country": "Laos"
+  },
+  "19.89,102.13": {
+    "city": "Luang Prabang",
+    "county": "Luang Prabang District",
+    "state": "Luang Prabang",
+    "country": "Laos"
   },
   "19.89,102.14": {
     "city": "Luang Prabang",
@@ -424,6 +925,11 @@
     "county": "Luang Prabang District",
     "state": "Luang Prabang",
     "country": "Laos"
+  },
+  "2.03,103.35": {
+    "city": "Kluang",
+    "state": "Johor",
+    "country": "Malaysia"
   },
   "21.75,88.75": {
     "county": "Gosaba",
@@ -447,16 +953,40 @@
     "state": "West Bengal",
     "country": "India"
   },
+  "22.43,88.40": {
+    "town": "Rajpur Sonarpur",
+    "municipality": "Greater Kolkata",
+    "county": "Sonarpur",
+    "state": "West Bengal",
+    "country": "India"
+  },
   "22.51,88.36": {
     "city": "Kolkata",
     "state": "West Bengal",
     "country": "India"
+  },
+  "22.53,-78.47": {
+    "country": "Cuba"
+  },
+  "22.62,120.29": {
+    "city": "Kaohsiung",
+    "country": "Taiwan"
   },
   "22.91,5.67": {
     "city": "Tamanghasset",
     "county": "de Tamanrasset District",
     "state": "Tamanrasset",
     "country": "Algeria"
+  },
+  "23.05,87.44": {
+    "county": "Jaypur",
+    "state": "West Bengal",
+    "country": "India"
+  },
+  "23.22,88.36": {
+    "county": "Kalna - I",
+    "state": "West Bengal",
+    "country": "India"
   },
   "23.26,5.64": {
     "city": "Tamanghasset",
@@ -469,6 +999,11 @@
     "state": "Madhya Pradesh",
     "country": "India"
   },
+  "23.66,90.42": {
+    "county": "Keraniganj Subdistrict",
+    "state": "Dhaka Division",
+    "country": "Bangladesh"
+  },
   "24.03,81.56": {
     "county": "Kusmi Tahsil",
     "state": "Madhya Pradesh",
@@ -480,6 +1015,11 @@
     "state": "Dhaka Division",
     "country": "Bangladesh"
   },
+  "24.19,88.28": {
+    "county": "Murshidabad Jiaganj",
+    "state": "West Bengal",
+    "country": "India"
+  },
   "24.90,121.56": {
     "city": "New Taipei",
     "village": "Dapinglin",
@@ -489,6 +1029,11 @@
     "city": "New Taipei",
     "village": "槓子寮",
     "country": "Taiwan"
+  },
+  "25.03,88.98": {
+    "county": "Badalgachhi Upazila",
+    "state": "Rajshahi Division",
+    "country": "Bangladesh"
   },
   "25.07,73.17": {
     "county": "Bali Tehsil",
@@ -505,6 +1050,16 @@
     "village": "Shezi",
     "country": "Taiwan"
   },
+  "25.56,94.08": {
+    "county": "Jakhama",
+    "state": "Nagaland",
+    "country": "India"
+  },
+  "25.74,32.61": {
+    "city": "Luxor",
+    "state": "Luxor",
+    "country": "Egypt"
+  },
   "25.94,91.79": {
     "county": "Umling",
     "state": "Meghalaya",
@@ -515,10 +1070,21 @@
     "state": "Assam",
     "country": "India"
   },
+  "26.92,75.83": {
+    "city": "Jaipur Municipal Corporation",
+    "county": "Jaipur Tehsil",
+    "state": "Rajasthan",
+    "country": "India"
+  },
   "26.98,88.34": {
     "county": "Kurseong Subdivision",
     "state": "West Bengal",
     "country": "India"
+  },
+  "27.05,-82.44": {
+    "county": "Sarasota County",
+    "state": "Florida",
+    "country": "United States"
   },
   "27.16,77.52": {
     "city": "Bharatpur",
@@ -526,16 +1092,72 @@
     "state": "Rajasthan",
     "country": "India"
   },
+  "27.48,96.38": {
+    "county": "Miao ADC",
+    "state": "Arunachal Pradesh",
+    "country": "India"
+  },
+  "27.50,84.33": {
+    "county": "Chitwan",
+    "state": "Bagamati Province",
+    "country": "Nepal"
+  },
   "27.51,88.44": {
     "county": "Mangan",
     "state": "Sikkim",
     "country": "India"
+  },
+  "27.55,84.09": {
+    "county": "Chitwan",
+    "state": "Bagamati Province",
+    "country": "Nepal"
+  },
+  "27.57,85.39": {
+    "municipality": "Godawari",
+    "county": "Lalitpur",
+    "state": "Bagamati Province",
+    "country": "Nepal"
+  },
+  "27.58,84.50": {
+    "municipality": "Ratnanagar",
+    "county": "Chitwan",
+    "state": "Bagamati Province",
+    "country": "Nepal"
+  },
+  "27.62,84.15": {
+    "municipality": "Kawasoti",
+    "county": "Nawalpur District",
+    "state": "Gandaki Province",
+    "country": "Nepal"
+  },
+  "27.65,85.27": {
+    "municipality": "Dakshinkali Municipality",
+    "county": "Kathmandu",
+    "state": "Bagamati Province",
+    "country": "Nepal"
+  },
+  "27.67,96.43": {
+    "county": "Wakro Circle",
+    "state": "Arunachal Pradesh",
+    "country": "India"
+  },
+  "27.69,85.28": {
+    "municipality": "Kirtipur Municipality",
+    "county": "Kathmandu",
+    "state": "Bagamati Province",
+    "country": "Nepal"
   },
   "27.70,85.39": {
     "municipality": "Kageshwori Manohara Municipality",
     "county": "Kathmandu",
     "state": "Bagamati Province",
     "country": "Nepal"
+  },
+  "27.78,94.10": {
+    "city": "Raga",
+    "county": "Raga ADC",
+    "state": "Arunachal Pradesh",
+    "country": "India"
   },
   "27.80,74.43": {
     "county": "Sujangarh Tehsil",
@@ -566,14 +1188,69 @@
     "state": "Koshi Province",
     "country": "Nepal"
   },
+  "27.95,86.76": {
+    "municipality": "Khumbu Pasang Lhamu",
+    "county": "Solukhumbu",
+    "state": "Koshi Province",
+    "country": "Nepal"
+  },
+  "27.96,86.69": {
+    "municipality": "Khumbu Pasang Lhamu",
+    "county": "Solukhumbu",
+    "state": "Koshi Province",
+    "country": "Nepal"
+  },
+  "27.96,86.75": {
+    "municipality": "Khumbu Pasang Lhamu",
+    "county": "Solukhumbu",
+    "state": "Koshi Province",
+    "country": "Nepal"
+  },
+  "27.96,86.76": {
+    "municipality": "Khumbu Pasang Lhamu",
+    "county": "Solukhumbu",
+    "state": "Koshi Province",
+    "country": "Nepal"
+  },
   "27.98,86.67": {
     "municipality": "Khumbu Pasang Lhamu",
     "county": "Solukhumbu",
     "state": "Koshi Province",
     "country": "Nepal"
   },
+  "28.00,86.85": {
+    "municipality": "Khumbu Pasang Lhamu",
+    "county": "Solukhumbu",
+    "state": "Koshi Province",
+    "country": "Nepal"
+  },
+  "28.03,-17.19": {
+    "town": "San Sebastián de la Gomera",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
   "28.05,-17.20": {
     "town": "San Sebastián de la Gomera",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
+  "28.06,-17.20": {
+    "town": "San Sebastián de la Gomera",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
+  "28.10,-16.68": {
+    "city": "Arona",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
+  "28.13,-17.26": {
+    "village": "Vallehermoso",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
+  "28.20,-16.63": {
+    "city": "Vilaflor",
     "state": "Canary Islands",
     "country": "Spain"
   },
@@ -593,15 +1270,51 @@
     "state": "Canary Islands",
     "country": "Spain"
   },
+  "28.59,77.21": {
+    "city": "New Delhi",
+    "state": "Delhi",
+    "country": "India"
+  },
+  "28.72,80.07": {
+    "county": "Puranpur",
+    "state": "Uttar Pradesh",
+    "country": "India"
+  },
+  "28.94,83.81": {
+    "municipality": "Barhagaun Muktikhsetra",
+    "county": "Mustang",
+    "state": "Gandaki Province",
+    "country": "Nepal"
+  },
+  "29.08,-13.48": {
+    "city": "Teguise",
+    "state": "Canary Islands",
+    "country": "Spain"
+  },
   "29.32,47.84": {
     "county": "Sulaibikhat",
     "state": "Capital Governorate",
     "country": "Kuwait"
   },
+  "29.47,78.88": {
+    "county": "Kotdwara",
+    "state": "Uttarakhand",
+    "country": "India"
+  },
   "29.56,78.90": {
     "county": "Kotdwara",
     "state": "Uttarakhand",
     "country": "India"
+  },
+  "29.97,31.13": {
+    "city": "Giza",
+    "state": "Aj Jiza",
+    "country": "Egypt"
+  },
+  "29.97,31.14": {
+    "city": "Giza",
+    "state": "Aj Jiza",
+    "country": "Egypt"
   },
   "30.64,104.09": {
     "city": "Jinjiang District",
@@ -611,6 +1324,17 @@
   "30.74,79.62": {
     "county": "Joshimath Tehsil",
     "state": "Uttarakhand",
+    "country": "India"
+  },
+  "30.92,-6.90": {
+    "city": "Ouarzazate",
+    "county": "Pachalik d'Ouarzazate باشوية ورزازات",
+    "state": "Drâa-Tafilalet",
+    "country": "Morocco"
+  },
+  "31.12,77.07": {
+    "county": "Shimla ( Rural )",
+    "state": "Himachal Pradesh",
     "country": "India"
   },
   "31.17,-8.07": {
@@ -644,7 +1368,47 @@
     "state": "Himachal Pradesh",
     "country": "India"
   },
+  "32.50,-4.92": {
+    "town": "Tounfit",
+    "municipality": "Caïdat de Tounfite",
+    "county": "Cercle de Boumia دائرة بومية",
+    "state": "Drâa-Tafilalet",
+    "country": "Morocco"
+  },
+  "32.57,77.01": {
+    "county": "Lahaul",
+    "state": "Himachal Pradesh",
+    "country": "India"
+  },
+  "32.57,77.02": {
+    "county": "Lahaul",
+    "state": "Himachal Pradesh",
+    "country": "India"
+  },
+  "32.61,77.15": {
+    "county": "Lahaul",
+    "state": "Himachal Pradesh",
+    "country": "India"
+  },
   "32.63,-16.94": {
+    "country": "Portugal"
+  },
+  "32.64,77.15": {
+    "county": "Lahaul",
+    "state": "Himachal Pradesh",
+    "country": "India"
+  },
+  "32.68,-16.95": {
+    "city": "Funchal",
+    "country": "Portugal"
+  },
+  "32.72,-16.95": {
+    "city": "Funchal",
+    "country": "Portugal"
+  },
+  "32.74,-16.89": {
+    "city": "Santana",
+    "village": "São Roque do Faial",
     "country": "Portugal"
   },
   "32.81,-17.14": {
@@ -652,9 +1416,52 @@
     "village": "Seixal",
     "country": "Portugal"
   },
+  "32.85,10.29": {
+    "county": "رأس الوادي",
+    "state": "Tataouine",
+    "country": "Tunisia"
+  },
+  "32.89,77.19": {
+    "county": "Lahaul",
+    "state": "Himachal Pradesh",
+    "country": "India"
+  },
+  "32.91,10.27": {
+    "county": "شنني الجديدة",
+    "state": "Tataouine",
+    "country": "Tunisia"
+  },
+  "32.91,77.20": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "32.98,77.25": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.01,9.64": {
+    "county": "العوينة الجنوبية",
+    "state": "Kébili",
+    "country": "Tunisia"
+  },
+  "33.12,9.12": {
+    "county": "غليسية",
+    "state": "Kébili",
+    "country": "Tunisia"
+  },
   "33.16,10.24": {
     "county": "الزغاية",
     "state": "Médenine",
+    "country": "Tunisia"
+  },
+  "33.17,9.15": {
+    "county": "غليسية",
+    "state": "Kébili",
+    "country": "Tunisia"
+  },
+  "33.17,9.64": {
+    "county": "دوز الشرقية",
+    "state": "Kébili",
     "country": "Tunisia"
   },
   "33.24,10.33": {
@@ -662,10 +1469,18 @@
     "state": "Médenine",
     "country": "Tunisia"
   },
+  "33.24,77.13": {
+    "state": "Ladakh",
+    "country": "India"
+  },
   "33.25,10.20": {
     "county": "بني خداش",
     "state": "Médenine",
     "country": "Tunisia"
+  },
+  "33.26,77.17": {
+    "state": "Ladakh",
+    "country": "India"
   },
   "33.27,10.20": {
     "county": "بني خداش",
@@ -675,6 +1490,46 @@
   "33.27,77.18": {
     "state": "Ladakh",
     "country": "India"
+  },
+  "33.38,126.50": {
+    "city": "Jeju",
+    "town": "Aewol",
+    "country": "South Korea"
+  },
+  "33.43,49.01": {
+    "city": "Dorud",
+    "county": "Dorud County",
+    "state": "Lorestan Province",
+    "country": "Iran"
+  },
+  "33.43,76.90": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.51,76.81": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.51,76.91": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.52,76.97": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.53,76.91": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.65,77.00": {
+    "state": "Ladakh",
+    "country": "India"
+  },
+  "33.71,10.86": {
+    "town": "Guellala",
+    "state": "Médenine",
+    "country": "Tunisia"
   },
   "33.85,77.71": {
     "state": "Ladakh",
@@ -751,9 +1606,18 @@
     "city": "Sakai",
     "country": "Japan"
   },
+  "34.61,135.52": {
+    "city": "Osaka",
+    "country": "Japan"
+  },
   "34.65,135.51": {
     "city": "Osaka",
     "country": "Japan"
+  },
+  "34.71,10.75": {
+    "county": "الحي الخيري",
+    "state": "Sfax",
+    "country": "Tunisia"
   },
   "34.87,-5.94": {
     "village": "Arbaoua",
@@ -775,6 +1639,13 @@
     "state": "Region of Crete",
     "country": "Greece"
   },
+  "35.12,25.87": {
+    "city": "Ierapetra Municipal Unit",
+    "municipality": "Municipality of Ierapetra",
+    "county": "Lasithi Regional Unit",
+    "state": "Region of Crete",
+    "country": "Greece"
+  },
   "35.15,106.48": {
     "county": "Huating City",
     "state": "Gansu",
@@ -787,6 +1658,10 @@
     "state": "Region of Crete",
     "country": "Greece"
   },
+  "35.17,129.06": {
+    "city": "Busan",
+    "country": "South Korea"
+  },
   "35.19,25.91": {
     "county": "Lasithi Regional Unit",
     "state": "Region of Crete",
@@ -795,6 +1670,17 @@
   "35.28,129.07": {
     "city": "Busan",
     "country": "South Korea"
+  },
+  "35.37,24.48": {
+    "city": "Rethymno",
+    "municipality": "Municipality of Rethymnon",
+    "county": "Rethymno Regional Unit",
+    "state": "Region of Crete",
+    "country": "Greece"
+  },
+  "35.50,138.80": {
+    "city": "Fujiyoshida",
+    "country": "Japan"
   },
   "35.52,138.76": {
     "town": "Fujikawaguchiko",
@@ -807,6 +1693,12 @@
     "county": "Chania Regional Unit",
     "state": "Region of Crete",
     "country": "Greece"
+  },
+  "35.52,52.52": {
+    "city": "Hablerud RD",
+    "county": "Firuzkuh County",
+    "state": "Tehran Province",
+    "country": "Iran"
   },
   "35.66,139.70": {
     "city": "Shibuya",
@@ -835,6 +1727,10 @@
     "city": "Gyeongju-si",
     "country": "South Korea"
   },
+  "35.84,129.21": {
+    "city": "Gyeongju-si",
+    "country": "South Korea"
+  },
   "35.84,129.23": {
     "city": "Gyeongju-si",
     "country": "South Korea"
@@ -844,8 +1740,18 @@
     "state": "Siliana",
     "country": "Tunisia"
   },
+  "35.97,14.35": {
+    "village": "Mellieħa",
+    "municipality": "Northern Region",
+    "country": "Malta"
+  },
   "36.05,14.19": {
     "country": "Malta"
+  },
+  "36.13,-115.17": {
+    "county": "Clark County",
+    "state": "Nevada",
+    "country": "United States"
   },
   "36.40,9.90": {
     "county": "الغريفات",
@@ -861,6 +1767,25 @@
     "county": "Thira Regional Unit",
     "state": "South Aegean",
     "country": "Greece"
+  },
+  "36.63,10.13": {
+    "county": "الخليدية",
+    "state": "Ben Arous",
+    "country": "Tunisia"
+  },
+  "36.63,104.23": {
+    "state": "Gansu",
+    "country": "China"
+  },
+  "36.69,23.06": {
+    "county": "Laconia Regional Unit",
+    "state": "Peloponnese Region",
+    "country": "Greece"
+  },
+  "36.79,10.20": {
+    "city": "Carthage",
+    "state": "Tunis",
+    "country": "Tunisia"
   },
   "36.80,10.17": {
     "city": "Tunis",
@@ -881,9 +1806,29 @@
   "36.85,10.57": {
     "country": "Tunisia"
   },
+  "36.89,10.33": {
+    "city": "Carthage",
+    "state": "Tunis",
+    "country": "Tunisia"
+  },
   "36.95,28.69": {
     "town": "Köyceğiz",
     "country": "Turkey"
+  },
+  "36.97,10.98": {
+    "county": "صاحب الجبل جنوبية",
+    "state": "Nabeul",
+    "country": "Tunisia"
+  },
+  "37.02,10.07": {
+    "county": "أوتيك",
+    "state": "Bizerte",
+    "country": "Tunisia"
+  },
+  "37.11,9.66": {
+    "county": "أحواز ماطر",
+    "state": "Bizerte",
+    "country": "Tunisia"
   },
   "37.12,-8.57": {
     "city": "Portimão",
@@ -891,9 +1836,29 @@
     "county": "Faro",
     "country": "Portugal"
   },
+  "37.12,9.67": {
+    "county": "الزعرور",
+    "state": "Bizerte",
+    "country": "Tunisia"
+  },
+  "37.14,9.69": {
+    "state": "Bizerte",
+    "country": "Tunisia"
+  },
+  "37.25,9.95": {
+    "county": "منزل جميل الشرقية",
+    "state": "Bizerte",
+    "country": "Tunisia"
+  },
   "37.38,-5.99": {
     "city": "Seville",
     "state": "Andalusia",
+    "country": "Spain"
+  },
+  "37.58,-0.86": {
+    "city": "La Unión",
+    "county": "Campo de Cartagena y Mar Menor",
+    "state": "Region of Murcia",
     "country": "Spain"
   },
   "37.58,126.98": {
@@ -919,10 +1884,48 @@
     "city": "Burdur Merkez",
     "country": "Turkey"
   },
+  "37.77,-25.30": {
+    "town": "Povoação",
+    "village": "Furnas",
+    "country": "Portugal"
+  },
   "37.79,-122.40": {
     "city": "San Francisco",
     "state": "California",
     "country": "United States"
+  },
+  "37.80,-122.39": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States"
+  },
+  "37.80,-122.41": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States"
+  },
+  "37.80,28.80": {
+    "town": "Babadağ",
+    "country": "Turkey"
+  },
+  "37.81,-122.37": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States"
+  },
+  "37.83,-122.42": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States"
+  },
+  "37.86,-25.85": {
+    "city": "Ponta Delgada",
+    "country": "Portugal"
+  },
+  "37.87,-4.78": {
+    "city": "Córdoba",
+    "state": "Andalusia",
+    "country": "Spain"
   },
   "37.97,-122.27": {
     "city": "Richmond",
@@ -948,6 +1951,25 @@
     "state": "California",
     "country": "United States"
   },
+  "38.08,30.20": {
+    "town": "Dinar",
+    "country": "Turkey"
+  },
+  "38.34,35.05": {
+    "town": "Yeşilhisar",
+    "village": "Kale Mahallesi",
+    "country": "Turkey"
+  },
+  "38.36,28.73": {
+    "town": "Alaşehir",
+    "village": "Serinköy Mahallesi",
+    "country": "Turkey"
+  },
+  "38.39,-109.86": {
+    "county": "San Juan County",
+    "state": "Utah",
+    "country": "United States"
+  },
   "38.42,-82.44": {
     "city": "Huntington",
     "county": "Cabell County",
@@ -966,16 +1988,40 @@
     "state": "Central Greece",
     "country": "Greece"
   },
+  "38.50,39.25": {
+    "town": "Sivrice",
+    "country": "Turkey"
+  },
+  "38.51,14.34": {
+    "country": "Italy"
+  },
+  "38.57,-7.91": {
+    "city": "Évora",
+    "county": "Évora",
+    "country": "Portugal"
+  },
   "38.60,-28.82": {
     "village": "Capelo",
     "municipality": "Horta",
     "country": "Portugal"
+  },
+  "38.65,39.62": {
+    "city": "Elâzığ",
+    "country": "Turkey"
   },
   "38.71,-9.14": {
     "city": "Lisbon",
     "village": "Madalena",
     "county": "Lisbon",
     "country": "Portugal"
+  },
+  "38.86,15.25": {
+    "country": "Italy"
+  },
+  "39.29,-6.38": {
+    "city": "Cáceres",
+    "state": "Extremadura",
+    "country": "Spain"
   },
   "39.37,-121.21": {
     "county": "Yuba County",
@@ -992,10 +2038,47 @@
     "state": "California",
     "country": "United States"
   },
+  "39.42,-122.17": {
+    "county": "Glenn County",
+    "state": "California",
+    "country": "United States"
+  },
   "39.46,-74.44": {
     "town": "Galloway Township",
     "county": "Atlantic County",
     "state": "New Jersey",
+    "country": "United States"
+  },
+  "39.58,-122.05": {
+    "county": "Glenn County",
+    "state": "California",
+    "country": "United States"
+  },
+  "39.60,-121.91": {
+    "county": "Butte County",
+    "state": "California",
+    "country": "United States"
+  },
+  "39.61,-121.91": {
+    "county": "Butte County",
+    "state": "California",
+    "country": "United States"
+  },
+  "39.65,-77.38": {
+    "county": "Frederick County",
+    "state": "Maryland",
+    "country": "United States"
+  },
+  "39.71,-121.79": {
+    "city": "Chico",
+    "county": "Butte County",
+    "state": "California",
+    "country": "United States"
+  },
+  "39.73,-121.84": {
+    "city": "Chico",
+    "county": "Butte County",
+    "state": "California",
     "country": "United States"
   },
   "39.77,64.42": {
@@ -1008,11 +2091,21 @@
     "state": "Bukhara Region",
     "country": "Uzbekistan"
   },
+  "39.94,-120.94": {
+    "county": "Plumas County",
+    "state": "California",
+    "country": "United States"
+  },
   "39.96,-83.01": {
     "city": "Columbus",
     "county": "Franklin County",
     "state": "Ohio",
     "country": "United States"
+  },
+  "4.36,-74.34": {
+    "town": "Fusagasugá",
+    "state": "Cundinamarca",
+    "country": "Colombia"
   },
   "40.04,-7.11": {
     "town": "Idanha-a-Nova",
@@ -1023,10 +2116,21 @@
     "city": "Sabail Raion",
     "country": "Azerbaijan"
   },
+  "40.42,15.01": {
+    "town": "Capaccio Paestum",
+    "county": "Salerno",
+    "state": "Campania",
+    "country": "Italy"
+  },
   "40.44,-79.95": {
     "city": "Pittsburgh",
     "county": "Allegheny County",
     "state": "Pennsylvania",
+    "country": "United States"
+  },
+  "40.47,-121.51": {
+    "county": "Shasta County",
+    "state": "California",
     "country": "United States"
   },
   "40.48,-121.46": {
@@ -1035,6 +2139,59 @@
     "country": "United States"
   },
   "40.60,-73.92": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.60,-73.93": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.62,-73.83": {
+    "city": "New York",
+    "county": "Queens County",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.66,-73.97": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.67,-73.97": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.67,-74.01": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.68,-73.99": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.69,-74.02": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.71,-74.03": {
+    "city": "Jersey City",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.71,-74.05": {
+    "city": "Jersey City",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.72,-74.02": {
     "city": "New York",
     "state": "New York",
     "country": "United States"
@@ -1050,16 +2207,68 @@
     "state": "California",
     "country": "United States"
   },
+  "40.73,-73.96": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.73,-74.03": {
+    "city": "Jersey City",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.73,-74.05": {
+    "city": "Jersey City",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.73,-74.09": {
+    "city": "Jersey City",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
   "40.74,-74.03": {
     "town": "Hoboken",
     "county": "Hudson County",
     "state": "New Jersey",
     "country": "United States"
   },
+  "40.74,-74.04": {
+    "town": "Hoboken",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.76,-73.98": {
+    "city": "New York",
+    "state": "New York",
+    "country": "United States"
+  },
   "40.76,-73.99": {
     "city": "New York",
     "state": "New York",
     "country": "United States"
+  },
+  "40.77,-74.02": {
+    "town": "Weehawken",
+    "county": "Hudson County",
+    "state": "New Jersey",
+    "country": "United States"
+  },
+  "40.82,-72.58": {
+    "town": "Town of Southampton",
+    "village": "Village of Quogue",
+    "county": "Suffolk County",
+    "state": "New York",
+    "country": "United States"
+  },
+  "40.89,71.90": {
+    "county": "Baliqchi District",
+    "state": "Andijan Region",
+    "country": "Uzbekistan"
   },
   "40.95,20.81": {
     "village": "Lubanishta",
@@ -1080,6 +2289,16 @@
     "municipality": "Municipality of Bitola",
     "country": "North Macedonia"
   },
+  "41.05,21.21": {
+    "village": "Rotino",
+    "municipality": "Municipality of Bitola",
+    "country": "North Macedonia"
+  },
+  "41.14,-8.61": {
+    "city": "Porto",
+    "county": "Porto",
+    "country": "Portugal"
+  },
   "41.14,20.65": {
     "village": "Kalishta",
     "municipality": "Municipality of Struga",
@@ -1090,6 +2309,10 @@
     "municipality": "Municipality of Struga",
     "country": "North Macedonia"
   },
+  "41.15,32.52": {
+    "city": "Karabük",
+    "country": "Turkey"
+  },
   "41.17,21.11": {
     "village": "Smilevo",
     "municipality": "Municipality of Demir Hisar/Murgashevo",
@@ -1099,6 +2322,11 @@
     "village": "Manastir",
     "municipality": "Municipality of Prilep",
     "country": "North Macedonia"
+  },
+  "41.19,-122.29": {
+    "county": "Siskiyou County",
+    "state": "California",
+    "country": "United States"
   },
   "41.23,21.55": {
     "village": "Marul",
@@ -1111,6 +2339,11 @@
     "state": "Aragon",
     "country": "Spain"
   },
+  "41.25,22.75": {
+    "village": "Nikolikj",
+    "municipality": "Municipality of Dojran",
+    "country": "North Macedonia"
+  },
   "41.26,21.57": {
     "village": "Shtavica",
     "municipality": "Municipality of Prilep",
@@ -1120,6 +2353,11 @@
     "county": "Siskiyou County",
     "state": "California",
     "country": "United States"
+  },
+  "41.30,21.50": {
+    "village": "Berovci",
+    "municipality": "Municipality of Prilep",
+    "country": "North Macedonia"
   },
   "41.30,21.57": {
     "village": "Volkovo",
@@ -1138,11 +2376,31 @@
     "state": "Corsica",
     "country": "France"
   },
+  "41.35,-122.23": {
+    "county": "Siskiyou County",
+    "state": "California",
+    "country": "United States"
+  },
+  "41.38,-71.59": {
+    "town": "South Kingstown",
+    "county": "South County",
+    "state": "Rhode Island",
+    "country": "United States"
+  },
+  "41.38,22.40": {
+    "municipality": "Municipality of Valandovo",
+    "country": "North Macedonia"
+  },
   "41.40,-122.38": {
     "village": "Weed",
     "county": "Siskiyou County",
     "state": "California",
     "country": "United States"
+  },
+  "41.40,20.58": {
+    "village": "Drenok",
+    "municipality": "Municipality of Struga",
+    "country": "North Macedonia"
   },
   "41.44,21.62": {
     "village": "Prisad",
@@ -1157,6 +2415,11 @@
   "41.45,22.59": {
     "village": "Vodocha",
     "municipality": "Municipality of Strumica",
+    "country": "North Macedonia"
+  },
+  "41.46,20.53": {
+    "village": "Pralenik",
+    "municipality": "Municipality of Centar Zhupa",
     "country": "North Macedonia"
   },
   "41.47,69.95": {
@@ -1184,6 +2447,15 @@
     "municipality": "Municipality of Debar",
     "country": "North Macedonia"
   },
+  "41.60,-122.34": {
+    "county": "Siskiyou County",
+    "state": "California",
+    "country": "United States"
+  },
+  "41.62,70.14": {
+    "state": "Tashkent Region",
+    "country": "Uzbekistan"
+  },
   "41.81,21.67": {
     "village": "Karabunishte",
     "municipality": "Municipality of Veles",
@@ -1194,9 +2466,20 @@
     "municipality": "Municipality of Veles",
     "country": "North Macedonia"
   },
+  "41.87,15.35": {
+    "village": "Lesina",
+    "county": "Foggia",
+    "state": "Apulia",
+    "country": "Italy"
+  },
   "41.87,21.01": {
     "village": "Volkovija",
     "municipality": "Municipality of Brvenica",
+    "country": "North Macedonia"
+  },
+  "41.87,22.37": {
+    "village": "Mojanci",
+    "municipality": "Municipality of Kochani",
     "country": "North Macedonia"
   },
   "41.89,12.49": {
@@ -1211,15 +2494,34 @@
     "state": "Lazio",
     "country": "Italy"
   },
+  "41.92,70.32": {
+    "state": "Tashkent Region",
+    "country": "Uzbekistan"
+  },
+  "41.94,-6.48": {
+    "city": "Manzanal de Arriba",
+    "state": "Castile and León",
+    "country": "Spain"
+  },
   "41.96,22.34": {
     "village": "Nivichani",
     "municipality": "Municipality of Kochani",
     "country": "North Macedonia"
   },
+  "41.99,-6.55": {
+    "city": "Puebla de Sanabria",
+    "state": "Castile and León",
+    "country": "Spain"
+  },
   "41.99,21.43": {
     "city": "Skopje",
     "county": "City of Skopje",
     "country": "North Macedonia"
+  },
+  "42.02,-6.70": {
+    "city": "Pedralba de la Pradería",
+    "state": "Castile and León",
+    "country": "Spain"
   },
   "42.05,20.83": {
     "village": "Bozovce",
@@ -1243,11 +2545,45 @@
     "state": "Issyk-Kul Region",
     "country": "Kyrgyzstan"
   },
+  "42.35,-71.08": {
+    "city": "Boston",
+    "county": "Suffolk County",
+    "state": "Massachusetts",
+    "country": "United States"
+  },
+  "42.46,-80.10": {
+    "state": "Ontario",
+    "country": "Canada"
+  },
+  "42.51,-2.37": {
+    "village": "Viana",
+    "county": "Estellerria",
+    "state": "Navarre",
+    "country": "Spain"
+  },
   "42.56,-83.15": {
     "town": "Troy",
     "county": "Oakland County",
     "state": "Michigan",
     "country": "United States"
+  },
+  "42.57,1.61": {
+    "municipality": "Canillo",
+    "country": "Andorra"
+  },
+  "42.61,54.30": {
+    "county": "Qaraqïya District",
+    "state": "Mangystau Region",
+    "country": "Kazakhstan"
+  },
+  "42.63,19.38": {
+    "county": "Podgorica Capital City",
+    "country": "Montenegro"
+  },
+  "42.65,54.34": {
+    "county": "Qaraqïya District",
+    "state": "Mangystau Region",
+    "country": "Kazakhstan"
   },
   "42.77,1.35": {
     "village": "Aulus-les-Bains",
@@ -1263,6 +2599,46 @@
     "state": "Occitania",
     "country": "France"
   },
+  "42.84,-0.49": {
+    "village": "Laruns",
+    "municipality": "Oloron-Sainte-Marie",
+    "county": "Pyrénées-Atlantiques",
+    "state": "Nouvelle-Aquitaine",
+    "country": "France"
+  },
+  "42.84,44.45": {
+    "municipality": "Даргавское сельское поселение",
+    "county": "Prigorodny District",
+    "state": "Republic of North Ossetia – Alania",
+    "country": "Russia"
+  },
+  "42.85,-0.49": {
+    "village": "Laruns",
+    "municipality": "Oloron-Sainte-Marie",
+    "county": "Pyrénées-Atlantiques",
+    "state": "Nouvelle-Aquitaine",
+    "country": "France"
+  },
+  "42.93,2.26": {
+    "village": "Rennes-le-Château",
+    "municipality": "Limoux",
+    "county": "Aude",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "43.01,12.68": {
+    "city": "Spello",
+    "county": "Perugia",
+    "state": "Umbria",
+    "country": "Italy"
+  },
+  "43.05,3.04": {
+    "village": "Port-la-Nouvelle",
+    "municipality": "Narbonne",
+    "county": "Aude",
+    "state": "Occitania",
+    "country": "France"
+  },
   "43.07,12.61": {
     "town": "Assisi",
     "county": "Perugia",
@@ -1275,16 +2651,48 @@
     "state": "Umbria",
     "country": "Italy"
   },
+  "43.10,42.70": {
+    "county": "Mestia Municipality",
+    "state": "Samegrelo-Upper Svaneti",
+    "country": "Georgia"
+  },
   "43.29,41.68": {
     "village": "Верхне-Тебердинское сельское поселение",
     "county": "Karachayevsky District",
     "state": "Karachay-Cherkessia",
     "country": "Russia"
   },
+  "43.30,-2.31": {
+    "country": "Spain"
+  },
   "43.33,2.03": {
     "village": "Saint-Papoul",
     "municipality": "Carcassonne",
     "county": "Aude",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "43.35,42.44": {
+    "county": "Elbrus District",
+    "state": "Kabardino-Balkaria",
+    "country": "Russia"
+  },
+  "43.39,54.09": {
+    "county": "Qaraqïya District",
+    "state": "Mangystau Region",
+    "country": "Kazakhstan"
+  },
+  "43.40,3.70": {
+    "town": "Sète",
+    "municipality": "Montpellier",
+    "county": "Hérault",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "43.42,3.60": {
+    "town": "Mèze",
+    "municipality": "Montpellier",
+    "county": "Hérault",
     "state": "Occitania",
     "country": "France"
   },
@@ -1299,15 +2707,32 @@
     "state": "Marche",
     "country": "Italy"
   },
+  "43.46,-1.58": {
+    "country": "France"
+  },
   "43.46,54.07": {
     "county": "Qaraqïya District",
     "state": "Mangystau Region",
     "country": "Kazakhstan"
   },
+  "43.51,2.99": {
+    "village": "Roquebrun",
+    "municipality": "Béziers",
+    "county": "Hérault",
+    "state": "Occitania",
+    "country": "France"
+  },
   "43.54,51.83": {
     "county": "Munaily District",
     "state": "Mangystau Region",
     "country": "Kazakhstan"
+  },
+  "43.55,4.16": {
+    "town": "Aigues-Mortes",
+    "municipality": "Nîmes",
+    "county": "Gard",
+    "state": "Occitania",
+    "country": "France"
   },
   "43.59,0.41": {
     "village": "L'Isle-de-Noé",
@@ -1316,11 +2741,60 @@
     "state": "Occitania",
     "country": "France"
   },
+  "43.60,20.62": {
+    "municipality": "City of Kraljevo",
+    "county": "Raska Administrative District",
+    "country": "Serbia"
+  },
+  "43.61,2.98": {
+    "village": "Rosis",
+    "municipality": "Béziers",
+    "county": "Hérault",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "43.63,-79.42": {
+    "city": "Toronto",
+    "state": "Ontario",
+    "country": "Canada"
+  },
+  "43.63,40.98": {
+    "municipality": "Урупское сельское поселение",
+    "county": "Urupsky District",
+    "state": "Karachay-Cherkessia",
+    "country": "Russia"
+  },
+  "43.64,2.96": {
+    "village": "Rosis",
+    "municipality": "Béziers",
+    "county": "Hérault",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "43.65,40.96": {
+    "municipality": "Урупское сельское поселение",
+    "county": "Urupsky District",
+    "state": "Karachay-Cherkessia",
+    "country": "Russia"
+  },
+  "43.65,40.97": {
+    "municipality": "Урупское сельское поселение",
+    "county": "Urupsky District",
+    "state": "Karachay-Cherkessia",
+    "country": "Russia"
+  },
   "43.80,15.97": {
     "city": "Grad Šibenik",
     "village": "Gradina",
     "county": "Šibenik-Knin County",
     "country": "Croatia"
+  },
+  "43.89,-0.50": {
+    "town": "Mont-de-Marsan",
+    "municipality": "Mont-de-Marsan",
+    "county": "Landes",
+    "state": "Nouvelle-Aquitaine",
+    "country": "France"
   },
   "43.93,12.45": {
     "town": "City of San Marino",
@@ -1336,12 +2810,33 @@
     "state": "Emilia-Romagna",
     "country": "Italy"
   },
+  "44.10,9.73": {
+    "state": "Liguria",
+    "country": "Italy"
+  },
+  "44.11,9.73": {
+    "village": "Riomaggiore",
+    "county": "La Spezia",
+    "state": "Liguria",
+    "country": "Italy"
+  },
   "44.20,12.40": {
     "town": "Cesenatico",
     "municipality": "Unione Rubicone e mare",
     "county": "Forlì-Cesena",
     "state": "Emilia-Romagna",
     "country": "Italy"
+  },
+  "44.27,-71.35": {
+    "county": "Coös County",
+    "state": "New Hampshire",
+    "country": "United States"
+  },
+  "44.32,-72.34": {
+    "village": "Marshfield",
+    "county": "Washington County",
+    "state": "Vermont",
+    "country": "United States"
   },
   "44.35,2.45": {
     "village": "Moyrazès",
@@ -1362,11 +2857,35 @@
     "state": "Emilia-Romagna",
     "country": "Italy"
   },
+  "44.51,3.92": {
+    "village": "Prévenchères",
+    "municipality": "Mende",
+    "county": "Lozère",
+    "state": "Occitania",
+    "country": "France"
+  },
+  "44.52,-110.84": {
+    "county": "Teton County",
+    "state": "Wyoming",
+    "country": "United States"
+  },
   "44.52,33.96": {
     "city": "Голубинское сельское поселение",
     "county": "Bakhchysarai Raion",
     "state": "Autonomous Republic of Crimea",
     "country": "Ukraine"
+  },
+  "44.53,-110.84": {
+    "county": "Teton County",
+    "state": "Wyoming",
+    "country": "United States"
+  },
+  "44.53,2.28": {
+    "village": "Cransac-les-Thermes",
+    "municipality": "Villefranche-de-Rouergue",
+    "county": "Aveyron",
+    "state": "Occitania",
+    "country": "France"
   },
   "44.55,2.67": {
     "village": "Estaing",
@@ -1402,6 +2921,12 @@
     "state": "Wyoming",
     "country": "United States"
   },
+  "45.00,-81.23": {
+    "municipality": "Municipality of Northern Bruce Peninsula",
+    "county": "Bruce County",
+    "state": "Ontario",
+    "country": "Canada"
+  },
   "45.00,6.12": {
     "village": "Les Deux Alpes",
     "municipality": "Grenoble",
@@ -1423,11 +2948,29 @@
     "state": "Auvergne-Rhône-Alpes",
     "country": "France"
   },
+  "45.07,7.69": {
+    "city": "Turin",
+    "county": "Turin",
+    "state": "Piedmont",
+    "country": "Italy"
+  },
   "45.08,7.77": {
     "village": "Baldissero Torinese",
     "county": "Turin",
     "state": "Piedmont",
     "country": "Italy"
+  },
+  "45.20,29.00": {
+    "municipality": "Maliuc",
+    "county": "Tulcea",
+    "country": "Romania"
+  },
+  "45.27,5.68": {
+    "village": "Mont-Saint-Martin",
+    "municipality": "Grenoble",
+    "county": "Isère",
+    "state": "Auvergne-Rhône-Alpes",
+    "country": "France"
   },
   "45.28,6.55": {
     "village": "Les Belleville",
@@ -1448,6 +2991,28 @@
     "state": "Oregon",
     "country": "United States"
   },
+  "45.52,-122.71": {
+    "city": "Portland",
+    "county": "Multnomah County",
+    "state": "Oregon",
+    "country": "United States"
+  },
+  "45.61,14.64": {
+    "municipality": "Loški Potok",
+    "country": "Slovenia"
+  },
+  "45.61,7.74": {
+    "city": "Hône",
+    "state": "Aosta Valley",
+    "country": "Italy"
+  },
+  "45.66,10.05": {
+    "town": "Iseo",
+    "municipality": "Comunità montana del Sebino bresciano",
+    "county": "Brescia",
+    "state": "Lombardy",
+    "country": "Italy"
+  },
   "45.76,18.17": {
     "town": "Donji Miholjac",
     "municipality": "Grad Donji Miholjac",
@@ -1460,11 +3025,40 @@
     "state": "Friuli – Venezia Giulia",
     "country": "Italy"
   },
+  "45.79,14.41": {
+    "municipality": "Cerknica",
+    "country": "Slovenia"
+  },
   "45.85,9.39": {
     "city": "Lecco",
     "county": "Lecco",
     "state": "Lombardy",
     "country": "Italy"
+  },
+  "45.93,7.95": {
+    "village": "Macugnaga",
+    "municipality": "Bannio Anzino",
+    "county": "Verbano-Cusio-Ossola",
+    "state": "Piedmont",
+    "country": "Italy"
+  },
+  "45.94,7.74": {
+    "town": "Zermatt",
+    "county": "Visp",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
+  "46.01,7.75": {
+    "town": "Zermatt",
+    "county": "Visp",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
+  "46.01,7.79": {
+    "town": "Zermatt",
+    "county": "Visp",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
   },
   "46.05,19.97": {
     "city": "Kanjiza Municipality",
@@ -1494,9 +3088,34 @@
     "state": "Valais/Wallis",
     "country": "Switzerland"
   },
+  "46.19,7.30": {
+    "village": "Nendaz",
+    "county": "Conthey",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
+  "46.21,5.45": {
+    "village": "Cize",
+    "municipality": "Bourg-en-Bresse",
+    "county": "Ain",
+    "state": "Auvergne-Rhône-Alpes",
+    "country": "France"
+  },
   "46.21,6.16": {
     "city": "Geneva",
     "state": "Geneva",
+    "country": "Switzerland"
+  },
+  "46.26,6.98": {
+    "village": "Bex",
+    "county": "Aigle District",
+    "state": "Vaud",
+    "country": "Switzerland"
+  },
+  "46.28,7.16": {
+    "village": "Bex",
+    "county": "Aigle District",
+    "state": "Vaud",
     "country": "Switzerland"
   },
   "46.29,11.79": {
@@ -1504,6 +3123,24 @@
     "county": "Provincia di Trento",
     "state": "Trentino – Alto Adige/Südtirol",
     "country": "Italy"
+  },
+  "46.30,7.68": {
+    "village": "Agarn",
+    "county": "Leuk",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
+  "46.31,16.34": {
+    "city": "City of Varaždin",
+    "county": "Varaždin County",
+    "country": "Croatia"
+  },
+  "46.33,4.69": {
+    "village": "Pierreclos",
+    "municipality": "Mâcon",
+    "county": "Saône-et-Loire",
+    "state": "Bourgogne – Franche-Comté",
+    "country": "France"
   },
   "46.34,6.83": {
     "village": "Vouvry",
@@ -1517,11 +3154,59 @@
     "state": "Valais/Wallis",
     "country": "Switzerland"
   },
+  "46.38,8.01": {
+    "village": "Riederalp",
+    "county": "Östlich Raron",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
+  "46.39,16.43": {
+    "town": "Čakovec",
+    "county": "Međimurje County",
+    "country": "Croatia"
+  },
+  "46.40,12.48": {
+    "village": "Cimolais",
+    "county": "Pordenone",
+    "state": "Friuli – Venezia Giulia",
+    "country": "Italy"
+  },
+  "46.40,6.92": {
+    "village": "Villeneuve (VD)",
+    "county": "Aigle District",
+    "state": "Vaud",
+    "country": "Switzerland"
+  },
+  "46.40,7.62": {
+    "village": "Leukerbad",
+    "county": "Leuk",
+    "state": "Valais/Wallis",
+    "country": "Switzerland"
+  },
   "46.41,6.93": {
     "village": "Veytaux",
     "county": "Riviera-Pays-d'Enhaut District",
     "state": "Vaud",
     "country": "Switzerland"
+  },
+  "46.41,7.49": {
+    "village": "Lenk",
+    "county": "Obersimmental-Saanen administrative district",
+    "state": "Bern",
+    "country": "Switzerland"
+  },
+  "46.45,14.18": {
+    "village": "Feistritz im Rosental",
+    "county": "Bezirk Klagenfurt-Land",
+    "state": "Carinthia",
+    "country": "Austria"
+  },
+  "46.47,11.80": {
+    "village": "Canazei",
+    "municipality": "Comun General de Fascia",
+    "county": "Provincia di Trento",
+    "state": "Trentino – Alto Adige/Südtirol",
+    "country": "Italy"
   },
   "46.49,12.04": {
     "city": "Colle Santa Lucia",
@@ -1535,6 +3220,13 @@
     "state": "Veneto",
     "country": "Italy"
   },
+  "46.50,2.61": {
+    "village": "Nassigny",
+    "municipality": "Montluçon",
+    "county": "Allier",
+    "state": "Auvergne-Rhône-Alpes",
+    "country": "France"
+  },
   "46.52,10.41": {
     "town": "Bormio",
     "municipality": "Comunità montana Alta Valtellina",
@@ -1542,14 +3234,38 @@
     "state": "Lombardy",
     "country": "Italy"
   },
+  "46.52,6.59": {
+    "city": "Lausanne",
+    "county": "District de Lausanne",
+    "state": "Vaud",
+    "country": "Switzerland"
+  },
   "46.56,15.64": {
     "municipality": "Maribor",
     "country": "Slovenia"
+  },
+  "46.58,8.80": {
+    "city": "Medel (Lucmagn)",
+    "county": "Surselva",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.59,8.49": {
+    "village": "Realp",
+    "county": "Korporation Ursern",
+    "state": "Uri",
+    "country": "Switzerland"
   },
   "46.61,7.92": {
     "village": "Lauterbrunnen",
     "county": "Interlaken-Oberhasli administrative district",
     "state": "Bern",
+    "country": "Switzerland"
+  },
+  "46.61,8.55": {
+    "village": "Hospental",
+    "county": "Korporation Ursern",
+    "state": "Uri",
     "country": "Switzerland"
   },
   "46.65,12.19": {
@@ -1558,6 +3274,19 @@
     "county": "South Tyrol",
     "state": "Trentino – Alto Adige/Südtirol",
     "country": "Italy"
+  },
+  "46.68,11.19": {
+    "city": "Schenna - Scena",
+    "municipality": "Burggrafenamt - Burgraviato",
+    "county": "South Tyrol",
+    "state": "Trentino – Alto Adige/Südtirol",
+    "country": "Italy"
+  },
+  "46.68,9.67": {
+    "city": "Albula/Alvra",
+    "county": "Albula/Alvra",
+    "state": "Grisons",
+    "country": "Switzerland"
   },
   "46.69,12.08": {
     "city": "Prags - Braies",
@@ -1583,6 +3312,12 @@
     "state": "Grisons",
     "country": "Switzerland"
   },
+  "46.75,14.44": {
+    "village": "Sankt Georgen am Längsee",
+    "county": "Bezirk St. Veit an der Glan",
+    "state": "Carinthia",
+    "country": "Austria"
+  },
   "46.75,9.13": {
     "city": "Obersaxen-Mundaun",
     "county": "Surselva",
@@ -1601,9 +3336,33 @@
     "state": "Carinthia",
     "country": "Austria"
   },
+  "46.77,9.07": {
+    "village": "Breil/Brigels",
+    "county": "Surselva",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.77,9.10": {
+    "village": "Breil/Brigels",
+    "county": "Surselva",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
   "46.78,9.10": {
     "village": "Breil/Brigels",
     "county": "Surselva",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.78,9.14": {
+    "city": "Ilanz/Glion",
+    "county": "Surselva",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.78,9.67": {
+    "village": "Arosa",
+    "county": "Plessur",
     "state": "Grisons",
     "country": "Switzerland"
   },
@@ -1611,6 +3370,9 @@
     "county": "Pierce County",
     "state": "Washington",
     "country": "United States"
+  },
+  "46.79,-2.09": {
+    "country": "France"
   },
   "46.79,-71.25": {
     "city": "Quebec",
@@ -1624,11 +3386,29 @@
     "state": "Grisons",
     "country": "Switzerland"
   },
+  "46.81,-71.20": {
+    "city": "Quebec",
+    "county": "Urban agglomeration of Québec",
+    "state": "Quebec",
+    "country": "Canada"
+  },
   "46.81,-71.21": {
     "city": "Quebec",
     "county": "Urban agglomeration of Québec",
     "state": "Quebec",
     "country": "Canada"
+  },
+  "46.81,10.27": {
+    "village": "Scuol",
+    "county": "Engiadina Bassa/Val Müstair",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.81,9.32": {
+    "village": "Flims",
+    "county": "Imboden",
+    "state": "Grisons",
+    "country": "Switzerland"
   },
   "46.82,7.17": {
     "village": "Granges-Paccot",
@@ -1642,6 +3422,47 @@
     "county": "South Tyrol",
     "state": "Trentino – Alto Adige/Südtirol",
     "country": "Italy"
+  },
+  "46.83,9.32": {
+    "village": "Flims",
+    "county": "Imboden",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.84,9.85": {
+    "town": "Davos",
+    "county": "Prättigau/Davos",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.85,-121.76": {
+    "county": "Pierce County",
+    "state": "Washington",
+    "country": "United States"
+  },
+  "46.85,10.34": {
+    "city": "Valsot",
+    "county": "Engiadina Bassa/Val Müstair",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
+  "46.89,-71.15": {
+    "city": "Quebec",
+    "county": "Urban agglomeration of Québec",
+    "state": "Quebec",
+    "country": "Canada"
+  },
+  "46.89,-71.25": {
+    "city": "Quebec",
+    "county": "Urban agglomeration of Québec",
+    "state": "Quebec",
+    "country": "Canada"
+  },
+  "46.93,6.72": {
+    "village": "Provence",
+    "county": "District du Jura-Nord vaudois",
+    "state": "Vaud",
+    "country": "Switzerland"
   },
   "46.97,11.19": {
     "city": "Ratschings - Racines",
@@ -1657,6 +3478,12 @@
     "state": "Trentino – Alto Adige/Südtirol",
     "country": "Italy"
   },
+  "46.97,9.58": {
+    "village": "Malans",
+    "county": "Landquart",
+    "state": "Grisons",
+    "country": "Switzerland"
+  },
   "46.98,-103.49": {
     "county": "Billings County",
     "state": "North Dakota",
@@ -1667,6 +3494,37 @@
     "county": "Bezirk Innsbruck-Land",
     "state": "Tyrol",
     "country": "Austria"
+  },
+  "46.98,11.27": {
+    "village": "Gschnitz",
+    "county": "Bezirk Innsbruck-Land",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
+  "46.99,-70.82": {
+    "village": "Saint-François-de-l'Île-d'Orléans",
+    "county": "L'Île-d'Orléans",
+    "state": "Quebec",
+    "country": "Canada"
+  },
+  "46.99,11.26": {
+    "village": "Gschnitz",
+    "county": "Bezirk Innsbruck-Land",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
+  "46.99,11.28": {
+    "village": "Gschnitz",
+    "county": "Bezirk Innsbruck-Land",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
+  "46.99,11.32": {
+    "city": "Brenner - Brennero",
+    "municipality": "Wipptal - Alta Vall'Isarco",
+    "county": "South Tyrol",
+    "state": "Trentino – Alto Adige/Südtirol",
+    "country": "Italy"
   },
   "47.00,11.16": {
     "village": "Neustift im Stubaital",
@@ -1686,6 +3544,12 @@
     "state": "Tyrol",
     "country": "Austria"
   },
+  "47.04,11.31": {
+    "village": "Gschnitz",
+    "county": "Bezirk Innsbruck-Land",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
   "47.05,8.31": {
     "city": "Lucerne",
     "state": "Lucerne",
@@ -1697,10 +3561,21 @@
     "state": "Vorarlberg",
     "country": "Austria"
   },
+  "47.07,11.45": {
+    "village": "Steinach am Brenner",
+    "county": "Bezirk Innsbruck-Land",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
   "47.08,8.56": {
     "town": "Arth",
     "county": "Schwyz",
     "state": "Schwyz",
+    "country": "Switzerland"
+  },
+  "47.10,8.55": {
+    "village": "Walchwil",
+    "state": "Zug",
     "country": "Switzerland"
   },
   "47.12,10.50": {
@@ -1709,10 +3584,33 @@
     "state": "Tyrol",
     "country": "Austria"
   },
+  "47.14,7.03": {
+    "village": "Villeret",
+    "county": "Bernese Jura administrative district",
+    "state": "Bern",
+    "country": "Switzerland"
+  },
+  "47.17,-71.37": {
+    "village": "Stoneham-et-Tewkesbury",
+    "county": "La Jacques-Cartier",
+    "state": "Quebec",
+    "country": "Canada"
+  },
   "47.17,8.51": {
     "town": "Zug",
     "state": "Zug",
     "country": "Switzerland"
+  },
+  "47.17,8.52": {
+    "town": "Zug",
+    "state": "Zug",
+    "country": "Switzerland"
+  },
+  "47.20,-71.38": {
+    "village": "Stoneham-et-Tewkesbury",
+    "county": "La Jacques-Cartier",
+    "state": "Quebec",
+    "country": "Canada"
   },
   "47.20,-91.37": {
     "city": "Beaver Bay Township",
@@ -1726,6 +3624,29 @@
     "state": "St. Gallen",
     "country": "Switzerland"
   },
+  "47.25,1.35": {
+    "village": "Saint-Aignan",
+    "municipality": "Romorantin-Lanthenay",
+    "county": "Loir-et-Cher",
+    "state": "Centre-Val de Loire",
+    "country": "France"
+  },
+  "47.28,9.41": {
+    "city": "Schwende-Rüte",
+    "state": "Appenzell Innerrhoden",
+    "country": "Switzerland"
+  },
+  "47.29,8.53": {
+    "village": "Langnau am Albis",
+    "county": "Bezirk Horgen",
+    "state": "Zurich",
+    "country": "Switzerland"
+  },
+  "47.31,11.38": {
+    "city": "Innsbruck",
+    "state": "Tyrol",
+    "country": "Austria"
+  },
   "47.31,37.09": {
     "municipality": "Nikolske Settlement Hromada",
     "county": "Mariupol Raion",
@@ -1738,11 +3659,40 @@
     "state": "Vorarlberg",
     "country": "Austria"
   },
+  "47.37,8.57": {
+    "city": "Zurich",
+    "county": "District Zurich",
+    "state": "Zurich",
+    "country": "Switzerland"
+  },
+  "47.40,9.82": {
+    "village": "Schwarzenberg",
+    "county": "Bezirk Bregenz",
+    "state": "Vorarlberg",
+    "country": "Austria"
+  },
+  "47.50,-123.78": {
+    "county": "Grays Harbor County",
+    "state": "Washington",
+    "country": "United States"
+  },
   "47.51,19.05": {
     "city": "Budapest",
     "country": "Hungary"
   },
+  "47.52,12.85": {
+    "village": "Weißbach bei Lofer",
+    "county": "Bezirk Zell am See",
+    "state": "Salzburg",
+    "country": "Austria"
+  },
   "47.55,10.73": {
+    "city": "Schwangau",
+    "county": "Landkreis Ostallgäu",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.55,10.74": {
     "city": "Schwangau",
     "county": "Landkreis Ostallgäu",
     "state": "Bavaria",
@@ -1754,12 +3704,131 @@
     "state": "Bavaria",
     "country": "Germany"
   },
+  "47.56,10.78": {
+    "city": "Schwangau",
+    "county": "Landkreis Ostallgäu",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.56,12.80": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.57,-69.87": {
+    "county": "Kamouraska (MRC)",
+    "state": "Quebec",
+    "country": "Canada"
+  },
   "47.57,10.96": {
     "city": "Ettal",
     "municipality": "Unterammergau (VGem)",
     "county": "Landkreis Garmisch-Partenkirchen",
     "state": "Bavaria",
     "country": "Germany"
+  },
+  "47.58,12.81": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.58,14.46": {
+    "city": "Admont",
+    "county": "Bezirk Liezen",
+    "state": "Styria",
+    "country": "Austria"
+  },
+  "47.59,13.05": {
+    "village": "Schönau am Königssee",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.59,13.07": {
+    "village": "Schönau am Königssee",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.61,12.85": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.61,12.86": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.61,12.90": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.62,-122.35": {
+    "city": "Seattle",
+    "county": "King County",
+    "state": "Washington",
+    "country": "United States"
+  },
+  "47.62,12.88": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.63,12.88": {
+    "village": "Ramsau bei Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.63,12.99": {
+    "village": "Bischofswiesen",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.65,13.00": {
+    "town": "Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.65,13.02": {
+    "town": "Berchtesgaden",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.68,8.61": {
+    "town": "Neuhausen am Rheinfall",
+    "county": "Bezirk Schaffhausen",
+    "state": "Schaffhausen",
+    "country": "Switzerland"
+  },
+  "47.69,12.99": {
+    "city": "Schellenberger Forst",
+    "county": "Landkreis Berchtesgadener Land",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "47.69,7.76": {
+    "city": "Steinen",
+    "county": "Landkreis Lörrach",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "47.70,8.64": {
+    "town": "Schaffhausen",
+    "county": "Bezirk Schaffhausen",
+    "state": "Schaffhausen",
+    "country": "Switzerland"
   },
   "47.80,13.05": {
     "city": "Salzburg",
@@ -1771,14 +3840,34 @@
     "state": "Salzburg",
     "country": "Austria"
   },
+  "47.81,7.10": {
+    "town": "Thann",
+    "municipality": "Thann-Guebwiller",
+    "county": "Haut-Rhin",
+    "state": "Grand Est",
+    "country": "France"
+  },
   "47.84,-69.54": {
     "city": "Rivière-du-Loup",
     "county": "Rivière-du-Loup (MRC)",
     "state": "Quebec",
     "country": "Canada"
   },
+  "47.84,8.02": {
+    "municipality": "Bernau im Schwarzwald",
+    "county": "Landkreis Waldshut",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
   "47.85,7.28": {
     "village": "Ungersheim",
+    "municipality": "Mulhouse",
+    "county": "Haut-Rhin",
+    "state": "Grand Est",
+    "country": "France"
+  },
+  "47.85,7.29": {
+    "village": "Pulversheim",
     "municipality": "Mulhouse",
     "county": "Haut-Rhin",
     "state": "Grand Est",
@@ -1790,9 +3879,40 @@
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
+  "47.89,-124.63": {
+    "county": "Clallam County",
+    "state": "Washington",
+    "country": "United States"
+  },
+  "47.90,7.10": {
+    "village": "Soultz-Haut-Rhin",
+    "municipality": "Thann-Guebwiller",
+    "county": "Haut-Rhin",
+    "state": "Grand Est",
+    "country": "France"
+  },
+  "47.92,24.31": {
+    "municipality": "Bohdan Rural Hromada",
+    "state": "Zakarpattia Oblast",
+    "country": "Ukraine"
+  },
   "47.94,8.83": {
     "municipality": "Emmingen-Liptingen",
     "county": "Landkreis Tuttlingen",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "47.99,0.50": {
+    "village": "Le Breil-sur-Mérize",
+    "municipality": "Mamers",
+    "county": "Sarthe",
+    "state": "Pays de la Loire",
+    "country": "France"
+  },
+  "48.09,9.21": {
+    "town": "Sigmaringen",
+    "municipality": "GVV Sigmaringen",
+    "county": "Landkreis Sigmaringen",
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
@@ -1819,6 +3939,13 @@
     "city": "Vienna",
     "country": "Austria"
   },
+  "48.20,7.31": {
+    "village": "Ribeauvillé",
+    "municipality": "Colmar-Ribeauvillé",
+    "county": "Haut-Rhin",
+    "state": "Grand Est",
+    "country": "France"
+  },
   "48.21,15.37": {
     "village": "Loosdorf",
     "county": "Bezirk Melk",
@@ -1833,7 +3960,30 @@
     "city": "Vienna",
     "country": "Austria"
   },
+  "48.22,14.78": {
+    "village": "Klam",
+    "county": "Bezirk Perg",
+    "state": "Upper Austria",
+    "country": "Austria"
+  },
+  "48.22,14.79": {
+    "village": "Klam",
+    "county": "Bezirk Perg",
+    "state": "Upper Austria",
+    "country": "Austria"
+  },
   "48.22,24.54": {
+    "municipality": "Yasinia Settlement Hromada",
+    "state": "Zakarpattia Oblast",
+    "country": "Ukraine"
+  },
+  "48.23,15.33": {
+    "town": "Melk",
+    "county": "Bezirk Melk",
+    "state": "Lower Austria",
+    "country": "Austria"
+  },
+  "48.23,24.23": {
     "municipality": "Yasinia Settlement Hromada",
     "state": "Zakarpattia Oblast",
     "country": "Ukraine"
@@ -1858,12 +4008,29 @@
     "state": "Normandy",
     "country": "France"
   },
+  "48.35,15.61": {
+    "city": "Paudorf",
+    "county": "Bezirk Krems",
+    "state": "Lower Austria",
+    "country": "Austria"
+  },
   "48.35,5.70": {
     "city": "Neufchâteau",
     "municipality": "Neufchâteau",
     "county": "Vosges",
     "state": "Grand Est",
     "country": "France"
+  },
+  "48.36,10.90": {
+    "city": "Augsburg",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "48.38,15.53": {
+    "city": "Bergern im Dunkelsteinerwald",
+    "county": "Bezirk Krems",
+    "state": "Lower Austria",
+    "country": "Austria"
   },
   "48.40,2.70": {
     "town": "Fontainebleau",
@@ -1878,6 +4045,25 @@
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
+  "48.43,18.90": {
+    "town": "Banská Štiavnica",
+    "county": "District of Banská Štiavnica",
+    "country": "Slovakia"
+  },
+  "48.49,9.40": {
+    "town": "Bad Urach",
+    "municipality": "VVG der Stadt Bad Urach",
+    "county": "Landkreis Reutlingen",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "48.51,8.99": {
+    "town": "Rottenburg am Neckar",
+    "municipality": "VVG der Stadt Rottenburg am Neckar",
+    "county": "Landkreis Tübingen",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
   "48.57,13.47": {
     "town": "Passau",
     "state": "Bavaria",
@@ -1886,6 +4072,12 @@
   "48.62,-1.49": {
     "country": "France"
   },
+  "48.64,16.28": {
+    "village": "Stronsdorf",
+    "county": "Bezirk Mistelbach",
+    "state": "Lower Austria",
+    "country": "Austria"
+  },
   "48.67,8.16": {
     "city": "Bühl",
     "municipality": "VVG der Stadt Bühl",
@@ -1893,12 +4085,84 @@
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
+  "48.69,9.83": {
+    "town": "Donzdorf",
+    "municipality": "GVV Mittleres Fils-Lautertal",
+    "county": "Landkreis Göppingen",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "48.70,106.74": {
+    "county": "Mandal",
+    "state": "Selenge",
+    "country": "Mongolia"
+  },
+  "48.70,13.94": {
+    "village": "Ulrichsberg",
+    "county": "Bezirk Rohrbach",
+    "state": "Upper Austria",
+    "country": "Austria"
+  },
+  "48.76,20.07": {
+    "municipality": "Muráň",
+    "country": "Slovakia"
+  },
   "48.77,9.17": {
     "city": "Stuttgart",
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
+  "48.78,2.45": {
+    "town": "Créteil",
+    "municipality": "Créteil",
+    "county": "Val-de-Marne",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  "48.80,9.70": {
+    "town": "Lorch",
+    "county": "Ostalbkreis",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "48.81,9.21": {
+    "city": "Stuttgart",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "48.82,2.22": {
+    "town": "Sèvres",
+    "municipality": "Boulogne-Billancourt",
+    "county": "Hauts-de-Seine",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  "48.83,16.67": {
+    "town": "Mikulov",
+    "county": "okres Břeclav",
+    "state": "South Moravian Region",
+    "country": "Czechia"
+  },
+  "48.84,2.95": {
+    "village": "Guérard",
+    "municipality": "Meaux",
+    "county": "Seine-et-Marne",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  "48.86,2.29": {
+    "city": "Paris",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
   "48.93,2.31": {
+    "town": "Gennevilliers",
+    "municipality": "Nanterre",
+    "county": "Hauts-de-Seine",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  "48.93,2.32": {
     "town": "Gennevilliers",
     "municipality": "Nanterre",
     "county": "Hauts-de-Seine",
@@ -1926,6 +4190,20 @@
     "state": "Ile-de-France",
     "country": "France"
   },
+  "48.96,2.51": {
+    "town": "Aulnay-sous-Bois",
+    "municipality": "Le Raincy",
+    "county": "Seine-Saint-Denis",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
+  "48.99,2.21": {
+    "town": "Franconville",
+    "municipality": "Argenteuil",
+    "county": "Val-d'Oise",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
   "49.00,2.21": {
     "town": "Montigny-lès-Cormeilles",
     "municipality": "Argenteuil",
@@ -1938,9 +4216,42 @@
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
+  "49.02,23.27": {
+    "municipality": "Skole Urban Hromada",
+    "county": "Stryi Raion",
+    "state": "Lviv Oblast",
+    "country": "Ukraine"
+  },
+  "49.02,8.98": {
+    "municipality": "Sachsenheim",
+    "county": "Landkreis Ludwigsburg",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.03,12.22": {
+    "city": "Donaustauf",
+    "municipality": "Donaustauf (VGem)",
+    "county": "Landkreis Regensburg",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "49.05,2.31": {
+    "village": "Baillet-en-France",
+    "municipality": "Sarcelles",
+    "county": "Val-d'Oise",
+    "state": "Ile-de-France",
+    "country": "France"
+  },
   "49.06,9.35": {
     "town": "Beilstein",
     "municipality": "GVV Schozach-Bottwartal",
+    "county": "Landkreis Heilbronn",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.08,9.01": {
+    "village": "Güglingen",
+    "municipality": "GVV Oberes Zabergäu",
     "county": "Landkreis Heilbronn",
     "state": "Baden-Württemberg",
     "country": "Germany"
@@ -1952,10 +4263,22 @@
     "state": "Rhineland-Palatinate",
     "country": "Germany"
   },
+  "49.11,9.74": {
+    "town": "Schwäbisch Hall",
+    "municipality": "VVG der Stadt Schwäbisch Hall",
+    "county": "Landkreis Schwäbisch Hall",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
   "49.12,9.73": {
     "town": "Schwäbisch Hall",
     "municipality": "VVG der Stadt Schwäbisch Hall",
     "county": "Landkreis Schwäbisch Hall",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.13,9.18": {
+    "city": "Heilbronn",
     "state": "Baden-Württemberg",
     "country": "Germany"
   },
@@ -1972,10 +4295,53 @@
     "state": "Rhineland-Palatinate",
     "country": "Germany"
   },
+  "49.17,-121.68": {
+    "city": "Area E (Chilliwack River Valley)",
+    "county": "Fraser Valley Regional District",
+    "state": "British Columbia",
+    "country": "Canada"
+  },
+  "49.17,8.28": {
+    "village": "Rülzheim",
+    "municipality": "Rülzheim",
+    "county": "Landkreis Germersheim",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "49.18,-121.68": {
+    "city": "Area E (Chilliwack River Valley)",
+    "county": "Fraser Valley Regional District",
+    "state": "British Columbia",
+    "country": "Canada"
+  },
   "49.18,20.09": {
     "municipality": "Tatranská Javorina",
     "county": "District of Poprad",
     "country": "Slovakia"
+  },
+  "49.18,9.11": {
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.19,20.23": {
+    "town": "Vysoké Tatry",
+    "county": "District of Poprad",
+    "country": "Slovakia"
+  },
+  "49.19,7.91": {
+    "village": "Wernersberg",
+    "municipality": "Annweiler am Trifels",
+    "county": "Landkreis Südliche Weinstraße",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "49.20,9.24": {
+    "town": "Neckarsulm",
+    "municipality": "VVG der Stadt Neckarsulm",
+    "county": "Landkreis Heilbronn",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
   },
   "49.21,9.99": {
     "town": "Kirchberg an der Jagst",
@@ -1983,6 +4349,11 @@
     "county": "Landkreis Schwäbisch Hall",
     "state": "Baden-Württemberg",
     "country": "Germany"
+  },
+  "49.22,-107.56": {
+    "municipality": "Val Marie No. 17",
+    "state": "Saskatchewan",
+    "country": "Canada"
   },
   "49.22,9.18": {
     "town": "Bad Wimpfen",
@@ -2013,11 +4384,37 @@
     "state": "Saarland",
     "country": "Germany"
   },
+  "49.25,9.85": {
+    "town": "Langenburg",
+    "municipality": "VVG der Stadt Gerabronn",
+    "county": "Landkreis Schwäbisch Hall",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.27,9.15": {
+    "town": "Gundelsheim",
+    "county": "Landkreis Heilbronn",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.27,9.27": {
+    "town": "Neuenstadt am Kocher",
+    "municipality": "VVG der Stadt Neuenstadt am Kocher",
+    "county": "Landkreis Heilbronn",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
   "49.28,13.62": {
     "town": "Rabí",
     "county": "okres Klatovy",
     "state": "Plzeň Region",
     "country": "Czechia"
+  },
+  "49.28,20.00": {
+    "town": "Zakopane",
+    "county": "Tatra County",
+    "state": "Lesser Poland Voivodeship",
+    "country": "Poland"
   },
   "49.29,-0.20": {
     "country": "France"
@@ -2032,18 +4429,71 @@
     "municipality": "Lechnica",
     "country": "Slovakia"
   },
+  "49.42,8.65": {
+    "city": "Heidelberg",
+    "state": "Baden-Württemberg",
+    "country": "Germany"
+  },
+  "49.43,-123.01": {
+    "city": "Electoral Area A",
+    "county": "Metro Vancouver Regional District",
+    "state": "British Columbia",
+    "country": "Canada"
+  },
   "49.49,6.36": {
     "city": "Schengen",
     "county": "Canton Remich",
     "country": "Luxembourg"
+  },
+  "49.52,15.91": {
+    "country": "Czechia"
+  },
+  "49.58,19.55": {
+    "village": "Zawoja",
+    "municipality": "gmina Zawoja",
+    "county": "Sucha County",
+    "state": "Lesser Poland Voivodeship",
+    "country": "Poland"
   },
   "49.61,6.13": {
     "city": "Luxembourg",
     "county": "Canton Luxembourg",
     "country": "Luxembourg"
   },
+  "49.67,25.48": {
+    "municipality": "Ternopil Urban Hromada",
+    "state": "Ternopil Oblast",
+    "country": "Ukraine"
+  },
+  "49.71,0.19": {
+    "country": "France"
+  },
+  "49.74,10.96": {
+    "city": "Hallerndorf",
+    "county": "Landkreis Forchheim",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "49.75,31.53": {
+    "municipality": "Ліплявська сільська громада",
+    "county": "Cherkasy Raion",
+    "state": "Cherkasy Oblast",
+    "country": "Ukraine"
+  },
   "49.75,6.63": {
     "city": "Trier",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "49.76,10.82": {
+    "city": "Pommersfelden",
+    "county": "Landkreis Bamberg",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "49.76,6.64": {
+    "city": "Trier",
+    "municipality": "Trierweiler",
     "state": "Rhineland-Palatinate",
     "country": "Germany"
   },
@@ -2068,11 +4518,68 @@
     "state": "Rhineland-Palatinate",
     "country": "Germany"
   },
+  "49.86,1.08": {
+    "village": "Tourville-sur-Arques",
+    "municipality": "Dieppe",
+    "county": "Seine-Maritime",
+    "state": "Normandy",
+    "country": "France"
+  },
+  "49.87,10.21": {
+    "city": "Volkach",
+    "municipality": "Volkach (VGem)",
+    "county": "Landkreis Kitzingen",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "49.88,6.65": {
+    "city": "Zemmer",
+    "municipality": "Trier-Land",
+    "county": "Landkreis Trier-Saarburg",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "49.94,14.20": {
+    "county": "okres Beroun",
+    "state": "Central Bohemian Region",
+    "country": "Czechia"
+  },
+  "49.95,11.06": {
+    "city": "Scheßlitz",
+    "county": "Landkreis Bamberg",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "49.96,-123.02": {
+    "city": "Area D (Elaho/Garibaldi)",
+    "county": "Squamish-Lillooet Regional District",
+    "state": "British Columbia",
+    "country": "Canada"
+  },
+  "49.96,8.21": {
+    "city": "Mainz",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "49.97,19.64": {
+    "village": "Brzeznica",
+    "municipality": "gmina Brzeźnica",
+    "county": "Wadowice County",
+    "state": "Lesser Poland Voivodeship",
+    "country": "Poland"
+  },
   "49.97,7.88": {
     "town": "Bingen am Rhein",
     "county": "Landkreis Mainz-Bingen",
     "state": "Rhineland-Palatinate",
     "country": "Germany"
+  },
+  "49.98,19.76": {
+    "village": "Ochodza",
+    "municipality": "gmina Skawina",
+    "county": "Kraków County",
+    "state": "Lesser Poland Voivodeship",
+    "country": "Poland"
   },
   "49.98,8.51": {
     "municipality": "Mörfelden-Walldorf",
@@ -2087,15 +4594,54 @@
     "state": "Lesser Poland Voivodeship",
     "country": "Poland"
   },
+  "5.02,-75.36": {
+    "city": "Manizales",
+    "municipality": "Río Blanco",
+    "state": "Caldas",
+    "country": "Colombia"
+  },
   "5.07,-75.44": {
     "city": "Manizales",
     "municipality": "Río Blanco",
     "state": "Caldas",
     "country": "Colombia"
   },
+  "5.23,-2.65": {
+    "county": "Jomoro Municipal District",
+    "state": "Western Region",
+    "country": "Ghana"
+  },
+  "5.33,-1.38": {
+    "county": "Twifo/Hemang/Lower Denkyira District",
+    "state": "Central Region",
+    "country": "Ghana"
+  },
+  "5.85,-76.18": {
+    "county": "El Carmen de Atrato",
+    "state": "Chocó",
+    "country": "Colombia"
+  },
   "50.04,11.86": {
     "city": "Neubauer Forst Nord",
     "county": "Landkreis Bayreuth",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
+  "50.04,8.98": {
+    "municipality": "Seligenstadt",
+    "county": "Landkreis Offenbach",
+    "state": "Hesse",
+    "country": "Germany"
+  },
+  "50.05,25.62": {
+    "municipality": "Kremenets Urban Hromada",
+    "county": "Kremenets Raion",
+    "state": "Ternopil Oblast",
+    "country": "Ukraine"
+  },
+  "50.06,11.30": {
+    "town": "Weismain",
+    "county": "Landkreis Lichtenfels",
     "state": "Bavaria",
     "country": "Germany"
   },
@@ -2138,11 +4684,21 @@
     "state": "Rhineland-Palatinate",
     "country": "Germany"
   },
+  "50.10,8.66": {
+    "city": "Frankfurt",
+    "state": "Hesse",
+    "country": "Germany"
+  },
   "50.11,-125.38": {
     "city": "Area A (Kyuquot/Nootka/Sayward)",
     "county": "Strathcona Regional District",
     "state": "British Columbia",
     "country": "Canada"
+  },
+  "50.11,8.71": {
+    "city": "Frankfurt",
+    "state": "Hesse",
+    "country": "Germany"
   },
   "50.14,7.17": {
     "town": "Cochem",
@@ -2156,6 +4712,12 @@
     "municipality": "Hunsrück-Mittelrhein",
     "county": "Rhein-Hunsrück-Kreis",
     "state": "Rhineland-Palatinate",
+    "country": "Germany"
+  },
+  "50.15,10.28": {
+    "municipality": "Üchtelhausen",
+    "county": "Landkreis Schweinfurt",
+    "state": "Bavaria",
     "country": "Germany"
   },
   "50.15,7.72": {
@@ -2226,12 +4788,31 @@
     "state": "Bavaria",
     "country": "Germany"
   },
+  "50.43,9.94": {
+    "municipality": "Gersfeld (Rhön)",
+    "county": "Landkreis Fulda",
+    "state": "Hesse",
+    "country": "Germany"
+  },
   "50.45,30.51": {
     "city": "Kyiv",
     "country": "Ukraine"
   },
+  "50.49,10.06": {
+    "village": "Hausen",
+    "municipality": "Fladungen (VGem)",
+    "county": "Landkreis Rhön-Grabfeld",
+    "state": "Bavaria",
+    "country": "Germany"
+  },
   "50.49,9.92": {
     "municipality": "Poppenhausen (Wasserkuppe)",
+    "county": "Landkreis Fulda",
+    "state": "Hesse",
+    "country": "Germany"
+  },
+  "50.52,9.91": {
+    "municipality": "Hilders",
     "county": "Landkreis Fulda",
     "state": "Hesse",
     "country": "Germany"
@@ -2248,6 +4829,26 @@
     "state": "Hesse",
     "country": "Germany"
   },
+  "50.59,-3.46": {
+    "city": "Teignbridge",
+    "county": "Devon",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "50.60,11.10": {
+    "city": "Schwarzatal",
+    "municipality": "Schwarzatal",
+    "county": "Landkreis Saalfeld-Rudolstadt",
+    "state": "Thuringia",
+    "country": "Germany"
+  },
+  "50.61,11.09": {
+    "city": "Schwarzatal",
+    "municipality": "Schwarzatal",
+    "county": "Landkreis Saalfeld-Rudolstadt",
+    "state": "Thuringia",
+    "country": "Germany"
+  },
   "50.67,2.90": {
     "village": "La Chapelle-d'Armentières",
     "municipality": "Lille",
@@ -2255,10 +4856,24 @@
     "state": "Hauts-de-France",
     "country": "France"
   },
+  "50.70,11.11": {
+    "town": "Königsee",
+    "municipality": "Königsee",
+    "county": "Landkreis Saalfeld-Rudolstadt",
+    "state": "Thuringia",
+    "country": "Germany"
+  },
   "50.71,-2.76": {
     "county": "Dorset",
     "state": "England",
     "country": "United Kingdom"
+  },
+  "50.71,3.17": {
+    "town": "Tourcoing",
+    "municipality": "Lille",
+    "county": "Nord",
+    "state": "Hauts-de-France",
+    "country": "France"
   },
   "50.74,25.32": {
     "city": "Lutsk",
@@ -2284,10 +4899,21 @@
     "state": "North Rhine-Westphalia",
     "country": "Germany"
   },
+  "50.85,4.26": {
+    "town": "Dilbeek",
+    "county": "Halle-Vilvoorde",
+    "state": "Flemish Brabant",
+    "country": "Belgium"
+  },
   "50.94,6.97": {
     "city": "Cologne",
     "state": "North Rhine-Westphalia",
     "country": "Germany"
+  },
+  "50.96,-115.12": {
+    "county": "Kananaskis Improvement District",
+    "state": "Alberta",
+    "country": "Canada"
   },
   "51.02,11.03": {
     "city": "Erfurt",
@@ -2305,6 +4931,16 @@
     "state": "British Columbia",
     "country": "Canada"
   },
+  "51.06,-115.41": {
+    "county": "Kananaskis Improvement District",
+    "state": "Alberta",
+    "country": "Canada"
+  },
+  "51.07,-115.20": {
+    "county": "Municipal District of Bighorn",
+    "state": "Alberta",
+    "country": "Canada"
+  },
   "51.10,17.08": {
     "city": "Wrocław",
     "state": "Lower Silesian Voivodeship",
@@ -2317,6 +4953,11 @@
     "country": "Poland"
   },
   "51.18,-115.72": {
+    "county": "Improvement District No. 9",
+    "state": "Alberta",
+    "country": "Canada"
+  },
+  "51.25,-116.00": {
     "county": "Improvement District No. 9",
     "state": "Alberta",
     "country": "Canada"
@@ -2344,6 +4985,22 @@
     "state": "Hesse",
     "country": "Germany"
   },
+  "51.39,9.42": {
+    "municipality": "Calden",
+    "county": "Landkreis Kassel",
+    "state": "Hesse",
+    "country": "Germany"
+  },
+  "51.40,-116.13": {
+    "county": "Improvement District No. 9",
+    "state": "Alberta",
+    "country": "Canada"
+  },
+  "51.40,-3.50": {
+    "county": "Vale of Glamorgan",
+    "state": "Wales",
+    "country": "United Kingdom"
+  },
   "51.43,-0.28": {
     "city": "Greater London",
     "state": "England",
@@ -2352,6 +5009,12 @@
   "51.44,-2.86": {
     "county": "North Somerset",
     "state": "England",
+    "country": "United Kingdom"
+  },
+  "51.46,-3.17": {
+    "city": "Cardiff",
+    "county": "Cardiff",
+    "state": "Wales",
     "country": "United Kingdom"
   },
   "51.48,-9.83": {
@@ -2375,11 +5038,35 @@
     "state": "England",
     "country": "United Kingdom"
   },
+  "51.52,3.45": {
+    "village": "Westkapelle",
+    "municipality": "Veere",
+    "state": "Zeeland",
+    "country": "Netherlands"
+  },
+  "51.53,9.93": {
+    "city": "Göttingen",
+    "municipality": "Radolfshausen",
+    "county": "Landkreis Göttingen",
+    "state": "Lower Saxony",
+    "country": "Germany"
+  },
+  "51.57,-0.14": {
+    "city": "Greater London",
+    "state": "England",
+    "country": "United Kingdom"
+  },
   "51.61,-1.24": {
     "city": "South Oxfordshire",
     "county": "Oxfordshire",
     "state": "England",
     "country": "United Kingdom"
+  },
+  "51.71,7.39": {
+    "town": "Olfen",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
   },
   "51.72,10.63": {
     "town": "Braunlage",
@@ -2387,13 +5074,108 @@
     "state": "Lower Saxony",
     "country": "Germany"
   },
+  "51.73,-5.30": {
+    "city": "St Davids",
+    "county": "Pembrokeshire",
+    "state": "Wales",
+    "country": "United Kingdom"
+  },
   "51.73,7.23": {
     "town": "Haltern am See",
     "county": "Kreis Recklinghausen",
     "state": "North Rhine-Westphalia",
     "country": "Germany"
   },
+  "51.75,-1.26": {
+    "city": "Oxford",
+    "county": "Oxfordshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "51.75,-1.30": {
+    "city": "Vale of White Horse",
+    "county": "Oxfordshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "51.75,10.61": {
+    "town": "Braunlage",
+    "county": "Landkreis Goslar",
+    "state": "Lower Saxony",
+    "country": "Germany"
+  },
+  "51.78,7.44": {
+    "town": "Lüdinghausen",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.79,-1.30": {
+    "city": "Cherwell District",
+    "county": "Oxfordshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "51.79,7.29": {
+    "town": "Dülmen",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.80,104.35": {
+    "municipality": "Marituy settlement",
+    "county": "Slyudyansky District",
+    "state": "Irkutsk Oblast",
+    "country": "Russia"
+  },
+  "51.81,-0.65": {
+    "city": "Dacorum",
+    "county": "Hertfordshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "51.81,7.45": {
+    "town": "Lüdinghausen",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.83,10.80": {
+    "town": "Wernigerode",
+    "county": "Landkreis Harz",
+    "state": "Saxony-Anhalt",
+    "country": "Germany"
+  },
+  "51.83,7.26": {
+    "town": "Dülmen",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.85,8.68": {
+    "town": "Hövelhof",
+    "county": "Kreis Paderborn",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.87,8.92": {
+    "municipality": "Horn-Bad Meinberg",
+    "county": "Kreis Lippe",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.92,7.23": {
+    "town": "Coesfeld",
+    "county": "Kreis Coesfeld",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
   "51.95,7.64": {
+    "city": "Münster",
+    "state": "North Rhine-Westphalia",
+    "country": "Germany"
+  },
+  "51.96,7.61": {
     "city": "Münster",
     "state": "North Rhine-Westphalia",
     "country": "Germany"
@@ -2408,6 +5190,11 @@
     "state": "England",
     "country": "United Kingdom"
   },
+  "52.03,-1.29": {
+    "county": "West Northamptonshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
   "52.04,14.04": {
     "municipality": "Märkische Heide",
     "county": "Dahme-Spreewald",
@@ -2419,10 +5206,39 @@
     "state": "Brest Region",
     "country": "Belarus"
   },
+  "52.14,9.71": {
+    "town": "Elze",
+    "county": "Landkreis Hildesheim",
+    "state": "Lower Saxony",
+    "country": "Germany"
+  },
+  "52.17,9.78": {
+    "town": "Nordstemmen",
+    "county": "Landkreis Hildesheim",
+    "state": "Lower Saxony",
+    "country": "Germany"
+  },
   "52.21,-117.23": {
     "county": "Improvement District No. 12",
     "state": "Alberta",
     "country": "Canada"
+  },
+  "52.24,21.02": {
+    "city": "Warsaw",
+    "state": "Masovian Voivodeship",
+    "country": "Poland"
+  },
+  "52.33,5.07": {
+    "city": "Muiden",
+    "municipality": "Gooise Meren",
+    "state": "North Holland",
+    "country": "Netherlands"
+  },
+  "52.33,5.90": {
+    "village": "Emst",
+    "municipality": "Epe",
+    "state": "Gelderland",
+    "country": "Netherlands"
   },
   "52.35,22.61": {
     "municipality": "gmina Korczew",
@@ -2447,6 +5263,20 @@
     "state": "North Holland",
     "country": "Netherlands"
   },
+  "52.51,13.38": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "52.52,13.37": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "52.56,5.92": {
+    "town": "Kampen",
+    "municipality": "Kampen",
+    "state": "Overijssel",
+    "country": "Netherlands"
+  },
   "52.58,13.29": {
     "city": "Berlin",
     "country": "Germany"
@@ -2454,6 +5284,24 @@
   "52.59,13.27": {
     "city": "Berlin",
     "country": "Germany"
+  },
+  "52.67,13.28": {
+    "town": "Hohen Neuendorf",
+    "county": "Oberhavel",
+    "state": "Brandenburg",
+    "country": "Germany"
+  },
+  "52.68,-3.87": {
+    "county": "Gwynedd",
+    "state": "Wales",
+    "country": "United Kingdom"
+  },
+  "52.73,23.73": {
+    "village": "Budy",
+    "municipality": "gmina Białowieża",
+    "county": "Hajnówka County",
+    "state": "Podlachia Voivodeship",
+    "country": "Poland"
   },
   "52.80,6.71": {
     "town": "Coevorden",
@@ -2499,6 +5347,11 @@
     "state": "Frisia",
     "country": "Netherlands"
   },
+  "52.96,5.74": {
+    "municipality": "De Fryske Marren",
+    "state": "Frisia",
+    "country": "Netherlands"
+  },
   "52.96,5.75": {
     "town": "Joure",
     "municipality": "De Fryske Marren",
@@ -2508,11 +5361,22 @@
   "52.97,-9.43": {
     "country": "Ireland"
   },
+  "52.97,5.78": {
+    "village": "Broek",
+    "municipality": "De Fryske Marren",
+    "state": "Frisia",
+    "country": "Netherlands"
+  },
   "52.97,5.79": {
     "town": "Joure",
     "municipality": "De Fryske Marren",
     "state": "Frisia",
     "country": "Netherlands"
+  },
+  "53.00,-118.07": {
+    "town": "Jasper",
+    "state": "Alberta",
+    "country": "Canada"
   },
   "53.02,5.21": {
     "municipality": "Súdwest-Fryslân",
@@ -2524,6 +5388,18 @@
     "state": "Wales",
     "country": "United Kingdom"
   },
+  "53.08,-119.18": {
+    "city": "Area H (Robson Valley/Canoe)",
+    "county": "Regional District of Fraser-Fort George",
+    "state": "British Columbia",
+    "country": "Canada"
+  },
+  "53.09,70.26": {
+    "city": "Зелёный Бор ауылдық округі",
+    "county": "Burabay District",
+    "state": "Akmola Region",
+    "country": "Kazakhstan"
+  },
   "53.09,8.82": {
     "city": "Bremen",
     "state": "Bremen",
@@ -2534,9 +5410,20 @@
     "state": "Wales",
     "country": "United Kingdom"
   },
+  "53.11,-2.21": {
+    "city": "Newcastle-under-Lyme",
+    "county": "Staffordshire",
+    "state": "England",
+    "country": "United Kingdom"
+  },
   "53.11,-2.32": {
     "county": "Cheshire East",
     "state": "England",
+    "country": "United Kingdom"
+  },
+  "53.12,-4.02": {
+    "county": "Conwy",
+    "state": "Wales",
     "country": "United Kingdom"
   },
   "53.16,13.40": {
@@ -2551,6 +5438,13 @@
     "state": "Irkutsk Oblast",
     "country": "Russia"
   },
+  "53.22,22.59": {
+    "village": "Zajki",
+    "municipality": "gmina Trzcianne",
+    "county": "Mońki County",
+    "state": "Podlachia Voivodeship",
+    "country": "Poland"
+  },
   "53.27,-9.05": {
     "country": "Ireland"
   },
@@ -2564,8 +5458,31 @@
     "county": "County Dublin",
     "country": "Ireland"
   },
+  "53.38,-2.40": {
+    "city": "Trafford",
+    "state": "England",
+    "country": "United Kingdom"
+  },
+  "53.40,6.02": {
+    "village": "Wierum",
+    "municipality": "Noardeast-Fryslân",
+    "state": "Frisia",
+    "country": "Netherlands"
+  },
+  "53.40,6.13": {
+    "village": "Eanjum",
+    "municipality": "Noardeast-Fryslân",
+    "state": "Frisia",
+    "country": "Netherlands"
+  },
   "53.42,18.37": {
     "municipality": "gmina Świecie",
+    "county": "Świecie County",
+    "state": "Kuyavian-Pomeranian Voivodeship",
+    "country": "Poland"
+  },
+  "53.49,18.74": {
+    "municipality": "gmina Dragacz",
     "county": "Świecie County",
     "state": "Kuyavian-Pomeranian Voivodeship",
     "country": "Poland"
@@ -2575,7 +5492,21 @@
     "state": "Alberta",
     "country": "Canada"
   },
+  "53.53,-113.51": {
+    "city": "Edmonton",
+    "state": "Alberta",
+    "country": "Canada"
+  },
   "53.54,10.00": {
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  "53.54,8.57": {
+    "city": "Bremerhaven",
+    "state": "Bremen",
+    "country": "Germany"
+  },
+  "53.55,10.00": {
     "city": "Hamburg",
     "country": "Germany"
   },
@@ -2585,10 +5516,22 @@
     "county": "County Galway",
     "country": "Ireland"
   },
+  "53.63,11.42": {
+    "city": "Schwerin",
+    "state": "Mecklenburg-Vorpommern",
+    "country": "Germany"
+  },
   "53.69,7.80": {
     "city": "Wittmund",
     "county": "Landkreis Wittmund",
     "state": "Lower Saxony",
+    "country": "Germany"
+  },
+  "53.72,12.95": {
+    "village": "Ivenack",
+    "municipality": "Stavenhagen",
+    "county": "Mecklenburgische Seenplatte",
+    "state": "Mecklenburg-Vorpommern",
     "country": "Germany"
   },
   "53.72,7.25": {
@@ -2603,6 +5546,11 @@
     "state": "Lower Saxony",
     "country": "Germany"
   },
+  "53.93,14.28": {
+    "city": "Świnoujście",
+    "state": "West Pomeranian Voivodeship",
+    "country": "Poland"
+  },
   "53.94,37.12": {
     "municipality": "Крапивенское сельское поселение",
     "county": "Щёкинский район",
@@ -2615,6 +5563,11 @@
     "state": "Warmian-Masurian Voivodeship",
     "country": "Poland"
   },
+  "54.15,12.11": {
+    "city": "Rostock",
+    "state": "Mecklenburg-Vorpommern",
+    "country": "Germany"
+  },
   "54.21,-2.37": {
     "county": "North Yorkshire",
     "state": "England",
@@ -2624,6 +5577,13 @@
     "county": "North Yorkshire",
     "state": "England",
     "country": "United Kingdom"
+  },
+  "54.39,12.53": {
+    "city": "Born a. Darß",
+    "municipality": "Darß/Fischland",
+    "county": "Vorpommern-Rügen",
+    "state": "Mecklenburg-Vorpommern",
+    "country": "Germany"
   },
   "54.47,-3.24": {
     "county": "Cumberland",
@@ -2645,17 +5605,39 @@
     "state": "England",
     "country": "United Kingdom"
   },
+  "55.27,59.79": {
+    "county": "Zlatoust",
+    "state": "Chelyabinsk Oblast",
+    "country": "Russia"
+  },
   "55.44,37.50": {
     "city": "Podolsk",
     "county": "Podolsk Urban Okrug",
     "state": "Moscow Oblast",
     "country": "Russia"
   },
+  "55.61,12.99": {
+    "city": "Malmö",
+    "municipality": "Malmö kommun",
+    "county": "Skåne County",
+    "country": "Sweden"
+  },
   "55.65,12.58": {
     "city": "Copenhagen",
     "municipality": "Copenhagen Municipality",
     "state": "Capital Region of Denmark",
     "country": "Denmark"
+  },
+  "55.65,12.59": {
+    "city": "Copenhagen",
+    "municipality": "Copenhagen Municipality",
+    "state": "Capital Region of Denmark",
+    "country": "Denmark"
+  },
+  "55.69,160.24": {
+    "county": "Milkovsky District",
+    "state": "Kamchatka Krai",
+    "country": "Russia"
   },
   "55.75,37.64": {
     "city": "Moscow",
@@ -2670,6 +5652,16 @@
   "55.97,92.38": {
     "county": "Divnogorsk Urban Okrug",
     "state": "Krasnoyarsk Krai",
+    "country": "Russia"
+  },
+  "55.99,-3.38": {
+    "city": "City of Edinburgh",
+    "state": "Scotland",
+    "country": "United Kingdom"
+  },
+  "56.24,37.97": {
+    "county": "Sergiyevo-Posadsky District",
+    "state": "Moscow Oblast",
     "country": "Russia"
   },
   "56.45,-5.60": {
@@ -2697,6 +5689,11 @@
     "state": "Scotland",
     "country": "United Kingdom"
   },
+  "56.83,118.13": {
+    "county": "Kalarsky District",
+    "state": "Zabaykalsky Krai",
+    "country": "Russia"
+  },
   "56.84,-5.12": {
     "county": "Inverness-shire",
     "state": "Scotland",
@@ -2707,6 +5704,10 @@
     "state": "Scotland",
     "country": "United Kingdom"
   },
+  "56.99,23.53": {
+    "municipality": "Tukuma novads",
+    "country": "Latvia"
+  },
   "57.03,34.96": {
     "town": "Torzhok",
     "state": "Tver Oblast",
@@ -2714,6 +5715,11 @@
   },
   "57.09,37.93": {
     "county": "Kalyazinsky District",
+    "state": "Tver Oblast",
+    "country": "Russia"
+  },
+  "57.16,33.10": {
+    "county": "Ostashkovsky District",
     "state": "Tver Oblast",
     "country": "Russia"
   },
@@ -2726,6 +5732,12 @@
     "county": "Highland",
     "state": "Scotland",
     "country": "United Kingdom"
+  },
+  "57.58,18.18": {
+    "city": "Visby",
+    "municipality": "Gotland Municipality",
+    "county": "Gotland County",
+    "country": "Sweden"
   },
   "57.64,18.30": {
     "city": "Visby",
@@ -2758,6 +5770,21 @@
     "county": "Västra Götaland County",
     "country": "Sweden"
   },
+  "58.39,11.45": {
+    "municipality": "Lysekils kommun",
+    "county": "Västra Götaland County",
+    "country": "Sweden"
+  },
+  "58.40,11.41": {
+    "municipality": "Lysekils kommun",
+    "county": "Västra Götaland County",
+    "country": "Sweden"
+  },
+  "58.53,8.33": {
+    "municipality": "Birkenes",
+    "county": "Agder",
+    "country": "Norway"
+  },
   "58.61,26.74": {
     "municipality": "Tartu vald",
     "county": "Tartu County",
@@ -2778,11 +5805,31 @@
     "county": "Järva County",
     "country": "Estonia"
   },
+  "59.27,27.89": {
+    "municipality": "Narva-Jõesuu linn",
+    "county": "Ida-Viru County",
+    "country": "Estonia"
+  },
   "59.30,18.12": {
     "city": "Stockholm",
     "municipality": "Stockholm Municipality",
     "county": "Stockholm County",
     "country": "Sweden"
+  },
+  "59.31,24.36": {
+    "municipality": "Keila linn",
+    "county": "Harju County",
+    "country": "Estonia"
+  },
+  "59.31,24.38": {
+    "municipality": "Keila linn",
+    "county": "Harju County",
+    "country": "Estonia"
+  },
+  "59.31,24.43": {
+    "municipality": "Keila linn",
+    "county": "Harju County",
+    "country": "Estonia"
   },
   "59.33,18.06": {
     "city": "Stockholm",
@@ -2794,6 +5841,21 @@
     "city": "Stockholm",
     "municipality": "Stockholm Municipality",
     "county": "Stockholm County",
+    "country": "Sweden"
+  },
+  "59.34,25.95": {
+    "municipality": "Kadrina vald",
+    "county": "Lääne-Viru County",
+    "country": "Estonia"
+  },
+  "59.34,26.36": {
+    "municipality": "Rakvere linn",
+    "county": "Lääne-Viru County",
+    "country": "Estonia"
+  },
+  "59.36,14.02": {
+    "municipality": "Kristinehamns kommun",
+    "county": "Värmland County",
     "country": "Sweden"
   },
   "59.37,28.20": {
@@ -2810,6 +5872,11 @@
     "county": "Harju County",
     "country": "Estonia"
   },
+  "59.51,9.33": {
+    "municipality": "Notodden",
+    "county": "Telemark",
+    "country": "Norway"
+  },
   "59.93,30.29": {
     "city": "Saint Petersburg",
     "state": "Saint Petersburg",
@@ -2820,24 +5887,104 @@
     "state": "Saint Petersburg",
     "country": "Russia"
   },
+  "59.94,30.40": {
+    "city": "Saint Petersburg",
+    "state": "Saint Petersburg",
+    "country": "Russia"
+  },
+  "6.15,-1.35": {
+    "county": "Adansi South District",
+    "state": "Ashanti Region",
+    "country": "Ghana"
+  },
+  "6.20,81.22": {
+    "city": "Hambantota",
+    "state": "Southern Province",
+    "country": "Sri Lanka"
+  },
+  "6.29,81.41": {
+    "state": "Southern Province",
+    "country": "Sri Lanka"
+  },
+  "6.30,80.60": {
+    "state": "Southern Province",
+    "country": "Sri Lanka"
+  },
+  "60.79,11.17": {
+    "city": "Hamar",
+    "municipality": "Hamar",
+    "county": "Innlandet",
+    "country": "Norway"
+  },
+  "60.99,10.62": {
+    "municipality": "Ringsaker",
+    "county": "Innlandet",
+    "country": "Norway"
+  },
+  "61.29,25.53": {
+    "city": "Asikkala",
+    "municipality": "Lahti sub-region",
+    "state": "Päijät-Häme",
+    "country": "Finland"
+  },
   "61.38,-148.54": {
     "city": "Anchorage",
     "state": "Alaska",
     "country": "United States"
+  },
+  "61.81,29.96": {
+    "town": "Parikkala",
+    "municipality": "Imatra sub-region",
+    "state": "South Karelia",
+    "country": "Finland"
   },
   "61.84,8.57": {
     "municipality": "Lom",
     "county": "Innlandet",
     "country": "Norway"
   },
+  "62.26,8.18": {
+    "municipality": "Lesja",
+    "county": "Innlandet",
+    "country": "Norway"
+  },
+  "62.29,-6.97": {
+    "municipality": "Runavíkar kommuna",
+    "country": "Faroe Islands"
+  },
+  "62.29,9.59": {
+    "municipality": "Oppdal",
+    "county": "Trøndelag",
+    "country": "Norway"
+  },
+  "62.30,-7.06": {
+    "municipality": "Eiðis kommuna",
+    "country": "Faroe Islands"
+  },
   "62.30,9.57": {
     "municipality": "Oppdal",
+    "county": "Trøndelag",
+    "country": "Norway"
+  },
+  "62.50,9.87": {
+    "municipality": "Oppdal",
+    "county": "Trøndelag",
+    "country": "Norway"
+  },
+  "62.72,10.00": {
+    "municipality": "Rennebu",
     "county": "Trøndelag",
     "country": "Norway"
   },
   "63.45,-19.05": {
     "county": "Mýrdalshreppur",
     "country": "Iceland"
+  },
+  "63.51,18.47": {
+    "city": "Björna District",
+    "municipality": "Örnsköldsviks kommun",
+    "county": "Västernorrland County",
+    "country": "Sweden"
   },
   "63.92,-22.20": {
     "county": "Grindavíkurbær",
@@ -2851,12 +5998,25 @@
     "county": "Sveitarfélagið Hornafjörður",
     "country": "Iceland"
   },
+  "64.06,-16.18": {
+    "county": "Sveitarfélagið Hornafjörður",
+    "country": "Iceland"
+  },
   "64.13,-16.23": {
     "county": "Sveitarfélagið Hornafjörður",
     "country": "Iceland"
   },
   "64.13,-16.24": {
     "county": "Sveitarfélagið Hornafjörður",
+    "country": "Iceland"
+  },
+  "64.16,19.68": {
+    "municipality": "Vindelns kommun",
+    "county": "Västerbotten County",
+    "country": "Sweden"
+  },
+  "64.26,-20.22": {
+    "county": "Hrunamannahreppur",
     "country": "Iceland"
   },
   "64.82,-23.38": {
@@ -2867,12 +6027,30 @@
     "town": "Grundarfjarðarbær",
     "country": "Iceland"
   },
+  "65.02,35.70": {
+    "county": "Primorsky District",
+    "state": "Arkhangelsk Oblast",
+    "country": "Russia"
+  },
+  "65.07,11.94": {
+    "municipality": "Bindal",
+    "county": "Nordland",
+    "country": "Norway"
+  },
   "65.37,-22.92": {
+    "country": "Iceland"
+  },
+  "65.38,-22.91": {
     "country": "Iceland"
   },
   "65.57,-17.01": {
     "county": "Þingeyjarsveit",
     "country": "Iceland"
+  },
+  "65.72,13.21": {
+    "municipality": "Vefsn",
+    "county": "Nordland",
+    "country": "Norway"
   },
   "65.77,-18.08": {
     "county": "Svalbarðsstrandarhreppur",
@@ -2884,6 +6062,121 @@
   "66.15,-18.91": {
     "county": "Fjallabyggð",
     "country": "Iceland"
+  },
+  "66.17,-23.09": {
+    "country": "Iceland"
+  },
+  "66.29,14.09": {
+    "municipality": "Rana",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "66.75,15.70": {
+    "municipality": "Saltdal",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "66.78,15.45": {
+    "municipality": "Saltdal",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "67.31,15.00": {
+    "municipality": "Bodø",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "67.93,13.09": {
+    "municipality": "Moskenes",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "67.94,13.10": {
+    "municipality": "Moskenes",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "67.94,13.12": {
+    "municipality": "Moskenes",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.01,24.07": {
+    "town": "Muonio",
+    "municipality": "Fell Lapland sub-region",
+    "state": "Lapland",
+    "country": "Finland"
+  },
+  "68.03,13.18": {
+    "municipality": "Flakstad",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.23,19.55": {
+    "municipality": "Kiruna kommun",
+    "county": "Norrbotten County",
+    "country": "Sweden"
+  },
+  "68.27,19.39": {
+    "municipality": "Kiruna kommun",
+    "county": "Norrbotten County",
+    "country": "Sweden"
+  },
+  "68.29,16.56": {
+    "municipality": "Narvik",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.32,15.00": {
+    "municipality": "Vågan",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.42,17.99": {
+    "municipality": "Narvik",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.42,18.16": {
+    "municipality": "Kiruna kommun",
+    "county": "Norrbotten County",
+    "country": "Sweden"
+  },
+  "68.43,18.01": {
+    "municipality": "Narvik",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "68.43,18.25": {
+    "municipality": "Kiruna kommun",
+    "county": "Norrbotten County",
+    "country": "Sweden"
+  },
+  "69.19,-51.11": {
+    "municipality": "Avannaata",
+    "country": "Greenland"
+  },
+  "7.22,81.52": {
+    "state": "Uva Province",
+    "country": "Sri Lanka"
+  },
+  "7.76,98.77": {
+    "city": "Ao Nang",
+    "county": "Mueang Krabi District",
+    "country": "Thailand"
+  },
+  "70.12,22.53": {
+    "municipality": "Loppa",
+    "county": "Finnmark",
+    "country": "Norway"
+  },
+  "70.68,-24.76": {
+    "municipality": "Sermersooq",
+    "country": "Greenland"
+  },
+  "9.02,98.66": {
+    "county": "Ban Ta Khun District",
+    "country": "Thailand"
   },
   "9.02,98.73": {
     "county": "Ban Ta Khun District",
