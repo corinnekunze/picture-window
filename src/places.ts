@@ -43,15 +43,25 @@ export function cacheKey(latitude: number, longitude: number): string {
 const ADMINISTRATIVE_WORDS =
   /\b(?:Tehsil|Tahsil|Rayon|Raion|Regional Unit|Municipal Unit|Municipal District|Urban Municipality|Municipality(?: of)?|Settlement Hromada|Urban Okrug|Subdivision|Subdistrict(?: Municipality)?|Mandal|Kabupaten|gmina|Grad|vald|linn|kommun|Sveitarfélagið|Parroquia|Xã|Merkez)\b|-si$|\s*\([^)]*\)/giu;
 const LATIN_TEXT = /^[\p{Script=Latin}\p{N}\s.,'’&/-]+$/u;
+/**
+ * Territories OpenStreetMap files as a region of the country that governs them ("French Polynesia",
+ * country "France"). Viewers know them by their own name, so it stands in for the country.
+ */
+const OVERSEAS_TERRITORIES = new Set([
+  "French Polynesia", "Guadeloupe", "Martinique", "French Guiana", "Réunion", "Mayotte", "New Caledonia",
+  "Saint Barthélemy", "Saint Martin", "Saint Pierre and Miquelon", "Wallis and Futuna",
+  "Puerto Rico", "Guam", "United States Virgin Islands", "American Samoa", "Northern Mariana Islands",
+]);
 
 /**
  * "Town, Country", else "Region, Country", else "Country"; null at sea or when OpenStreetMap has
  * nothing. Only real towns count as the first part (districts and counties have bureaucratic names),
  * and any part a viewer couldn't read (not in Latin script, or still administrative) gives way to the
- * next one up.
+ * next one up. An overseas territory counts as the country.
  */
 export function placeName(address: Address): string | null {
-  const country = readable(address.country);
+  const territory = address.state && OVERSEAS_TERRITORIES.has(address.state) ? address.state : undefined;
+  const country = readable(territory ?? address.country);
   const area = [address.city, address.town, address.village, address.state].map(readable).find(Boolean);
   if (!country) return area ?? null;
   if (!area || area === country) return country;

@@ -1,18 +1,18 @@
 {
   "schema": 1,
-  "published": "2026-11-02T00:12:04.916Z",
+  "published": "2026-11-02T16:46:39.165Z",
   "batches": [
     {
       "id": "2026-11",
       "manifest": "batches/2026-11.json",
-      "sha256": "d675212b7df04059dc807f27a40d9c13c556ab6343b2f3ee57493a3290bf88c0",
+      "sha256": "c42e156f28a33e1542465fec8a5c61de5859e16685bf64cb220c4f95019a867e",
       "count": 449,
       "theme": "https://github.com/corinnekunze/picture-window/releases/download/batch-2026-11/theme-2026-11.zip"
     },
     {
       "id": "2026-10",
       "manifest": "batches/2026-10.json",
-      "sha256": "6f4f5b43a007be5dca343e19c05b7c8eeb2995c27fe4bbfff9c19fbe3f20ea94",
+      "sha256": "cffb7ae2267399e76137ff616148b0acaf73728b080ec8a87134e8b4990f3c65",
       "count": 900,
       "theme": "https://github.com/corinnekunze/picture-window/releases/download/batch-2026-10/theme-2026-10.zip"
     }

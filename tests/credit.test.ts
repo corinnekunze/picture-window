@@ -57,6 +57,12 @@ describe("place names", () => {
     expect(placeName({})).toBeNull();
   });
 
+  it("names an overseas territory instead of the country that governs it", () => {
+    expect(placeName({ state: "French Polynesia", country: "France" })).toBe("French Polynesia");
+    expect(placeName({ city: "Saint-Denis", state: "Réunion", country: "France" })).toBe("Saint-Denis, Réunion");
+    expect(placeName({ state: "Normandy", country: "France" })).toBe("Normandy, France");
+  });
+
   it("skips names a viewer couldn't read", () => {
     expect(placeName({ village: "صيار", state: "Gouvernorat de Kairouan", country: "Tunisia" })).toBe("Gouvernorat de Kairouan, Tunisia");
     expect(placeName({ village: "Хужирское сельское поселение", state: "Irkutsk Oblast", country: "Russia" })).toBe("Irkutsk Oblast, Russia");
