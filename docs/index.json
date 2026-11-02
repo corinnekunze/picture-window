@@ -1,7 +1,14 @@
 {
   "schema": 1,
-  "published": "2026-10-22T20:55:38.454Z",
+  "published": "2026-11-02T00:12:04.916Z",
   "batches": [
+    {
+      "id": "2026-11",
+      "manifest": "batches/2026-11.json",
+      "sha256": "d675212b7df04059dc807f27a40d9c13c556ab6343b2f3ee57493a3290bf88c0",
+      "count": 449,
+      "theme": "https://github.com/corinnekunze/picture-window/releases/download/batch-2026-11/theme-2026-11.zip"
+    },
     {
       "id": "2026-10",
       "manifest": "batches/2026-10.json",
